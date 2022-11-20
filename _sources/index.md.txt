@@ -8,4 +8,6 @@ hide-toc: true
 :hidden:
 
 java/index
+docker/index
+kubernetes/index
 ```
