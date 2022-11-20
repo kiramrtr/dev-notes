@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+sphinx = "*"
+furo = "*"
+myst-parser = "*"
+sphinx-copybutton = "*"
+sphinx-design = "*"
+sphinx-inline-tabs = "*"
+sphinx-tabs = "*"
+sphinxcontrib-katex = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.7"
+python_full_version = "3.7.9"

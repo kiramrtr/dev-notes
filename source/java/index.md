@@ -3,7 +3,7 @@
 ## Functional Interfaces
 
 - _Functional Interfaces_ provide target types for lambda expressions and method references.
-- Each functional interface has a single abstract method SAM, called the _functional method_ for that functional interface.
+- Each functional interface has a single abstract method (SAM), called the _functional method_ for that functional interface.
 - Lambda expression's parameter and return type are matched or adapted to _functional method_.
 
 Functional interfaces can provide a target type in multiple contexts
