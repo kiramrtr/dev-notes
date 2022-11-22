@@ -1,3 +1,7 @@
 # Kubernetes
 
+```{toctree}
+:hidden:
+```
+
 ## Kubernetes
