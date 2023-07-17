@@ -5,12 +5,12 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Docker" href="../docker/index.html" /><link rel="prev" title="Functional Interfaces" href="functional-interfaces.html" />
 
-    <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
+    <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
         <title>Optional - Dev Note&#39;s</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/katex-math.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
@@ -152,23 +152,28 @@
   <span class="sidebar-brand-text">Dev Note's</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
-<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Java</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dev-tools/index.html">Dev Tools</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Dev Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dev-tools/curl.html">cURL</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Java</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Java</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="functional-interfaces.html">Functional Interfaces</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Optional</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../docker/index.html">Docker</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../docker/index.html">Docker</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Docker</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../kubernetes/index.html">Kubernetes</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../kubernetes/index.html">Kubernetes</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Kubernetes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../microservices/index.html">Microservices</a></li>
 </ul>
 
 </div>
@@ -214,17 +219,17 @@
 <li><p>Is a value-based class; use of identity-sensitive operations may have unpredictable results and should be avoided.</p></li>
 <li><p>Primarily intended for use as a method return type where there is a clear need to represent “no result”.</p></li>
 </ul>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Bike</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bike</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Bike</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bike</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="kd">class</span> <span class="nc">Bike</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Insurance</span><span class="o">&gt;</span><span class="w"> </span><span class="n">insurance</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kd">class</span> <span class="nc">Bike</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Insurance</span><span class="o">&gt;</span><span class="w"> </span><span class="n">insurance</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="kd">class</span> <span class="nc">Insurance</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">LocalDate</span><span class="w"> </span><span class="n">validTill</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kd">class</span> <span class="nc">Insurance</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">LocalDate</span><span class="w"> </span><span class="n">validTill</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <section id="creating-optional-objects">
@@ -252,18 +257,18 @@
 </section>
 <section id="using-map-on-optional">
 <h2>Using <code class="docutils literal notranslate"><span class="pre">map</span></code> on <code class="docutils literal notranslate"><span class="pre">Optional</span></code><a class="headerlink" href="#using-map-on-optional" title="Permalink to this heading">#</a></h2>
-<div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Before</label><div class="tab-content docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">LocalDate</span><span class="w"> </span><span class="n">validTill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"></span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">insurance</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">validTill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insurance</span><span class="p">.</span><span class="na">getValidTill</span><span class="p">();</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Before</label><div class="tab-content docutils">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">LocalDate</span><span class="w"> </span><span class="n">validTill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">insurance</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">validTill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insurance</span><span class="p">.</span><span class="na">getValidTill</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">After</label><div class="tab-content docutils container">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Insurance</span><span class="o">&gt;</span><span class="w"> </span><span class="n">insurance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">ofNullable</span><span class="p">(</span><span class="n">insurance</span><span class="p">);</span><span class="w"></span>
-<span class="n">Optional</span><span class="o">&lt;</span><span class="n">LocalDate</span><span class="o">&gt;</span><span class="w"> </span><span class="n">validTille</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insurance</span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">Insurance</span><span class="p">::</span><span class="n">getValidTill</span><span class="p">);</span><span class="w"></span>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">After</label><div class="tab-content docutils">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Insurance</span><span class="o">&gt;</span><span class="w"> </span><span class="n">insurance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">ofNullable</span><span class="p">(</span><span class="n">insurance</span><span class="p">);</span>
+<span class="n">Optional</span><span class="o">&lt;</span><span class="n">LocalDate</span><span class="o">&gt;</span><span class="w"> </span><span class="n">validTille</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">insurance</span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">Insurance</span><span class="p">::</span><span class="n">getValidTill</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -311,9 +316,7 @@
             
           </div>
           <div class="right-details">
-            <div class="icons">
-              
-            </div>
+            
           </div>
         </div>
         
@@ -347,9 +350,6 @@
     </aside>
   </div>
 </div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
