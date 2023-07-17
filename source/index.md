@@ -7,6 +7,7 @@ hide-toc: true
 Just yet another developer notes which I have made for my reference and re-collection.
 
 ```{toctree}
+dev-tools/index
 java/index
 docker/index
 kubernetes/index
