@@ -214,6 +214,38 @@
 </div>
 <section id="id1">
 <h2>Kubernetes<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="p">[</span><span class="n">command</span><span class="p">]</span> <span class="p">[</span><span class="nb">type</span><span class="p">]</span> <span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="p">[</span><span class="n">flags</span><span class="p">]</span>
+
+<span class="n">kubectl</span> <span class="n">get</span> <span class="n">pod</span> <span class="n">app</span> <span class="o">-</span><span class="n">o</span> <span class="n">yaml</span>
+</pre></div>
+</div>
+<p>Objects can be created imperatively or declaratively.</p>
+<p>Imperative approach</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">run</span> <span class="n">nginx</span> <span class="o">--</span><span class="n">image</span><span class="o">=</span><span class="n">nginx</span> <span class="o">--</span><span class="n">restart</span><span class="o">=</span><span class="n">Never</span> <span class="o">--</span><span class="n">port</span><span class="o">=</span><span class="mi">80</span>
+</pre></div>
+</div>
+<p>Declarative approach</p>
+<p><code class="docutils literal notranslate"><span class="pre">nginx-pod.yaml</span></code></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">frontend</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">frontend</span>
+<span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="w">      </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<span class="w">  </span><span class="nt">restartPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Never</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">nginx</span><span class="o">-</span><span class="n">pod</span><span class="o">.</span><span class="n">yaml</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">create</span></code> command instantiates a new object, if executed for existing object will result in an error.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">apply</span></code> command meant to update an existing object fully or incrementally. If object doesn’t exist it behaves same as <code class="docutils literal notranslate"><span class="pre">create</span></code>.</p></li>
+</ul>
 </section>
 </section>
 
