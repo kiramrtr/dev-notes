@@ -11,6 +11,7 @@ dev-tools/index
 java/index
 docker/index
 kubernetes/index
+microservices/index
 ```
 
 ## Credits
