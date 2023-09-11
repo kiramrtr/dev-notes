@@ -14,6 +14,8 @@ public interface AuthenticationEntryPoint {
 
 `AuthenticationManager`
 
+- Processes an `Authentication` request.
+
 ```java
 public interface AuthenticationManager {
     Authentication authenticate(Authentication authentication) throws AuthenticationException;
@@ -21,6 +23,8 @@ public interface AuthenticationManager {
 ```
 
 `Authentication`
+
+- Represents the token for an authentication request or for an authenticated principal once the request has been processed by the `AuthenticationManager.authenticate(Authentication)` method.
 
 ```java
 public interface Authentication extends Principal, Serializable {
@@ -33,6 +37,8 @@ public interface Authentication extends Principal, Serializable {
 }
 ```
 
+- https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/core/Authentication.html
+
 1. AuthenticationFilter
 2. AuthenticationToken
 3. AuthenticationManager
@@ -40,3 +46,11 @@ public interface Authentication extends Principal, Serializable {
    2. Success: AuthenticationSuccessHandler
 
 `ExceptionTranslationFilter` saves request when redirected to login page.
+
+Ant Matcher
+
+- `?` matches one character
+- `*` matched zero or more characters
+- `**` matched zero or more directories in a path
+
+Role vs Authority
