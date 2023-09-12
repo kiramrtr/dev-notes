@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="DSA" href="../dsa/index.html" /><link rel="prev" title="Docker" href="../docker/index.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Microservices" href="../microservices/index.html" /><link rel="prev" title="DSA" href="index.html" />
 
     <!-- Generated with Sphinx 7.2.5 and Furo 2023.09.10 -->
-        <title>Kubernetes - Dev Note&#39;s</title>
+        <title>Bit Manipulation - Dev Note&#39;s</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
@@ -172,9 +172,9 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../docker/index.html">Docker</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Docker</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Kubernetes</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dsa/index.html">DSA</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of DSA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dsa/bit-manipulation.html">Bit Manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/index.html">Kubernetes</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">DSA</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of DSA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Bit Manipulation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../microservices/index.html">Microservices</a></li>
@@ -212,64 +212,20 @@
           </label>
         </div>
         <article role="main">
-          <section id="kubernetes">
-<h1>Kubernetes<a class="headerlink" href="#kubernetes" title="Link to this heading">#</a></h1>
-<section id="todo">
-<h2>TODO<a class="headerlink" href="#todo" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>[ ] <code class="docutils literal notranslate"><span class="pre">StatefulSet</span></code></p></li>
-</ul>
-</section>
-<section id="kubernetes-architecture">
-<h2>Kubernetes Architecture<a class="headerlink" href="#kubernetes-architecture" title="Link to this heading">#</a></h2>
-<p>Control Plane</p>
-<ul class="simple">
-<li><p>api</p></li>
-<li><p>sched</p></li>
-<li><p>etcd</p></li>
-<li><p>c-m Control Manager</p></li>
-<li><p>c-c-m Cloud Control Manager (optional)</p></li>
-</ul>
-<p>Node</p>
-<ul class="simple">
-<li><p>kubectl</p></li>
-<li><p>kproxy</p></li>
-</ul>
-</section>
-<section id="draft">
-<h2>Draft<a class="headerlink" href="#draft" title="Link to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="p">[</span><span class="n">command</span><span class="p">]</span> <span class="p">[</span><span class="nb">type</span><span class="p">]</span> <span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="p">[</span><span class="n">flags</span><span class="p">]</span>
-
-<span class="n">kubectl</span> <span class="n">get</span> <span class="n">pod</span> <span class="n">app</span> <span class="o">-</span><span class="n">o</span> <span class="n">yaml</span>
+          <section id="bit-manipulation">
+<h1>Bit Manipulation<a class="headerlink" href="#bit-manipulation" title="Link to this heading">#</a></h1>
+<section id="count-number-of-bits-set">
+<h2>Count number of bits set<a class="headerlink" href="#count-number-of-bits-set" title="Link to this heading">#</a></h2>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">countSetBits</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="n">count</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">count</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>Objects can be created imperatively or declaratively.</p>
-<p>Imperative approach</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">run</span> <span class="n">nginx</span> <span class="o">--</span><span class="n">image</span><span class="o">=</span><span class="n">nginx</span> <span class="o">--</span><span class="n">restart</span><span class="o">=</span><span class="n">Never</span> <span class="o">--</span><span class="n">port</span><span class="o">=</span><span class="mi">80</span>
-</pre></div>
-</div>
-<p>Declarative approach</p>
-<p><code class="docutils literal notranslate"><span class="pre">nginx-pod.yaml</span></code></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pod</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">frontend</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">frontend</span>
-<span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
-<span class="w">      </span><span class="nt">ports</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
-<span class="w">  </span><span class="nt">restartPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Never</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">nginx</span><span class="o">-</span><span class="n">pod</span><span class="o">.</span><span class="n">yaml</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">create</span></code> command instantiates a new object, if executed for existing object will result in an error.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">apply</span></code> command meant to update an existing object fully or incrementally. If object doesn’t exist it behaves same as <code class="docutils literal notranslate"><span class="pre">create</span></code>.</p></li>
-</ul>
 </section>
 </section>
 
@@ -278,23 +234,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../dsa/index.html">
+          <a class="next-page" href="../microservices/index.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">DSA</div>
+                <div class="title">Microservices</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../docker/index.html">
+          <a class="prev-page" href="index.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Docker</div>
+                <div class="title">DSA</div>
                 
               </div>
             </a>
@@ -328,10 +284,8 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Kubernetes</a><ul>
-<li><a class="reference internal" href="#todo">TODO</a></li>
-<li><a class="reference internal" href="#kubernetes-architecture">Kubernetes Architecture</a></li>
-<li><a class="reference internal" href="#draft">Draft</a></li>
+<li><a class="reference internal" href="#">Bit Manipulation</a><ul>
+<li><a class="reference internal" href="#count-number-of-bits-set">Count number of bits set</a></li>
 </ul>
 </li>
 </ul>

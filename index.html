@@ -1,18 +1,18 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" data-content_root="./">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Dev Tools" href="dev-tools/index.html" />
 
-    <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
+    <!-- Generated with Sphinx 7.2.5 and Furo 2023.09.10 -->
         <title>Dev Note&#39;s</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
-    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" />
-    <link rel="stylesheet" type="text/css" href="_static/katex-math.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="_static/katex-math.css?v=91adb8b6" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
     
 
@@ -164,13 +164,17 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="java/index.html">Java</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Java</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="java/functional-interfaces.html">Functional Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java/streams.html">Streams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="java/optional.html">Optional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java/concurrency.html">Concurrency</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="docker/index.html">Docker</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Docker</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="kubernetes/index.html">Kubernetes</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Kubernetes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="kubernetes/index.html">Kubernetes</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="dsa/index.html">DSA</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of DSA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="dsa/bit-manipulation.html">Bit Manipulation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="microservices/index.html">Microservices</a></li>
@@ -209,7 +213,7 @@
         </div>
         <article role="main">
           <section id="dev-note-s">
-<h1>Dev Note’s<a class="headerlink" href="#dev-note-s" title="Permalink to this heading">#</a></h1>
+<h1>Dev Note’s<a class="headerlink" href="#dev-note-s" title="Link to this heading">#</a></h1>
 <p>Just yet another developer notes which I have made for my reference and re-collection.</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -237,12 +241,35 @@
 <li class="toctree-l4"><a class="reference internal" href="java/functional-interfaces.html#method-reference">Method Reference</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="java/streams.html">Streams</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="java/streams.html#reduce">Reduce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="java/streams.html#collect">Collect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="java/streams.html#processing-methods">Processing methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="java/streams.html#map-vs-flatmap">map() vs flatMap()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="java/streams.html#collectors">Collectors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="java/streams.html#reduction-concurrency-and-ordering">Reduction, concurrency and ordering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="java/streams.html#parallel-streams">Parallel Streams</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="java/optional.html">Optional</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="java/optional.html#creating-optional-objects">Creating <code class="docutils literal notranslate"><span class="pre">Optional</span></code> objects</a></li>
 <li class="toctree-l4"><a class="reference internal" href="java/optional.html#using-map-on-optional">Using <code class="docutils literal notranslate"><span class="pre">map</span></code> on <code class="docutils literal notranslate"><span class="pre">Optional</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="java/optional.html#chaining-optional-objects-with-flatmap">Chaining <code class="docutils literal notranslate"><span class="pre">Optional</span></code> objects with <code class="docutils literal notranslate"><span class="pre">flatMap</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="java/concurrency.html">Concurrency</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="java/concurrency.html#todo">Todo:</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="java/concurrency.html#race-condition">Race Condition</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="java/concurrency.html#synchronizers">Synchronizers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="java/concurrency.html#countdownlatch"><code class="docutils literal notranslate"><span class="pre">CountDownLatch</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="java/index.html#java-8-features">Java 8 Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="java/index.html#java-11-features">Java 11 Features</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="java/index.html#glossary">Glossary</a></li>
@@ -257,17 +284,31 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="kubernetes/index.html">Kubernetes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="kubernetes/index.html#id1">Kubernetes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kubernetes/index.html#todo">TODO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kubernetes/index.html#kubernetes-architecture">Kubernetes Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kubernetes/index.html#draft">Draft</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dsa/index.html">DSA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dsa/index.html#contents">Contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dsa/bit-manipulation.html">Bit Manipulation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dsa/bit-manipulation.html#count-number-of-bits-set">Count number of bits set</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="microservices/index.html">Microservices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="microservices/index.html#advantages">Advantages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="microservices/index.html#disadvantages">Disadvantages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="microservices/index.html#pillars-of-observability">3 pillars of observability</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <section id="credits">
-<h2>Credits<a class="headerlink" href="#credits" title="Permalink to this heading">#</a></h2>
+<h2>Credits<a class="headerlink" href="#credits" title="Link to this heading">#</a></h2>
 <p>[TODO]</p>
 </section>
 </section>
@@ -311,13 +352,13 @@
       
     </aside>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/scripts/furo.js"></script>
-    <script src="_static/tabs.js"></script>
-    <script src="_static/katex.min.js"></script>
-    <script src="_static/auto-render.min.js"></script>
-    <script src="_static/katex_autorenderer.js"></script>
+</div><script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="_static/tabs.js?v=3ee01567"></script>
+    <script src="_static/katex.min.js?v=deb2f140"></script>
+    <script src="_static/auto-render.min.js?v=8b9f325c"></script>
+    <script src="_static/katex_autorenderer.js?v=bebc588a"></script>
     </body>
 </html>

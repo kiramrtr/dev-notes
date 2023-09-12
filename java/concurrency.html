@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="DSA" href="../dsa/index.html" /><link rel="prev" title="Docker" href="../docker/index.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Docker" href="../docker/index.html" /><link rel="prev" title="Optional" href="optional.html" />
 
     <!-- Generated with Sphinx 7.2.5 and Furo 2023.09.10 -->
-        <title>Kubernetes - Dev Note&#39;s</title>
+        <title>Concurrency - Dev Note&#39;s</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
@@ -162,17 +162,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../dev-tools/curl.html">cURL</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../java/index.html">Java</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Java</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../java/functional-interfaces.html">Functional Interfaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../java/streams.html">Streams</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../java/optional.html">Optional</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../java/concurrency.html">Concurrency</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Java</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Java</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="functional-interfaces.html">Functional Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="streams.html">Streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional.html">Optional</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Concurrency</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../docker/index.html">Docker</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Docker</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/index.html">Kubernetes</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dsa/index.html">DSA</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of DSA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dsa/bit-manipulation.html">Bit Manipulation</a></li>
 </ul>
@@ -212,64 +212,88 @@
           </label>
         </div>
         <article role="main">
-          <section id="kubernetes">
-<h1>Kubernetes<a class="headerlink" href="#kubernetes" title="Link to this heading">#</a></h1>
+          <section id="concurrency">
+<h1>Concurrency<a class="headerlink" href="#concurrency" title="Link to this heading">#</a></h1>
 <section id="todo">
-<h2>TODO<a class="headerlink" href="#todo" title="Link to this heading">#</a></h2>
+<h2>Todo:<a class="headerlink" href="#todo" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>[ ] <code class="docutils literal notranslate"><span class="pre">StatefulSet</span></code></p></li>
+<li><p>[ ] <em>lost update</em></p></li>
+<li><p>[ ] <em>happens before</em></p></li>
+</ul>
+<section id="race-condition">
+<h3>Race Condition<a class="headerlink" href="#race-condition" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>https://web.mit.edu/6.031/www/sp21/classes/20-concurrency/#race_condition</p>
+</div></blockquote>
+<p>A <strong><em>race condition</em></strong> means that the correctness of the program depends on the relative timing of events in concurrent computations <em>A</em> and <em>B</em>. When this happens we say “A is in race with B.”</p>
+<ul class="simple">
+<li><p><em>check-then-act</em>: a potentially stale observation is used to decide what to do next.</p></li>
+<li><p><em>read-modify-write</em>: new state is derived from previous state (may be stale). e.g., <code class="docutils literal notranslate"><span class="pre">count++</span></code>.</p></li>
 </ul>
 </section>
-<section id="kubernetes-architecture">
-<h2>Kubernetes Architecture<a class="headerlink" href="#kubernetes-architecture" title="Link to this heading">#</a></h2>
-<p>Control Plane</p>
-<ul class="simple">
-<li><p>api</p></li>
-<li><p>sched</p></li>
-<li><p>etcd</p></li>
-<li><p>c-m Control Manager</p></li>
-<li><p>c-c-m Cloud Control Manager (optional)</p></li>
-</ul>
-<p>Node</p>
-<ul class="simple">
-<li><p>kubectl</p></li>
-<li><p>kproxy</p></li>
-</ul>
 </section>
-<section id="draft">
-<h2>Draft<a class="headerlink" href="#draft" title="Link to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="p">[</span><span class="n">command</span><span class="p">]</span> <span class="p">[</span><span class="nb">type</span><span class="p">]</span> <span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="p">[</span><span class="n">flags</span><span class="p">]</span>
+<section id="synchronizers">
+<h2>Synchronizers<a class="headerlink" href="#synchronizers" title="Link to this heading">#</a></h2>
+<section id="countdownlatch">
+<h3><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CountDownLatch.html"><code class="docutils literal notranslate"><span class="pre">CountDownLatch</span></code></a><a class="headerlink" href="#countdownlatch" title="Link to this heading">#</a></h3>
+<p>A synchronization aid that allows one or more threads to wait until a set of operations being performed in other threads completes.</p>
+<ul class="simple">
+<li><p>Initialized with a given <em>count</em>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">await</span></code> method blocks until the current count is reached to zero due to invocations of the <code class="docutils literal notranslate"><span class="pre">countDown</span></code>.</p></li>
+<li><p>If <em>count</em> is already zero invocation to <code class="docutils literal notranslate"><span class="pre">await</span></code> returns immediately.</p></li>
+<li><p>The <em>count</em> cannot be reset.</p></li>
+<li><p>Threads calling <code class="docutils literal notranslate"><span class="pre">countDown</span></code> need not wait for the count.</p></li>
+</ul>
+<p><strong>Use cases:</strong></p>
+<ul class="simple">
+<li><p>A CountDownLatch with a count of one serves as a simple on/off latch, or gate: all thread invoking <code class="docutils literal notranslate"><span class="pre">await</span></code> wait at the gate until it is opened by a thread invoking <code class="docutils literal notranslate"><span class="pre">countDown</span></code>.</p></li>
+<li><p>A CountDownLatch intialized to <em>N</em> can be used to make one thread wait until <em>N</em> threads have completed some action, or some action has been completed <em>N</em> times.</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Driver</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
 
-<span class="n">kubectl</span> <span class="n">get</span> <span class="n">pod</span> <span class="n">app</span> <span class="o">-</span><span class="n">o</span> <span class="n">yaml</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">InterruptedException</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">CountDownLatch</span><span class="w"> </span><span class="n">startSignal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CountDownLatch</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="n">CountDownLatch</span><span class="w"> </span><span class="n">doneSignal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CountDownLatch</span><span class="p">(</span><span class="n">N</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="n">Thread</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Workder</span><span class="p">(</span><span class="n">startSignal</span><span class="p">,</span><span class="w"> </span><span class="n">doneSignal</span><span class="p">)).</span><span class="na">start</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">doSomeWorkBeforeWorker</span><span class="p">();</span>
+<span class="w">        </span><span class="n">startSignal</span><span class="p">.</span><span class="na">countDown</span><span class="p">();</span>
+<span class="w">        </span><span class="n">doSomeWork</span><span class="p">();</span>
+<span class="w">        </span><span class="n">doneSignal</span><span class="p">.</span><span class="na">await</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Worker</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Runnable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">CountDownLatch</span><span class="w"> </span><span class="n">startSingal</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">CountDownLatch</span><span class="w"> </span><span class="n">doneSignal</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">Worker</span><span class="p">(</span><span class="n">CountDownLatch</span><span class="w"> </span><span class="n">startSingal</span><span class="p">,</span><span class="w"> </span><span class="n">CountDownLatch</span><span class="w"> </span><span class="n">doneSignal</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">startSingal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">startSingal</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">doneSignal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">doneSignal</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">startSignal</span><span class="p">.</span><span class="na">await</span><span class="p">();</span>
+<span class="w">            </span><span class="n">doWork</span><span class="p">();</span>
+<span class="w">            </span><span class="n">doneSingal</span><span class="p">.</span><span class="na">countDown</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">InterruptedException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;I got interrupted :-()&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">doWork</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Doing work...&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>Objects can be created imperatively or declaratively.</p>
-<p>Imperative approach</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">run</span> <span class="n">nginx</span> <span class="o">--</span><span class="n">image</span><span class="o">=</span><span class="n">nginx</span> <span class="o">--</span><span class="n">restart</span><span class="o">=</span><span class="n">Never</span> <span class="o">--</span><span class="n">port</span><span class="o">=</span><span class="mi">80</span>
-</pre></div>
-</div>
-<p>Declarative approach</p>
-<p><code class="docutils literal notranslate"><span class="pre">nginx-pod.yaml</span></code></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pod</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">frontend</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">frontend</span>
-<span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
-<span class="w">      </span><span class="nt">ports</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
-<span class="w">  </span><span class="nt">restartPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Never</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">nginx</span><span class="o">-</span><span class="n">pod</span><span class="o">.</span><span class="n">yaml</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">create</span></code> command instantiates a new object, if executed for existing object will result in an error.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">apply</span></code> command meant to update an existing object fully or incrementally. If object doesn’t exist it behaves same as <code class="docutils literal notranslate"><span class="pre">create</span></code>.</p></li>
-</ul>
+</section>
 </section>
 </section>
 
@@ -278,23 +302,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../dsa/index.html">
+          <a class="next-page" href="../docker/index.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">DSA</div>
+                <div class="title">Docker</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../docker/index.html">
+          <a class="prev-page" href="optional.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Docker</div>
+                <div class="title">Optional</div>
                 
               </div>
             </a>
@@ -328,10 +352,15 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Kubernetes</a><ul>
-<li><a class="reference internal" href="#todo">TODO</a></li>
-<li><a class="reference internal" href="#kubernetes-architecture">Kubernetes Architecture</a></li>
-<li><a class="reference internal" href="#draft">Draft</a></li>
+<li><a class="reference internal" href="#">Concurrency</a><ul>
+<li><a class="reference internal" href="#todo">Todo:</a><ul>
+<li><a class="reference internal" href="#race-condition">Race Condition</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#synchronizers">Synchronizers</a><ul>
+<li><a class="reference internal" href="#countdownlatch"><code class="docutils literal notranslate"><span class="pre">CountDownLatch</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
