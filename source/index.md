@@ -10,6 +10,8 @@ Just yet another developer notes which I have made for my reference and re-colle
 java/index
 docker/index
 kubernetes/index
+dsa/index
+microservices/index
 ```
 
 ## Credits

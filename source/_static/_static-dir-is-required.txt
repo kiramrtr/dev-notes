@@ -1,1 +1,1 @@
-_static directory is required for sphinx to buil
+_static directory is required for sphinx to build
