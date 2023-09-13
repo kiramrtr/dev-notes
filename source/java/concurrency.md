@@ -75,3 +75,22 @@ class Worker implements Runnable {
     }
 }
 ```
+
+## Liveness
+
+Ability to make progress.
+
+- Deadlock
+- Livelock
+- Starvation
+
+### Deadlock
+
+
+
+### Livelock
+
+- A thread often acts in response to the action of another thread. If the other thread's action is also a respone to the action of another thread, then _livelock_ may result.
+- As with deadlock, livelocked threads are unable to make further progress. However, the threads are not blocked they are simply too busy responding to each other to resume work.
+
+> https://docs.oracle.com/javase/tutorial/essential/concurrency/newlocks.html
