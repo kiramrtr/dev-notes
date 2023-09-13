@@ -295,6 +295,28 @@
 </div>
 </section>
 </section>
+<section id="liveness">
+<h2>Liveness<a class="headerlink" href="#liveness" title="Link to this heading">#</a></h2>
+<p>Ability to make progress.</p>
+<ul class="simple">
+<li><p>Deadlock</p></li>
+<li><p>Livelock</p></li>
+<li><p>Starvation</p></li>
+</ul>
+<section id="deadlock">
+<h3>Deadlock<a class="headerlink" href="#deadlock" title="Link to this heading">#</a></h3>
+</section>
+<section id="livelock">
+<h3>Livelock<a class="headerlink" href="#livelock" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>A thread often acts in response to the action of another thread. If the other thread’s action is also a respone to the action of another thread, then <em>livelock</em> may result.</p></li>
+<li><p>As with deadlock, livelocked threads are unable to make further progress. However, the threads are not blocked they are simply too busy responding to each other to resume work.</p></li>
+</ul>
+<blockquote>
+<div><p>https://docs.oracle.com/javase/tutorial/essential/concurrency/newlocks.html</p>
+</div></blockquote>
+</section>
+</section>
 </section>
 
         </article>
@@ -359,6 +381,11 @@
 </li>
 <li><a class="reference internal" href="#synchronizers">Synchronizers</a><ul>
 <li><a class="reference internal" href="#countdownlatch"><code class="docutils literal notranslate"><span class="pre">CountDownLatch</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#liveness">Liveness</a><ul>
+<li><a class="reference internal" href="#deadlock">Deadlock</a></li>
+<li><a class="reference internal" href="#livelock">Livelock</a></li>
 </ul>
 </li>
 </ul>
