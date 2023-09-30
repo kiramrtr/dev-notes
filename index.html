@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Dev Tools" href="dev-tools/index.html" />
 
-    <!-- Generated with Sphinx 7.2.5 and Furo 2023.09.10 -->
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
         <title>Dev Note&#39;s</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
@@ -175,6 +175,7 @@
 <li class="toctree-l1"><a class="reference internal" href="kubernetes/index.html">Kubernetes</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="dsa/index.html">DSA</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of DSA</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="dsa/bit-manipulation.html">Bit Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dsa/leetcode.html">LeetCode</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="microservices/index.html">Microservices</a></li>
@@ -218,70 +219,18 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="dev-tools/index.html">Dev Tools</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev-tools/index.html#contents">Contents</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dev-tools/curl.html">cURL</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="dev-tools/curl.html#how-to-s">How to’s</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="dev-tools/curl.html#download-file">Download file</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="dev-tools/curl.html">cURL</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="java/index.html">Java</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="java/index.html#contents">Contents</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="java/functional-interfaces.html">Functional Interfaces</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="java/functional-interfaces.html#basic-function-shapes">Basic function shapes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="java/functional-interfaces.html#lambda-expression">Lambda Expression</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="java/functional-interfaces.html#closure">Closure</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="java/functional-interfaces.html#method-reference">Method Reference</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="java/streams.html">Streams</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="java/streams.html#reduce">Reduce</a></li>
-<li class="toctree-l4"><a class="reference internal" href="java/streams.html#collect">Collect</a></li>
-<li class="toctree-l4"><a class="reference internal" href="java/streams.html#processing-methods">Processing methods</a></li>
-<li class="toctree-l4"><a class="reference internal" href="java/streams.html#map-vs-flatmap">map() vs flatMap()</a></li>
-<li class="toctree-l4"><a class="reference internal" href="java/streams.html#collectors">Collectors</a></li>
-<li class="toctree-l4"><a class="reference internal" href="java/streams.html#reduction-concurrency-and-ordering">Reduction, concurrency and ordering</a></li>
-<li class="toctree-l4"><a class="reference internal" href="java/streams.html#parallel-streams">Parallel Streams</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="java/optional.html">Optional</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="java/optional.html#creating-optional-objects">Creating <code class="docutils literal notranslate"><span class="pre">Optional</span></code> objects</a></li>
-<li class="toctree-l4"><a class="reference internal" href="java/optional.html#using-map-on-optional">Using <code class="docutils literal notranslate"><span class="pre">map</span></code> on <code class="docutils literal notranslate"><span class="pre">Optional</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="java/optional.html#chaining-optional-objects-with-flatmap">Chaining <code class="docutils literal notranslate"><span class="pre">Optional</span></code> objects with <code class="docutils literal notranslate"><span class="pre">flatMap</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="java/concurrency.html">Concurrency</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="java/concurrency.html#todo">Todo:</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="java/concurrency.html#race-condition">Race Condition</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="java/concurrency.html#synchronizers">Synchronizers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="java/concurrency.html#countdownlatch"><code class="docutils literal notranslate"><span class="pre">CountDownLatch</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="java/concurrency.html#liveness">Liveness</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="java/concurrency.html#deadlock">Deadlock</a></li>
-<li class="toctree-l5"><a class="reference internal" href="java/concurrency.html#livelock">Livelock</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="java/index.html#java-8-features">Java 8 Features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="java/index.html#java-11-features">Java 11 Features</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="java/functional-interfaces.html">Functional Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java/streams.html">Streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java/optional.html">Optional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java/concurrency.html">Concurrency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java/index.html#java-8-features">Java 8 Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java/index.html#java-11-features">Java 11 Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="java/index.html#glossary">Glossary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="java/index.html#terms-concepts">Terms &amp; Concepts</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="java/index.html#value-based-classes">Value-based Classes</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="java/index.html#terms-concepts">Terms &amp; Concepts</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="docker/index.html">Docker</a><ul>
@@ -295,13 +244,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dsa/index.html">DSA</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dsa/index.html#contents">Contents</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dsa/bit-manipulation.html">Bit Manipulation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="dsa/bit-manipulation.html#count-number-of-bits-set">Count number of bits set</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="dsa/bit-manipulation.html">Bit Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dsa/leetcode.html">LeetCode</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="microservices/index.html">Microservices</a><ul>
@@ -315,6 +259,20 @@
 <section id="credits">
 <h2>Credits<a class="headerlink" href="#credits" title="Link to this heading">#</a></h2>
 <p>[TODO]</p>
+<ul class="simple">
+<li><p>Composition pattern</p></li>
+<li><p>Straggler Problem</p></li>
+</ul>
+<p>https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-split-index.html#how-split-works
+https://stackoverflow.com/questions/46236029/why-does-elasticsearch-still-use-simple-routing-value-using-modulo/67766224#67766224
+https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-split-index.html#incremental-resharding</p>
+<p>Rate Limiter</p>
+<p>Why?:</p>
+<ul class="simple">
+<li><p>Prevent DDoS</p></li>
+<li><p>Implement service limits like free user can make 100 calls per day</p></li>
+<li><p>Prevent abuse or brute-force attacks e.g., login</p></li>
+</ul>
 </section>
 </section>
 

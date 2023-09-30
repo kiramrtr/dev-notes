@@ -1,19 +1,15 @@
 # Java
 
-## Contents
-
 ```{toctree}
-
 functional-interfaces
 streams
 optional
 concurrency
-
 ```
 
-### Java 8 Features
+## Java 8 Features
 
-### Java 11 Features
+## Java 11 Features
 
 ## Glossary
 
