@@ -1,5 +1,9 @@
 # Spring
 
+```{toctree}
+spring-security
+```
+
 ## Draft
 
 Common annotations
