@@ -94,3 +94,8 @@ Ability to make progress.
 - As with deadlock, livelocked threads are unable to make further progress. However, the threads are not blocked they are simply too busy responding to each other to resume work.
 
 > https://docs.oracle.com/javase/tutorial/essential/concurrency/newlocks.html
+http://web.mit.edu/6.031/www/sp21/classes/20-concurrency/#race_condition
+
+**Race Condition:**
+
+A **race condition** means that the correctness of the program depends on the relative timing of events in concurrent computations A and B. When this happens, we say "A is in race with B.".
