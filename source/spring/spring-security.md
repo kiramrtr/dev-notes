@@ -54,3 +54,9 @@ Ant Matcher
 - `**` matched zero or more directories in a path
 
 Role vs Authority
+
+`@EnableMethodSecurity`
+
+- `jsr250Enabled`
+- `prePostEnabled`
+- `securedEnabled`
