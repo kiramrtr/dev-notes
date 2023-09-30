@@ -1,6 +1,10 @@
 # LeetCode
 
-## 2716. Minimize String Length
+## [2716. Minimize String Length](https://leetcode.com/problems/minimize-string-length/)
+
+**Approach**
+
+As given string contains only lowercase english letters, we can have an array of size 26 and keeping track of the count and counting characters not seen already.
 
 ```java
 class Solution {
