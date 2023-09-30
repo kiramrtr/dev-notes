@@ -160,6 +160,7 @@
   <ul class="current">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dev-tools/index.html">Dev Tools</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Dev Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dev-tools/curl.html">cURL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-tools/keys-and-certificates.html">Keys and Certificates</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../java/index.html">Java</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Java</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -179,6 +180,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../microservices/index.html">Microservices</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../spring/index.html">Spring</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Spring</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../spring/spring-security.html">Spring Security</a></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -272,6 +277,40 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">apply</span></code> command meant to update an existing object fully or incrementally. If object doesn’t exist it behaves same as <code class="docutils literal notranslate"><span class="pre">create</span></code>.</p></li>
 </ul>
 </section>
+<section id="tips-for-ckad">
+<h2>Tips for CKAD<a class="headerlink" href="#tips-for-ckad" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">config</span> <span class="nb">set</span><span class="o">-</span><span class="n">context</span> <span class="o">&lt;</span><span class="n">context</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">namespace</span><span class="o">=&lt;</span><span class="n">namespace</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h2><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="load-docker-images-to-kind-nodes">
+<h3>Load docker images to kind nodes<a class="headerlink" href="#load-docker-images-to-kind-nodes" title="Link to this heading">#</a></h3>
+<p>kind doesn’t use local docker images and will try to fetch from the container registry. Local images can be loaded using:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>kind<span class="w"> </span>load<span class="w"> </span>docker-image<span class="w"> </span>nginx<span class="w"> </span>--name<span class="w"> </span>kind-cluster-name
+</pre></div>
+</div>
+</section>
+<section id="using-kind-behind-proxy">
+<h3>Using kind behind proxy<a class="headerlink" href="#using-kind-behind-proxy" title="Link to this heading">#</a></h3>
+<p>As kind doesn’t use local docker images</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">http_proxy</span><span class="o">=</span>http://...
+<span class="nb">export</span><span class="w"> </span><span class="nv">https_proxy</span><span class="o">=</span>http://...
+
+kind<span class="w"> </span>create<span class="w"> </span>cluster<span class="w"> </span>--config<span class="w"> </span>...
+</pre></div>
+</div>
+</section>
+<section id="using-git-bash-on-windows">
+<h3>Using Git Bash on Windows<a class="headerlink" href="#using-git-bash-on-windows" title="Link to this heading">#</a></h3>
+<p>This stops Git Bash from altering file system paths.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">MSYS_NO_PATHCONV</span><span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://books.google.com/books?id=hHc5DwAAQBAJ&amp;amp;pg=PA196&amp;amp;lpg=PA196&amp;amp;dq=environment+variable+windows+MSYS_NO_PATHCONV&amp;amp;source=bl&amp;amp;ots=9AW2uHiBQ7&amp;amp;sig=ACfU3U1kwtYXN9LqmM5Cy2P_2W5zc9-bLw&amp;amp;hl=en&amp;amp;sa=X&amp;amp;ved=2ahUKEwiN-vG-gsLpAhUQo54KHVCCCaAQ6AEwBHoECAoQAQ#v=onepage&amp;amp;q&amp;amp;f=false">Ref</a></p>
+</section>
+</section>
 </section>
 
         </article>
@@ -333,6 +372,13 @@
 <li><a class="reference internal" href="#todo">TODO</a></li>
 <li><a class="reference internal" href="#kubernetes-architecture">Kubernetes Architecture</a></li>
 <li><a class="reference internal" href="#draft">Draft</a></li>
+<li><a class="reference internal" href="#tips-for-ckad">Tips for CKAD</a></li>
+<li><a class="reference internal" href="#id1"></a><ul>
+<li><a class="reference internal" href="#load-docker-images-to-kind-nodes">Load docker images to kind nodes</a></li>
+<li><a class="reference internal" href="#using-kind-behind-proxy">Using kind behind proxy</a></li>
+<li><a class="reference internal" href="#using-git-bash-on-windows">Using Git Bash on Windows</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Keys and Certificates" href="keys-and-certificates.html" /><link rel="prev" title="Dev Tools" href="index.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Spring Security" href="spring-security.html" /><link rel="prev" title="Microservices" href="../microservices/index.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>cURL - Dev Note&#39;s</title>
+        <title>Spring - Dev Note&#39;s</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
@@ -158,9 +158,9 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
-<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Dev Tools</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Dev Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">cURL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="keys-and-certificates.html">Keys and Certificates</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dev-tools/index.html">Dev Tools</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Dev Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dev-tools/curl.html">cURL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-tools/keys-and-certificates.html">Keys and Certificates</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../java/index.html">Java</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Java</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -180,8 +180,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../microservices/index.html">Microservices</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../spring/index.html">Spring</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Spring</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../spring/spring-security.html">Spring Security</a></li>
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Spring</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Spring</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="spring-security.html">Spring Security</a></li>
 </ul>
 </li>
 </ul>
@@ -218,48 +218,45 @@
           </label>
         </div>
         <article role="main">
-          <section id="curl">
-<h1>cURL<a class="headerlink" href="#curl" title="Link to this heading">#</a></h1>
-<blockquote>
-<div><p>Trivia: cURL stands for “Client for URL”</p>
-</div></blockquote>
-<p>Just noting down the ways of CURL, mostly which I have used.</p>
-<p>Flags and their descriptions:</p>
+          <section id="spring">
+<h1>Spring<a class="headerlink" href="#spring" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="spring-security.html">Spring Security</a></li>
+</ul>
+</div>
+<section id="draft">
+<h2>Draft<a class="headerlink" href="#draft" title="Link to this heading">#</a></h2>
+<p>Common annotations</p>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head"><p>Flag</p></th>
+<tr class="row-odd"><th class="head"><p>Annotation</p></th>
 <th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-l</span></code> <code class="docutils literal notranslate"><span class="pre">--location</span></code></p></td>
-<td><p>Follow redirects</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&#64;SpringBootApplication</span></code></p></td>
+<td><p>Composition annotation of <code class="docutils literal notranslate"><span class="pre">&#64;SpringBootConfiguration</span></code>, <code class="docutils literal notranslate"><span class="pre">&#64;EnableAutoConfiguration</span></code> and <code class="docutils literal notranslate"><span class="pre">&#64;ComponentScan</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-O</span></code></p></td>
-<td><p>Save file with original filename</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&#64;Configuration</span></code></p></td>
+<td><p>Indicates that class declares one or more <code class="docutils literal notranslate"><span class="pre">&#64;Bean</span></code> methods and may be processed by Spring Container</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-o</span> <span class="pre">&lt;name&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">--output</span> <span class="pre">&lt;name&gt;</span></code></p></td>
-<td><p>Output’s the output to <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&#64;EnableWebSecurity</span></code></p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-k</span></code> <code class="docutils literal notranslate"><span class="pre">--insecure</span></code></p></td>
-<td><p>Ignore SSL errors</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&#64;Service</span></code></p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-s</span></code> <code class="docutils literal notranslate"><span class="pre">--silent</span></code></p></td>
-<td><p>Silent mode for suppressing progress or error messages</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&#64;Repository</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&#64;Bean</span></code></p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<section id="how-to-s">
-<h2>How to’s<a class="headerlink" href="#how-to-s" title="Link to this heading">#</a></h2>
-<section id="download-file">
-<h3>Download file<a class="headerlink" href="#download-file" title="Link to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">--</span><span class="n">location</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">output</span> <span class="o">&lt;</span><span class="n">file</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-<p>Short form for <code class="docutils literal notranslate"><span class="pre">--location</span></code> is <code class="docutils literal notranslate"><span class="pre">-l</span></code> and <code class="docutils literal notranslate"><span class="pre">--output</span></code> is <code class="docutils literal notranslate"><span class="pre">-o</span></code></p>
-</section>
 </section>
 </section>
 
@@ -268,23 +265,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="keys-and-certificates.html">
+          <a class="next-page" href="spring-security.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Keys and Certificates</div>
+                <div class="title">Spring Security</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="index.html">
+          <a class="prev-page" href="../microservices/index.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Dev Tools</div>
+                <div class="title">Microservices</div>
                 
               </div>
             </a>
@@ -318,11 +315,8 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">cURL</a><ul>
-<li><a class="reference internal" href="#how-to-s">How to’s</a><ul>
-<li><a class="reference internal" href="#download-file">Download file</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">Spring</a><ul>
+<li><a class="reference internal" href="#draft">Draft</a></li>
 </ul>
 </li>
 </ul>

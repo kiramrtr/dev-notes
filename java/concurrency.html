@@ -160,6 +160,7 @@
   <ul class="current">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dev-tools/index.html">Dev Tools</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Dev Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dev-tools/curl.html">cURL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-tools/keys-and-certificates.html">Keys and Certificates</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Java</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Java</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
@@ -179,6 +180,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../microservices/index.html">Microservices</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../spring/index.html">Spring</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Spring</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../spring/spring-security.html">Spring Security</a></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -237,18 +242,18 @@
 <h2>Synchronizers<a class="headerlink" href="#synchronizers" title="Link to this heading">#</a></h2>
 <section id="countdownlatch">
 <h3><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CountDownLatch.html"><code class="docutils literal notranslate"><span class="pre">CountDownLatch</span></code></a><a class="headerlink" href="#countdownlatch" title="Link to this heading">#</a></h3>
-<p>A synchronization aid that allows one or more threads to wait until a set of operations being performed in other threads completes.</p>
+<p>A synchronization aid that allows one or more threads (by calling <code class="docutils literal notranslate"><span class="pre">await()</span></code>) to wait until a set of operations being performed in other threads completes.</p>
 <ul class="simple">
 <li><p>Initialized with a given <em>count</em>.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">await</span></code> method blocks until the current count is reached to zero due to invocations of the <code class="docutils literal notranslate"><span class="pre">countDown</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">await</span></code> method blocks until the current count is reached to zero due to invocations of the <code class="docutils literal notranslate"><span class="pre">countDown()</span></code>.</p></li>
 <li><p>If <em>count</em> is already zero invocation to <code class="docutils literal notranslate"><span class="pre">await</span></code> returns immediately.</p></li>
 <li><p>The <em>count</em> cannot be reset.</p></li>
 <li><p>Threads calling <code class="docutils literal notranslate"><span class="pre">countDown</span></code> need not wait for the count.</p></li>
 </ul>
 <p><strong>Use cases:</strong></p>
 <ul class="simple">
-<li><p>A CountDownLatch with a count of one serves as a simple on/off latch, or gate: all thread invoking <code class="docutils literal notranslate"><span class="pre">await</span></code> wait at the gate until it is opened by a thread invoking <code class="docutils literal notranslate"><span class="pre">countDown</span></code>.</p></li>
-<li><p>A CountDownLatch intialized to <em>N</em> can be used to make one thread wait until <em>N</em> threads have completed some action, or some action has been completed <em>N</em> times.</p></li>
+<li><p>A CountDownLatch with a count of one serves as a simple on/off latch, or gate: all thread invoking <code class="docutils literal notranslate"><span class="pre">await</span></code> wait at the gate until it is opened by a thread invoking <code class="docutils literal notranslate"><span class="pre">countDown()</span></code>.</p></li>
+<li><p>A CountDownLatch initialized to <em>N</em> can be used to make one thread wait until <em>N</em> threads have completed some action, or some action has been completed <em>N</em> times.</p></li>
 </ul>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Driver</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
@@ -269,11 +274,11 @@
 <span class="p">}</span>
 
 <span class="kd">class</span> <span class="nc">Worker</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Runnable</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">CountDownLatch</span><span class="w"> </span><span class="n">startSingal</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">CountDownLatch</span><span class="w"> </span><span class="n">startSignal</span><span class="p">;</span>
 <span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">CountDownLatch</span><span class="w"> </span><span class="n">doneSignal</span><span class="p">;</span>
 
-<span class="w">    </span><span class="n">Worker</span><span class="p">(</span><span class="n">CountDownLatch</span><span class="w"> </span><span class="n">startSingal</span><span class="p">,</span><span class="w"> </span><span class="n">CountDownLatch</span><span class="w"> </span><span class="n">doneSignal</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">startSingal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">startSingal</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Worker</span><span class="p">(</span><span class="n">CountDownLatch</span><span class="w"> </span><span class="n">startSignal</span><span class="p">,</span><span class="w"> </span><span class="n">CountDownLatch</span><span class="w"> </span><span class="n">doneSignal</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">startSignal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">startSignal</span><span class="p">;</span>
 <span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">doneSignal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">doneSignal</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 
@@ -281,7 +286,7 @@
 <span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="n">startSignal</span><span class="p">.</span><span class="na">await</span><span class="p">();</span>
 <span class="w">            </span><span class="n">doWork</span><span class="p">();</span>
-<span class="w">            </span><span class="n">doneSingal</span><span class="p">.</span><span class="na">countDown</span><span class="p">();</span>
+<span class="w">            </span><span class="n">doneSignal</span><span class="p">.</span><span class="na">countDown</span><span class="p">();</span>
 <span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">InterruptedException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;I got interrupted :-()&quot;</span><span class="p">);</span>
 <span class="w">            </span><span class="k">return</span><span class="p">;</span>
@@ -310,7 +315,7 @@
 <section id="livelock">
 <h3>Livelock<a class="headerlink" href="#livelock" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>A thread often acts in response to the action of another thread. If the other thread’s action is also a respone to the action of another thread, then <em>livelock</em> may result.</p></li>
+<li><p>A thread often acts in response to the action of another thread. If the other thread’s action is also a response to the action of another thread, then <em>livelock</em> may result.</p></li>
 <li><p>As with deadlock, livelocked threads are unable to make further progress. However, the threads are not blocked they are simply too busy responding to each other to resume work.</p></li>
 </ul>
 <blockquote>
