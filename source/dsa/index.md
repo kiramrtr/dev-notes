@@ -1,7 +1,6 @@
 # DSA
 
-## Contents
-
 ```{toctree}
 bit-manipulation
+leetcode
 ```
