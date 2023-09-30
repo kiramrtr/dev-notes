@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Dev Note\'s'
-copyright = '2022, Kiran Marturu'
+copyright = '2022-2023, Kiran Marturu'
 author = 'Kiran Marturu'
 
 # -- General configuration ---------------------------------------------------
