@@ -2,4 +2,6 @@
 
 ```{toctree}
 curl
+git
+keys-and-certificates
 ```
