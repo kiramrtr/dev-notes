@@ -17,10 +17,10 @@ extensions = [
     'myst_parser',
     'sphinx_inline_tabs',
     'sphinx_design',
-    'sphinxcontrib.katex'
+    'sphinxcontrib.katex',
 ]
 
-myst_enable_extensions = ["colon_fence"]
+myst_enable_extensions = ["colon_fence", "dollarmath"]
 
 templates_path = ['_templates']
 exclude_patterns = []
