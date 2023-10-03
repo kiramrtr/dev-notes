@@ -4,6 +4,12 @@
     "context": ".."
   },
   "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "Application",
+      "onAutoForward": "openPreview"
+    }
+  },
   "customizations": {
     // Configure properties specific to VS Code.
     "vscode": {
