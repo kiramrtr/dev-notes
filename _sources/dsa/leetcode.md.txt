@@ -1,5 +1,41 @@
 # LeetCode
 
+## [560. Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)
+
+::::{tab-set}
+
+:::{tab-item} Brute-force
+
+```{code-block} java
+---
+emphasize-lines: 7-10
+linenos:
+---
+public int subarraySum(int[] nums, int k) {
+  int matchCount = 0;
+
+  for (int i = 0; i < nums.length; i++) {
+    for (int j = i; j < nums.length; j++) {
+      int sum = 0;
+      // sum elements from i to j
+      for (int x = i; x <= j; x++) {
+        sum = sum + nums[x];
+      }
+
+      if (sum == k) {
+        matchCount++;
+      }
+    }
+  }
+
+  return matchCount;
+}
+```
+
+:::
+
+::::
+
 ## [2716. Minimize String Length](https://leetcode.com/problems/minimize-string-length/)
 
 **Approach**

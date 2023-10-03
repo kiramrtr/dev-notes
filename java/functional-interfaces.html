@@ -10,6 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/katex-math.css?v=91adb8b6" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
@@ -285,15 +286,13 @@
 <li><p>reference to an instance method of an object <code class="docutils literal notranslate"><span class="pre">objectName::instanceMethodName</span></code></p></li>
 <li><p>reference to an instance of an object of a particular type <code class="docutils literal notranslate"><span class="pre">ClassName::instanceMethodName</span></code></p></li>
 </ul>
-<div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Static method</label><div class="tab-content docutils">
+<p><strong>Static method</strong></p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parseInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">::</span><span class="n">parseInt</span><span class="p">;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="n">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parseInt</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="s">&quot;143&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Constructor</label><div class="tab-content docutils">
+<p><strong>Constructor</strong></p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">User</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">userId</span><span class="p">;</span>
 
@@ -310,8 +309,7 @@
 <span class="n">User</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userFun</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="s">&quot;john.doe&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<input class="tab-input" id="tab-set--1-input--3" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--3">Instance method of an object</label><div class="tab-content docutils">
+<p><strong>Instance method of an object</strong></p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tokens</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;desc&quot;</span><span class="p">);</span>
 
 <span class="hll"><span class="n">Function</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">posFun</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tokens</span><span class="p">::</span><span class="n">get</span><span class="p">;</span>
@@ -323,9 +321,8 @@
 </pre></div>
 </div>
 <p>See how <code class="docutils literal notranslate"><span class="pre">tokens</span></code> variable is captured from the context.</p>
-</div>
-<input class="tab-input" id="tab-set--1-input--4" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--4">Instance method of an object of a particular type</label><div class="tab-content docutils">
-<p>This is another way of referring non-static methods</p>
+<p><strong>Instance method of an object of a particular type</strong>
+This is another way of referring non-static methods</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="n">Function</span><span class="o">&lt;</span><span class="n">Long</span><span class="p">,</span><span class="w"> </span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">converter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Long</span><span class="p">::</span><span class="n">doubleValue</span><span class="p">;</span>
 </span>
 <span class="hll"><span class="c1">// or lambda</span>
@@ -333,8 +330,6 @@
 
 <span class="n">converter</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="mi">516L</span><span class="p">);</span>
 </pre></div>
-</div>
-</div>
 </div>
 </section>
 </section>
@@ -417,6 +412,7 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../_static/tabs.js?v=3ee01567"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script src="../_static/katex.min.js?v=deb2f140"></script>
     <script src="../_static/auto-render.min.js?v=8b9f325c"></script>
     <script src="../_static/katex_autorenderer.js?v=bebc588a"></script>

@@ -68,15 +68,16 @@ There are four types of method references in general:
 - reference to an instance method of an object `objectName::instanceMethodName`
 - reference to an instance of an object of a particular type `ClassName::instanceMethodName`
 
-````{tab} Static method
+**Static method**
+
 ```java
 Function<String, Integer> parseInt = Integer::parseInt;
 
 int n1 = parseInt.apply("143");
 ```
-````
 
-````{tab} Constructor
+**Constructor**
+
 ```{code-block} java
 ---
 emphasize-lines: 9, 11, 12
@@ -96,9 +97,9 @@ Function<String, User> userFun = userId -> new User(userId);
 
 User user = userFun.apply("john.doe");
 ```
-````
 
-````{tab} Instance method of an object
+**Instance method of an object**
+
 ```{code-block} java
 ---
 emphasize-lines: 3, 5, 6
@@ -112,10 +113,10 @@ Function<Integer, String> posFun = index -> tokens.get(index);
 
 posFun.apply(1); // $3 ==> "name"
 ```
-See how `tokens` variable is captured from the context.
-````
 
-````{tab} Instance method of an object of a particular type
+See how `tokens` variable is captured from the context.
+
+**Instance method of an object of a particular type**
 This is another way of referring non-static methods
 
 ```{code-block} java
@@ -129,4 +130,3 @@ Function<Long, Double> converter = val -> val.doubleValue();
 
 converter.apply(516L);
 ```
-````
