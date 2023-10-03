@@ -23,6 +23,8 @@ microservices/index
 
 - Composition pattern
 - Straggler Problem
+- Tumbling Windows - Apache Flink
+- Stream Processing
 
 https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-split-index.html#how-split-works
 https://stackoverflow.com/questions/46236029/why-does-elasticsearch-still-use-simple-routing-value-using-modulo/67766224#67766224
