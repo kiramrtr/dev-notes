@@ -2,6 +2,16 @@
 
 ## [560. Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)
 
+| Index $i$               | 0   | 1   | 2   | 3   | 4   | 5   | 6   |
+| ----------------------- | --- | --- | --- | --- | --- | --- | --- |
+| $\texttt{arr}[i]$       | 1   | 6   | 4   | 2   | 5   | 3   | -   |
+| $\texttt{prefixSum}[i]$ | 0   | 1   | 7   | 11  | 13  | 18  | 21  |
+
+Sum of $\texttt{arr}[i..j]$ can be computed using $\texttt{prefixSum}[j+1] - \texttt{preSum}[i]$.
+
+$\texttt{sum}[2-4] = \texttt{prefixSum}[5] - \texttt{prefixSum}[2]$
+$\texttt{sum}[2-4] = 18 - 7 = 11$
+
 ::::{tab-set}
 
 :::{tab-item} Brute-force
@@ -31,6 +41,8 @@ public int subarraySum(int[] nums, int k) {
   return matchCount;
 }
 ```
+
+Time complexity: {math}`\mathcal{O}(n\log n)`
 
 :::
 
