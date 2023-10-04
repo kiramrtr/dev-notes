@@ -1,23 +1,22 @@
+/* Styling for table in dsa/leetcode.md */
+
 table.ps-ex1 > tbody > tr:nth-child(1) > td:nth-child(3),
 table.ps-ex1 > tbody > tr:nth-child(1) > td:nth-child(4),
 table.ps-ex1 > tbody > tr:nth-child(1) > td:nth-child(5),
 table.ps-ex1 > tbody > tr:nth-child(1) > td:nth-child(6) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 249 195 / var(--tw-bg-opacity));
+  background-color: var(--color-admonition-title-background--caution);
 }
 
 table.ps-ex1 > tbody > tr:nth-child(2) > td:nth-child(2),
 table.ps-ex1 > tbody > tr:nth-child(2) > td:nth-child(3) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 226 226 / var(--tw-bg-opacity));
+  background-color: var(--color-admonition-title-background--error);
 }
 
 table.ps-ex1 > tbody > tr:nth-child(2) > td:nth-child(4),
 table.ps-ex1 > tbody > tr:nth-child(2) > td:nth-child(5),
 table.ps-ex1 > tbody > tr:nth-child(2) > td:nth-child(6),
 table.ps-ex1 > tbody > tr:nth-child(2) > td:nth-child(7) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 252 231 / var(--tw-bg-opacity));
+  background-color: var(--color-admonition-title-background--tip);
 }
 
 /* KaTeX */
