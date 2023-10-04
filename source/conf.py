@@ -1,3 +1,5 @@
+import datetime
+from datetime import datetime
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -7,7 +9,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Dev Note\'s'
-copyright = '2022-2023, Kiran Marturu'
+copyright = f'2022-{datetime.now().year}, Kiran Marturu'
 author = 'Kiran Marturu'
 
 # -- General configuration ---------------------------------------------------
@@ -18,6 +20,7 @@ extensions = [
     'sphinx_inline_tabs',
     'sphinx_design',
     'sphinxcontrib.katex',
+    'sphinx_copybutton'
 ]
 
 myst_enable_extensions = ["colon_fence", "dollarmath"]
@@ -31,3 +34,7 @@ exclude_patterns = []
 html_theme = 'furo'
 html_title = 'Dev Note\'s'
 html_static_path = ['_static']
+
+html_css_files = [
+    'css/custom.css',
+]
