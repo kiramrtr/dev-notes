@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="prev" title="Spring" href="index.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Bit Manipulation" href="bit-manipulation.html" /><link rel="prev" title="Data Structures &amp; Algorithms" href="index.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>Spring Security - Dev Note&#39;s</title>
+        <title>Algorithmic Techniques - Dev Note&#39;s</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
@@ -140,7 +140,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -178,16 +178,16 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../kubernetes/index.html">Kubernetes</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dsa/index.html">Data Structures &amp; Algorithms</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Data Structures &amp; Algorithms</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dsa/algorithmic-techniques.html">Algorithmic Techniques</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dsa/bit-manipulation.html">Bit Manipulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dsa/leetcode.html">LeetCode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dsa/leetcode/11_container_with_most_water.html">11. Container With Most Water</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Data Structures &amp; Algorithms</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Data Structures &amp; Algorithms</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Algorithmic Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bit-manipulation.html">Bit Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="leetcode.html">LeetCode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="leetcode/11_container_with_most_water.html">11. Container With Most Water</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../microservices/index.html">Microservices</a></li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Spring</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Spring</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Spring Security</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../spring/index.html">Spring</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Spring</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../spring/spring-security.html">Spring Security</a></li>
 </ul>
 </li>
 </ul>
@@ -218,74 +218,91 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="spring-security">
-<h1>Spring Security<a class="headerlink" href="#spring-security" title="Link to this heading">#</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">AuthenticationEntryPoint</span></code></p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">AuthenticationEntryPoint</span><span class="w"> </span><span class="p">{</span>
-<span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="nf">commence</span><span class="p">(</span>
-<span class="w">        </span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span>
-<span class="w">        </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">,</span>
-<span class="w">        </span><span class="n">AuthenticationException</span><span class="w"> </span><span class="n">authException</span>
-<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="p">,</span><span class="w"> </span><span class="n">ServletException</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
+          <section class="tex2jax_ignore mathjax_ignore" id="algorithmic-techniques">
+<h1>Algorithmic Techniques<a class="headerlink" href="#algorithmic-techniques" title="Link to this heading">#</a></h1>
+<section id="prefix-sum">
+<h2>Prefix Sum<a class="headerlink" href="#prefix-sum" title="Link to this heading">#</a></h2>
+<div class="table-wrapper colwidths-auto ps-ex1 docutils container">
+<table class="ps-ex1 docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Index <span class="math">\(i\)</span></p></th>
+<th class="head text-right"><p>0</p></th>
+<th class="head text-right"><p>1</p></th>
+<th class="head text-right"><p>2</p></th>
+<th class="head text-right"><p>3</p></th>
+<th class="head text-right"><p>4</p></th>
+<th class="head text-right"><p>5</p></th>
+<th class="head text-right"><p>6</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math">\(\texttt{arr}[i]\)</span></p></td>
+<td class="text-right"><p>1</p></td>
+<td class="text-right"><p>6</p></td>
+<td class="text-right"><p>4</p></td>
+<td class="text-right"><p>2</p></td>
+<td class="text-right"><p>5</p></td>
+<td class="text-right"><p>3</p></td>
+<td class="text-right"><p>-</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math">\(\texttt{prefixSum}[i]\)</span></p></td>
+<td class="text-right"><p>0</p></td>
+<td class="text-right"><p>1</p></td>
+<td class="text-right"><p>7</p></td>
+<td class="text-right"><p>11</p></td>
+<td class="text-right"><p>13</p></td>
+<td class="text-right"><p>18</p></td>
+<td class="text-right"><p>21</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">AuthenticationManager</span></code></p>
-<ul class="simple">
-<li><p>Processes an <code class="docutils literal notranslate"><span class="pre">Authentication</span></code> request.</p></li>
-</ul>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">AuthenticationManager</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">Authentication</span><span class="w"> </span><span class="nf">authenticate</span><span class="p">(</span><span class="n">Authentication</span><span class="w"> </span><span class="n">authentication</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">AuthenticationException</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
+<p>Prefix sum can be calculated in <span class="math">\(\mathcal{O}(n)\)</span> by the below formula:</p>
+<div class="math-wrapper docutils container">
+<div class="math">
+\[
+\texttt{prefixSum}[i] = \texttt{prefixSum}[i - 1] + \texttt{arr}[i - 1]
+\]</div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">Authentication</span></code></p>
-<ul class="simple">
-<li><p>Represents the token for an authentication request or for an authenticated principal once the request has been processed by the <code class="docutils literal notranslate"><span class="pre">AuthenticationManager.authenticate(Authentication)</span></code> method.</p></li>
-</ul>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Authentication</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Principal</span><span class="p">,</span><span class="w"> </span><span class="n">Serializable</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">Collection</span><span class="o">&lt;?</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">GrantedAuthority</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getAuthorities</span><span class="p">();</span>
-<span class="w">    </span><span class="n">Object</span><span class="w"> </span><span class="nf">getCredentials</span><span class="p">();</span>
-<span class="w">    </span><span class="n">Object</span><span class="w"> </span><span class="nf">getDetails</span><span class="p">();</span>
-<span class="w">    </span><span class="n">Object</span><span class="w"> </span><span class="nf">getPrincipal</span><span class="p">();</span>
-<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isAuthenticated</span><span class="p">();</span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">setAuthenticated</span><span class="p">(</span><span class="kt">boolean</span><span class="w"> </span><span class="n">isAuthenticated</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
+<p>Now, the sum of the elements of <span class="math">\(\texttt{arr}\)</span> from <span class="math">\(\textit{L}\)</span> to <span class="math">\(\textit{R}\)</span> can be computed using:</p>
+<div class="math-wrapper docutils container">
+<div class="math">
+\[
+\sum_{i=L}^{R} \texttt{arr}[i] = \sum_{i=0}^{R} \texttt{arr}[i] - \sum_{i=0}^{L-1} \texttt{arr}[i]
+\]</div>
 </div>
-<ul class="simple">
-<li><p>https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/core/Authentication.html</p></li>
-</ul>
-<ol class="arabic simple">
-<li><p>AuthenticationFilter</p></li>
-<li><p>AuthenticationToken</p></li>
-<li><p>AuthenticationManager</p>
-<ol class="arabic simple">
-<li><p>Failure: AuthenticationFailureHandler</p></li>
-<li><p>Success: AuthenticationSuccessHandler</p></li>
-</ol>
-</li>
-</ol>
-<p><code class="docutils literal notranslate"><span class="pre">ExceptionTranslationFilter</span></code> saves request when redirected to login page.</p>
-<p>Ant Matcher</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">?</span></code> matches one character</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> matched zero or more characters</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">**</span></code> matched zero or more directories in a path</p></li>
-</ul>
-<p>Role vs Authority</p>
-<p><code class="docutils literal notranslate"><span class="pre">&#64;EnableMethodSecurity</span></code></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">jsr250Enabled</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">prePostEnabled</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">securedEnabled</span></code></p></li>
-</ul>
+<p>Using the prefix sum array, the same can be</p>
+<div class="math-wrapper docutils container">
+<div class="math">
+\[
+\sum_{i=L}^{R} \texttt{arr}[i] = \texttt{prefixSum}[R+1] - \texttt{prefixSum}[L]
+\]</div>
+</div>
+<p>Example should make it more clearer:</p>
+<div class="math-wrapper docutils container">
+<div class="math">
+\[
+\sum_{1=1}^{4} \texttt{arr}[i] = \sum_{i=0}^{4} \texttt{arr}[i]  - \sum_{i=0}^{0} \texttt{arr}[i] \\
+\sum_{n=1}^{4} \texttt{arr}[i] = (1 + 6 + 4 + 2 + 5) - (1) = 18 - 1 = 17.
+\]</div>
+</div>
+<p>Using prefix sums:</p>
+<div class="math-wrapper docutils container">
+<div class="math">
+\[
+\texttt{prefixSum}[5] - \texttt{prefixSum}[1] = 18 - 1 = 17.
+\]</div>
+</div>
+<blockquote>
+<div><p>Read more at: https://usaco.guide/silver/prefix-sums and https://labuladong.gitbook.io/algo-en/iii.-algorithmic-thinking/prefix_sum</p>
+</div></blockquote>
+</section>
 </section>
 
         </article>
@@ -293,7 +310,15 @@
       <footer>
         
         <div class="related-pages">
-          
+          <a class="next-page" href="bit-manipulation.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Bit Manipulation</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
           <a class="prev-page" href="index.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
@@ -301,7 +326,7 @@
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Spring</div>
+                <div class="title">Data Structures &amp; Algorithms</div>
                 
               </div>
             </a>
@@ -323,8 +348,27 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Algorithmic Techniques</a><ul>
+<li><a class="reference internal" href="#prefix-sum">Prefix Sum</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

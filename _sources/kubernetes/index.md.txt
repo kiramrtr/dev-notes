@@ -66,7 +66,7 @@ kubectl create -f nginx-pod.yaml
 kubectl config set-context <context> --namespace=<namespace>
 ```
 
-##
+## How to's
 
 ### Load docker images to kind nodes
 
@@ -96,5 +96,3 @@ export MSYS_NO_PATHCONV=1
 ```
 
 [Ref](https://books.google.com/books?id=hHc5DwAAQBAJ&pg=PA196&lpg=PA196&dq=environment+variable+windows+MSYS_NO_PATHCONV&source=bl&ots=9AW2uHiBQ7&sig=ACfU3U1kwtYXN9LqmM5Cy2P_2W5zc9-bLw&hl=en&sa=X&ved=2ahUKEwiN-vG-gsLpAhUQo54KHVCCCaAQ6AEwBHoECAoQAQ#v=onepage&q&f=false)
-
-
