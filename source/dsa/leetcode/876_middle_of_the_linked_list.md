@@ -2,9 +2,9 @@
 
 ## Approach
 
-Imagine `a` and `b`. If `b` is twice fast as `a` then if `a` takes 10 steps to reach the end `b` can does the same in 5 steps and once `b` reaches end `a` will be at the middle.
+Imagine two elements, **a** and **b**. If **b** moves twice as fast as **a**, then when **a** takes 10 steps to reach the end, **b** can cover the same distance in just 5 steps. Once **b** reaches the end, **a** will be positioned at the middle.
 
-Using this intuition with two-pointer (slow and fast) approach we can find the middle element.
+By applying this intuition and utilizing a two-pointer (slow and fast) approach, we can efficiently determine the middle element.
 
 ## Code
 
@@ -32,3 +32,7 @@ class Solution {
   }
 }
 ```
+
+| Time Complexity  | Space Complexity |
+| :--------------: | :--------------: |
+| $\mathcal{O}(n)$ | $\mathcal{O}(1)$ |
