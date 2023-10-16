@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Microservices" href="../../microservices/index.html" /><link rel="prev" title="876. Middle of the Linked List" href="876_middle_of_the_linked_list.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="11. Container With Most Water" href="11_container_with_most_water.html" /><link rel="prev" title="238. Product of Array Except Self" href="00238_product_of_array_except_self.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>973. K Closest Points to Origin - Dev Note&#39;s</title>
+        <title>542. 01 Matrix - Dev Note&#39;s</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
@@ -183,7 +183,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../bit-manipulation.html">Bit Manipulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../leetcode.html">LeetCode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="00238_product_of_array_except_self.html">238. Product of Array Except Self</a></li>
-<li class="toctree-l2"><a class="reference internal" href="00542_01_matrix.html">542. 01 Matrix</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">542. 01 Matrix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="11_container_with_most_water.html">11. Container With Most Water</a></li>
 <li class="toctree-l2"><a class="reference internal" href="15_3_sum.html">15. 3Sum</a></li>
 <li class="toctree-l2"><a class="reference internal" href="208_implement_trie_prefix_tree.html">208. Implement Trie (Prefix Tree)</a></li>
@@ -194,7 +194,7 @@
 <li class="toctree-l2"><a class="reference internal" href="56_merge_intervals.html">56. Merge Intervals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="57_insert_interval.html">57. Insert Interval</a></li>
 <li class="toctree-l2"><a class="reference internal" href="876_middle_of_the_linked_list.html">876. Middle of the Linked List</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">973. K Closest Points to Origin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="973_k_closest_points_to_origin.html">973. K Closest Points to Origin</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../microservices/index.html">Microservices</a></li>
@@ -236,43 +236,61 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="k-closest-points-to-origin">
-<h1>973. K Closest Points to Origin<a class="headerlink" href="#k-closest-points-to-origin" title="Link to this heading">#</a></h1>
+          <section class="tex2jax_ignore mathjax_ignore" id="matrix">
+<h1>542. 01 Matrix<a class="headerlink" href="#matrix" title="Link to this heading">#</a></h1>
+<section id="approach">
+<h2>Approach<a class="headerlink" href="#approach" title="Link to this heading">#</a></h2>
+<p>Using <em>BFS</em> with source as all cells containing <em>0s</em> and updating the distance values until all paths are exhausted.</p>
+</section>
 <section id="code">
 <h2>Code<a class="headerlink" href="#code" title="Link to this heading">#</a></h2>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="nf">kClosest</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">points</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 2</span><span class="w">  </span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="n">k</span><span class="o">][</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="w">  </span><span class="n">Comparator</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]&gt;</span><span class="w"> </span><span class="n">distanceComparator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 5</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">aDist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
-<span class="linenos"> 6</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">bDist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
-<span class="linenos"> 7</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">compare</span><span class="p">(</span><span class="n">aDist</span><span class="p">,</span><span class="w"> </span><span class="n">bDist</span><span class="p">);</span>
-<span class="linenos"> 8</span><span class="w">  </span><span class="p">};</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="w">  </span><span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]&gt;</span><span class="w"> </span><span class="n">pq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">distanceComparator</span><span class="p">);</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">point</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">points</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">13</span><span class="w">    </span><span class="n">pq</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">point</span><span class="p">);</span>
-<span class="linenos">14</span><span class="w">  </span><span class="p">}</span>
-<span class="linenos">15</span>
-<span class="linenos">16</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">k</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">17</span><span class="w">    </span><span class="n">result</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pq</span><span class="p">.</span><span class="na">remove</span><span class="p">();</span>
-<span class="linenos">18</span><span class="w">  </span><span class="p">}</span>
-<span class="linenos">19</span>
-<span class="linenos">20</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
-<span class="linenos">21</span><span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="nf">updateMatrix</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">mat</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 2</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mat</span><span class="p">.</span><span class="na">length</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mat</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="n">Queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]&gt;</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 7</span><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mat</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="linenos"> 8</span><span class="w">        </span><span class="n">q</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="p">});</span>
+</span><span class="linenos"> 9</span><span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="linenos">10</span><span class="w">        </span><span class="n">mat</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">MAX_VALUE</span><span class="p">;</span>
+</span><span class="linenos">11</span><span class="w">      </span><span class="p">}</span>
+<span class="linenos">12</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">13</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">14</span>
+<span class="hll"><span class="linenos">15</span><span class="w">  </span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">dirs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span>
+</span><span class="linenos">16</span>
+<span class="linenos">17</span><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">18</span><span class="w">    </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">head</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">q</span><span class="p">.</span><span class="na">remove</span><span class="p">();</span>
+<span class="linenos">19</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">head</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos">20</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">head</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">dirs</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">23</span><span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dirs</span><span class="o">[</span><span class="n">k</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos">24</span><span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dirs</span><span class="o">[</span><span class="n">k</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos">25</span>
+<span class="hll"><span class="linenos">26</span><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span>
+</span><span class="hll"><span class="linenos">27</span><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mat</span><span class="o">[</span><span class="n">x</span><span class="o">][</span><span class="n">y</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">mat</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span>
+</span><span class="linenos">28</span>
+<span class="hll"><span class="linenos">29</span><span class="w">      </span><span class="n">mat</span><span class="o">[</span><span class="n">x</span><span class="o">][</span><span class="n">y</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mat</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span class="hll"><span class="linenos">30</span><span class="w">      </span><span class="n">q</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="p">});</span>
+</span><span class="linenos">31</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">32</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">33</span>
+<span class="linenos">34</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">mat</span><span class="p">;</span>
+<span class="linenos">35</span><span class="p">}</span>
 </pre></div>
 </div>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head text-center"><p>Time Complexity</p></th>
-<th class="head text-center"><p>Space Complexity</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Time complexity</p></th>
+<th class="head text-center"><p>Space complexity</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><span class="math">\(\mathcal{O}(nlogk)\)</span></p></td>
-<td class="text-center"><p><span class="math">\(\mathcal{O}(n)\)</span></p></td>
+<tr class="row-even"><td class="text-center"><p><span class="math">\(\mathcal{O}(m*n)\)</span></p></td>
+<td class="text-center"><p><span class="math">\(\mathcal{O}(m*n)\)</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -285,23 +303,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../../microservices/index.html">
+          <a class="next-page" href="11_container_with_most_water.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Microservices</div>
+                <div class="title">11. Container With Most Water</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="876_middle_of_the_linked_list.html">
+          <a class="prev-page" href="00238_product_of_array_except_self.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">876. Middle of the Linked List</div>
+                <div class="title">238. Product of Array Except Self</div>
                 
               </div>
             </a>
@@ -335,7 +353,8 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">973. K Closest Points to Origin</a><ul>
+<li><a class="reference internal" href="#">542. 01 Matrix</a><ul>
+<li><a class="reference internal" href="#approach">Approach</a></li>
 <li><a class="reference internal" href="#code">Code</a></li>
 </ul>
 </li>
