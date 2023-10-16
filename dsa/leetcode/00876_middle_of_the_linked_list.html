@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="56. Merge Intervals" href="56_merge_intervals.html" /><link rel="prev" title="21. Merge Two Sorted Lists" href="21_merge_two_sorted_lists.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="973. K Closest Points to Origin" href="00973_k_closest_points_to_origin.html" /><link rel="prev" title="542. 01 Matrix" href="00542_01_matrix.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>53. Maximum Subarray - Dev Note&#39;s</title>
+        <title>876. Middle of the Linked List - Dev Note&#39;s</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
@@ -182,19 +182,21 @@
 <li class="toctree-l2"><a class="reference internal" href="../algorithmic-techniques.html">Algorithmic Techniques</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../bit-manipulation.html">Bit Manipulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../leetcode.html">LeetCode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grind75.html">Grind 75</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00011_container_with_most_water.html">11. Container With Most Water</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00015_3_sum.html">15. 3Sum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00020_valid_parentheses.html">20. Valid Parentheses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00021_merge_two_sorted_lists.html">21. Merge Two Sorted Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00053_maximum_subarray.html">53. Maximum Subarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00056_merge_intervals.html">56. Merge Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00057_insert_interval.html">57. Insert Interval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00155_min_stack.html">155. Min Stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00208_implement_trie_prefix_tree.html">208. Implement Trie (Prefix Tree)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00217_contains_duplicate.html">217. Contains Duplicate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="00238_product_of_array_except_self.html">238. Product of Array Except Self</a></li>
 <li class="toctree-l2"><a class="reference internal" href="00542_01_matrix.html">542. 01 Matrix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="11_container_with_most_water.html">11. Container With Most Water</a></li>
-<li class="toctree-l2"><a class="reference internal" href="15_3_sum.html">15. 3Sum</a></li>
-<li class="toctree-l2"><a class="reference internal" href="208_implement_trie_prefix_tree.html">208. Implement Trie (Prefix Tree)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="20_valid_parentheses.html">20. Valid Parentheses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="217_contains_duplicate.html">217. Contains Duplicate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="21_merge_two_sorted_lists.html">21. Merge Two Sorted Lists</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">53. Maximum Subarray</a></li>
-<li class="toctree-l2"><a class="reference internal" href="56_merge_intervals.html">56. Merge Intervals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="57_insert_interval.html">57. Insert Interval</a></li>
-<li class="toctree-l2"><a class="reference internal" href="876_middle_of_the_linked_list.html">876. Middle of the Linked List</a></li>
-<li class="toctree-l2"><a class="reference internal" href="973_k_closest_points_to_origin.html">973. K Closest Points to Origin</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">876. Middle of the Linked List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00973_k_closest_points_to_origin.html">973. K Closest Points to Origin</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../microservices/index.html">Microservices</a></li>
@@ -236,71 +238,44 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="maximum-subarray">
-<h1>53. Maximum Subarray<a class="headerlink" href="#maximum-subarray" title="Link to this heading">#</a></h1>
+          <section class="tex2jax_ignore mathjax_ignore" id="middle-of-the-linked-list">
+<h1><a class="reference external" href="https://leetcode.com/problems/middle-of-the-linked-list/">876. Middle of the Linked List</a><a class="headerlink" href="#middle-of-the-linked-list" title="Link to this heading">#</a></h1>
+<section id="approach">
+<h2>Approach<a class="headerlink" href="#approach" title="Link to this heading">#</a></h2>
+<p>Imagine two elements, <strong>a</strong> and <strong>b</strong>. If <strong>b</strong> moves twice as fast as <strong>a</strong>, then when <strong>a</strong> takes 10 steps to reach the end, <strong>b</strong> can cover the same distance in just 5 steps. Once <strong>b</strong> reaches the end, <strong>a</strong> will be positioned at the middle.</p>
+<p>By applying this intuition and utilizing a two-pointer (slow and fast) approach, we can efficiently determine the middle element.</p>
+</section>
 <section id="code">
 <h2>Code<a class="headerlink" href="#code" title="Link to this heading">#</a></h2>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-0">
-Brute-force</label><div class="sd-tab-content docutils">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">maxSubArray</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">maxSum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">MIN_VALUE</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Definition for singly-linked list.</span>
+<span class="cm"> * public class ListNode {</span>
+<span class="cm"> *     int val;</span>
+<span class="cm"> *     ListNode next;</span>
+<span class="cm"> *     ListNode() {}</span>
+<span class="cm"> *     ListNode(int val) { this.val = val; }</span>
+<span class="cm"> *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }</span>
+<span class="cm"> * }</span>
+<span class="cm"> */</span>
+<span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">ListNode</span><span class="w"> </span><span class="nf">middleNode</span><span class="p">(</span><span class="n">ListNode</span><span class="w"> </span><span class="n">head</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ListNode</span><span class="w"> </span><span class="n">slow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="n">fast</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">head</span><span class="p">;</span>
 
-<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nums</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nums</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">nums</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
-<span class="w">      </span><span class="n">maxSum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">sum</span><span class="p">,</span><span class="w"> </span><span class="n">maxSum</span><span class="p">);</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">fast</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">fast</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">slow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">slow</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+<span class="w">      </span><span class="n">fast</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fast</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">}</span>
 
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">maxSum</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">slow</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head text-center"><p>Time complexity</p></th>
-<th class="head text-center"><p>Space complexity</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-center"><p><span class="math">\(\mathcal{O}(n^2)\)</span></p></td>
-<td class="text-center"><p><span class="math">\(\mathcal{O}(1)\)</span></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-1">
-Kaden’s Algorithm</label><div class="sd-tab-content docutils">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">maxSubArray</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">maxSum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">MIN_VALUE</span><span class="p">;</span>
-
-<span class="w">  </span><span class="c1">// not Integer.MIN_VALUE as adding nums[i] may underflow</span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">currentSum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-
-<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// if current element is greater than currentSum + num</span>
-<span class="w">    </span><span class="c1">// start new sub-array</span>
-<span class="w">    </span><span class="n">currentSum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="n">currentSum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num</span><span class="p">);</span>
-
-<span class="w">    </span><span class="c1">// update max sum</span>
-<span class="w">    </span><span class="n">maxSum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">maxSum</span><span class="p">,</span><span class="w"> </span><span class="n">currentSum</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span>
-
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">maxSum</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<div class="table-wrapper colwidths-auto docutils container">
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head text-center"><p>Time complexity</p></th>
-<th class="head text-center"><p>Space complexity</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Time Complexity</p></th>
+<th class="head text-center"><p>Space Complexity</p></th>
 </tr>
 </thead>
 <tbody>
@@ -310,8 +285,6 @@ Kaden’s Algorithm</label><div class="sd-tab-content docutils">
 </tbody>
 </table>
 </div>
-</div>
-</div>
 </section>
 </section>
 
@@ -320,23 +293,23 @@ Kaden’s Algorithm</label><div class="sd-tab-content docutils">
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="56_merge_intervals.html">
+          <a class="next-page" href="00973_k_closest_points_to_origin.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">56. Merge Intervals</div>
+                <div class="title">973. K Closest Points to Origin</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="21_merge_two_sorted_lists.html">
+          <a class="prev-page" href="00542_01_matrix.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">21. Merge Two Sorted Lists</div>
+                <div class="title">542. 01 Matrix</div>
                 
               </div>
             </a>
@@ -370,7 +343,8 @@ Kaden’s Algorithm</label><div class="sd-tab-content docutils">
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">53. Maximum Subarray</a><ul>
+<li><a class="reference internal" href="#">876. Middle of the Linked List</a><ul>
+<li><a class="reference internal" href="#approach">Approach</a></li>
 <li><a class="reference internal" href="#code">Code</a></li>
 </ul>
 </li>

@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="21. Merge Two Sorted Lists" href="21_merge_two_sorted_lists.html" /><link rel="prev" title="20. Valid Parentheses" href="20_valid_parentheses.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="15. 3Sum" href="00015_3_sum.html" /><link rel="prev" title="Grind 75" href="../grind75.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>217. Contains Duplicate - Dev Note&#39;s</title>
+        <title>11. Container With Most Water - Dev Note&#39;s</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
@@ -140,7 +140,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -182,19 +182,21 @@
 <li class="toctree-l2"><a class="reference internal" href="../algorithmic-techniques.html">Algorithmic Techniques</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../bit-manipulation.html">Bit Manipulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../leetcode.html">LeetCode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grind75.html">Grind 75</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">11. Container With Most Water</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00015_3_sum.html">15. 3Sum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00020_valid_parentheses.html">20. Valid Parentheses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00021_merge_two_sorted_lists.html">21. Merge Two Sorted Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00053_maximum_subarray.html">53. Maximum Subarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00056_merge_intervals.html">56. Merge Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00057_insert_interval.html">57. Insert Interval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00155_min_stack.html">155. Min Stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00208_implement_trie_prefix_tree.html">208. Implement Trie (Prefix Tree)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00217_contains_duplicate.html">217. Contains Duplicate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="00238_product_of_array_except_self.html">238. Product of Array Except Self</a></li>
 <li class="toctree-l2"><a class="reference internal" href="00542_01_matrix.html">542. 01 Matrix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="11_container_with_most_water.html">11. Container With Most Water</a></li>
-<li class="toctree-l2"><a class="reference internal" href="15_3_sum.html">15. 3Sum</a></li>
-<li class="toctree-l2"><a class="reference internal" href="208_implement_trie_prefix_tree.html">208. Implement Trie (Prefix Tree)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="20_valid_parentheses.html">20. Valid Parentheses</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">217. Contains Duplicate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="21_merge_two_sorted_lists.html">21. Merge Two Sorted Lists</a></li>
-<li class="toctree-l2"><a class="reference internal" href="53_maximum_subarray.html">53. Maximum Subarray</a></li>
-<li class="toctree-l2"><a class="reference internal" href="56_merge_intervals.html">56. Merge Intervals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="57_insert_interval.html">57. Insert Interval</a></li>
-<li class="toctree-l2"><a class="reference internal" href="876_middle_of_the_linked_list.html">876. Middle of the Linked List</a></li>
-<li class="toctree-l2"><a class="reference internal" href="973_k_closest_points_to_origin.html">973. K Closest Points to Origin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00876_middle_of_the_linked_list.html">876. Middle of the Linked List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00973_k_closest_points_to_origin.html">973. K Closest Points to Origin</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../microservices/index.html">Microservices</a></li>
@@ -230,41 +232,42 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="contains-duplicate">
-<h1>217. Contains Duplicate<a class="headerlink" href="#contains-duplicate" title="Link to this heading">#</a></h1>
-<p>Given an integer array <code class="docutils literal notranslate"><span class="pre">nums</span></code>, return <code class="docutils literal notranslate"><span class="pre">true</span></code> if any value appears at least twice in the array, and return <code class="docutils literal notranslate"><span class="pre">false</span></code> if every element is distinct.</p>
-<p>Example 1:</p>
+          <section class="tex2jax_ignore mathjax_ignore" id="container-with-most-water">
+<h1>11. Container With Most Water<a class="headerlink" href="#container-with-most-water" title="Link to this heading">#</a></h1>
+<p>You are given an integer array <code class="docutils literal notranslate"><span class="pre">height</span></code> of length <code class="docutils literal notranslate"><span class="pre">n</span></code>. There are <code class="docutils literal notranslate"><span class="pre">n</span></code> vertical lines drawn such that the two endpoints of the <code class="docutils literal notranslate"><span class="pre">ith</span></code> line are <code class="docutils literal notranslate"><span class="pre">(i,</span> <span class="pre">0)</span></code> and <code class="docutils literal notranslate"><span class="pre">(i,</span> <span class="pre">height[i])</span></code>.</p>
+<p>Find two lines that together with the x-axis form a container, such that the container contains the most water.</p>
+<p>Return the maximum amount of water a container can store.</p>
 <blockquote>
-<div><p>Input: nums = <code class="docutils literal notranslate"><span class="pre">[1,2,3,1]</span></code></p>
-<p>Output: <code class="docutils literal notranslate"><span class="pre">true</span></code></p>
+<div><p>Input: height = <code class="docutils literal notranslate"><span class="pre">[1,8,6,2,5,4,8,3,7]</span></code></p>
+<p>Output: <code class="docutils literal notranslate"><span class="pre">49</span></code></p>
+<p>Explanation: The above vertical lines are represented by array <code class="docutils literal notranslate"><span class="pre">[1,8,6,2,5,4,8,3,7]</span></code>. In this case, the max area of water (blue section) the container can contain is <code class="docutils literal notranslate"><span class="pre">49</span></code>.</p>
 </div></blockquote>
-<p>Example 2:</p>
-<blockquote>
-<div><p>Input: nums = <code class="docutils literal notranslate"><span class="pre">[1,2,3,4]</span></code></p>
-<p>Output: <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
-</div></blockquote>
-<section id="approach">
-<h2>Approach<a class="headerlink" href="#approach" title="Link to this heading">#</a></h2>
-<p>Loop over the array and add check whether <code class="docutils literal notranslate"><span class="pre">Set</span></code> already contains the element, if so duplicate exists else, add to <code class="docutils literal notranslate"><span class="pre">Set</span></code> and continue. If loop is finished it means no duplicate element exists.</p>
-</section>
-<section id="code">
-<h2>Code<a class="headerlink" href="#code" title="Link to this heading">#</a></h2>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">containsDuplicate</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Two Pointer</label><div class="sd-tab-content docutils">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">maxArea</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">height</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">maxArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">height</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 
-<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">set</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">num</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">minHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">height</span><span class="o">[</span><span class="n">left</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="o">[</span><span class="n">right</span><span class="o">]</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">currentArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">right</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">left</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">minHeight</span><span class="p">;</span>
+<span class="w">    </span><span class="n">maxArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">maxArea</span><span class="p">,</span><span class="w"> </span><span class="n">currentArea</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">height</span><span class="o">[</span><span class="n">left</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">height</span><span class="o">[</span><span class="n">right</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">left</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">right</span><span class="o">--</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="n">set</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">maxArea</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -277,12 +280,13 @@
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-center"><p><span class="math">\(\mathcal{O}(n)\)</span></p></td>
-<td class="text-center"><p><span class="math">\(\mathcal{O}(n)\)</span></p></td>
+<td class="text-center"><p><span class="math">\(\mathcal{O}(1)\)</span></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-</section>
+</div>
+</div>
 </section>
 
         </article>
@@ -290,23 +294,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="21_merge_two_sorted_lists.html">
+          <a class="next-page" href="00015_3_sum.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">21. Merge Two Sorted Lists</div>
+                <div class="title">15. 3Sum</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="20_valid_parentheses.html">
+          <a class="prev-page" href="../grind75.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">20. Valid Parentheses</div>
+                <div class="title">Grind 75</div>
                 
               </div>
             </a>
@@ -328,28 +332,8 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">217. Contains Duplicate</a><ul>
-<li><a class="reference internal" href="#approach">Approach</a></li>
-<li><a class="reference internal" href="#code">Code</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

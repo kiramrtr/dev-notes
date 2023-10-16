@@ -4,6 +4,7 @@
 algorithmic-techniques
 bit-manipulation
 leetcode
+grind75
 ```
 
 ## Grind 75
