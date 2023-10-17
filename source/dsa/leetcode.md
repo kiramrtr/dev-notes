@@ -1,5 +1,12 @@
 # LeetCode
 
+```{toctree}
+:glob:
+:maxdepth: 1
+
+leetcode/*
+```
+
 ## [560. Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)
 
 ::::{tab-set}
@@ -32,7 +39,7 @@ private int subarraySum(int[] nums, int k) {
 
 :::{tab-item} Prefix Sum + Hash Table
 
-Read <#algorithmic-techniques>
+Read about [Prefix Sum](algorithmic-techniques)
 
 ```{code-block} java
 ---

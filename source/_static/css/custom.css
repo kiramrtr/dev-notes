@@ -19,6 +19,12 @@ table.ps-ex1 > tbody > tr:nth-child(2) > td:nth-child(7) {
   background-color: var(--color-admonition-title-background--tip);
 }
 
+/* Styling fro table in dsa/grind-75.md */
+
+table.grind-75 td:nth-child(4) {
+  white-space: nowrap;
+}
+
 /* KaTeX */
 
 .katex-display {
