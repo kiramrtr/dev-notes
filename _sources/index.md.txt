@@ -2,7 +2,7 @@
 hide-toc: true
 ---
 
-# Dev Note's
+# Kira's dev notes
 
 Just yet another developer notes which I have made for my reference and re-collection.
 
