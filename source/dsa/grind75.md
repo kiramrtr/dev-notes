@@ -7,20 +7,20 @@
 :::{table}
 :class: grind-75
 
-|   # | Problem                                                                                                | Difficulty            | Time    | Topic               |
-| --: | :----------------------------------------------------------------------------------------------------- | --------------------- | ------- | :------------------ |
-|  1. | Two Sum                                                                                                | {bdg-success}`Easy`   | 15 mins | Array               |
-|  2. | [Valid Parentheses](leetcode/00020_valid_parentheses) {octicon}`check-circle-fill;1em;sd-text-success` | {bdg-success}`Easy`   | 20 mins | Stack               |
-|  3. | [Merge Two Sorted Lists](leetcode/00021_merge_two_sorted_lists)                                        | {bdg-success}`Easy`   | 20 mins | Linked List         |
-|  4. | Best Time to Buy and Sell Stock                                                                        | {bdg-success}`Easy`   | 20 mins | Array               |
-|  5. | Valid Palindrome                                                                                       | {bdg-success}`Easy`   | 15 mins | String              |
-|  6. | [Invert Binary Tree](leetcode/00226_invert_binary_tree)                                                | {bdg-success}`Easy`   | 15 mins | Binary Tree         |
-|  7. | Valid Anagram                                                                                          | {bdg-success}`Easy`   | 15 mins | String              |
-|  8. | Binary Search                                                                                          | {bdg-success}`Easy`   | 15 mins | Binary Search       |
-|  9. | Flood Fill                                                                                             | {bdg-success}`Easy`   | 20 mins | Graph               |
-| 10. | [Maximum Subarray](leetcode/00053_maximum_subarray)                                                    | {bdg-warning}`Medium` | 20 mins | Dynamic Programming |
-| 11. | Lowest Common Ancestor of a Binary Search Tree                                                         | {bdg-success}`Easy`   | 20 mins | Binary Search Tree  |
-| 12. | [Insert Interval](leetcode/00057_insert_interval)                                                      | {bdg-warning}`Medium` | 25 mins | Array               |
+|   # | Problem                                                                                                         | Difficulty            | Time    | Topic               |
+| --: | :-------------------------------------------------------------------------------------------------------------- | --------------------- | ------- | :------------------ |
+|  1. | [Two Sum](leetcode/00001_two_sum)                                                                               | {bdg-success}`Easy`   | 15 mins | Array               |
+|  2. | [Valid Parentheses](leetcode/00020_valid_parentheses) {octicon}`check-circle-fill;1em;sd-text-success`          | {bdg-success}`Easy`   | 20 mins | Stack               |
+|  3. | [Merge Two Sorted Lists](leetcode/00021_merge_two_sorted_lists)                                                 | {bdg-success}`Easy`   | 20 mins | Linked List         |
+|  4. | [Best Time to Buy and Sell Stock](leetcode/00121_best_time_to_buy_and_sell_stock)                               | {bdg-success}`Easy`   | 20 mins | Array               |
+|  5. | [Valid Palindrome](leetcode/00125_valid_palindrome)                                                             | {bdg-success}`Easy`   | 15 mins | String              |
+|  6. | [Invert Binary Tree](leetcode/00226_invert_binary_tree)                                                         | {bdg-success}`Easy`   | 15 mins | Binary Tree         |
+|  7. | Valid Anagram                                                                                                   | {bdg-success}`Easy`   | 15 mins | String              |
+|  8. | Binary Search                                                                                                   | {bdg-success}`Easy`   | 15 mins | Binary Search       |
+|  9. | Flood Fill                                                                                                      | {bdg-success}`Easy`   | 20 mins | Graph               |
+| 10. | [Maximum Subarray](leetcode/00053_maximum_subarray)                                                             | {bdg-warning}`Medium` | 20 mins | Dynamic Programming |
+| 11. | [Lowest Common Ancestor of a Binary Search Tree](leetcode/00235_lowest_common_ancestor_of_a_binary_search_tree) | {bdg-success}`Easy`   | 20 mins | Binary Search Tree  |
+| 12. | [Insert Interval](leetcode/00057_insert_interval)                                                               | {bdg-warning}`Medium` | 25 mins | Array               |
 
 :::
 
@@ -78,7 +78,7 @@
 |   6 | Combination Sum                         | {bdg-warning}`Medium` | 30 mins | Array              |
 |   7 | Permutations                            | {bdg-warning}`Medium` | 30 mins | Recursion          |
 |   8 | Merge Intervals                         | {bdg-warning}`Medium` | 30 mins | Array              |
-|   9 | Lowest Common Ancestor of a Binary Tree | {bdg-warning}`Medium` | 25 mins | Binary Tree:::     |
+|   9 | Lowest Common Ancestor of a Binary Tree | {bdg-warning}`Medium` | 25 mins | Binary Tree        |
 
 :::
 
