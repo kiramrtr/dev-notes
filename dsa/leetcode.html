@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="11. Container With Most Water" href="leetcode/00011_container_with_most_water.html" /><link rel="prev" title="Bit Manipulation" href="bit-manipulation.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="1. Two Sum" href="leetcode/00001_two_sum.html" /><link rel="prev" title="Bit Manipulation" href="bit-manipulation.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
         <title>LeetCode - Kira&#39;s dev notes</title>
@@ -140,7 +140,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -182,6 +182,7 @@
 <li class="toctree-l2"><a class="reference internal" href="algorithmic-techniques.html">Algorithmic Techniques</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bit-manipulation.html">Bit Manipulation</a></li>
 <li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">LeetCode</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of LeetCode</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00001_two_sum.html">1. Two Sum</a></li>
 <li class="toctree-l3"><a class="reference internal" href="leetcode/00011_container_with_most_water.html">11. Container With Most Water</a></li>
 <li class="toctree-l3"><a class="reference internal" href="leetcode/00015_3_sum.html">15. 3Sum</a></li>
 <li class="toctree-l3"><a class="reference internal" href="leetcode/00020_valid_parentheses.html">20. Valid Parentheses</a></li>
@@ -189,14 +190,19 @@
 <li class="toctree-l3"><a class="reference internal" href="leetcode/00053_maximum_subarray.html">53. Maximum Subarray</a></li>
 <li class="toctree-l3"><a class="reference internal" href="leetcode/00056_merge_intervals.html">56. Merge Intervals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="leetcode/00057_insert_interval.html">57. Insert Interval</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00121_best_time_to_buy_and_sell_stock.html">121. Best Time to Buy and Sell Stock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00125_valid_palindrome.html">125. Valid Palindrome</a></li>
 <li class="toctree-l3"><a class="reference internal" href="leetcode/00155_min_stack.html">155. Min Stack</a></li>
 <li class="toctree-l3"><a class="reference internal" href="leetcode/00208_implement_trie_prefix_tree.html">208. Implement Trie (Prefix Tree)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="leetcode/00217_contains_duplicate.html">217. Contains Duplicate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="leetcode/00226_invert_binary_tree.html">226. Invert Binary Tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00235_lowest_common_ancestor_of_a_binary_search_tree.html">235. Lowest Common Ancestor of a Binary Search Tree</a></li>
 <li class="toctree-l3"><a class="reference internal" href="leetcode/00238_product_of_array_except_self.html">238. Product of Array Except Self</a></li>
 <li class="toctree-l3"><a class="reference internal" href="leetcode/00542_01_matrix.html">542. 01 Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00560_subarray_sum_equals_k.html">560. Subarray Sum Equals K</a></li>
 <li class="toctree-l3"><a class="reference internal" href="leetcode/00876_middle_of_the_linked_list.html">876. Middle of the Linked List</a></li>
 <li class="toctree-l3"><a class="reference internal" href="leetcode/00973_k_closest_points_to_origin.html">973. K Closest Points to Origin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/02716_minimize_string_length.html">2716. Minimize String Length</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="grind75.html">Grind 75</a></li>
@@ -235,7 +241,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -245,6 +251,7 @@
 <h1>LeetCode<a class="headerlink" href="#leetcode" title="Link to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="leetcode/00001_two_sum.html">1. Two Sum</a></li>
 <li class="toctree-l1"><a class="reference internal" href="leetcode/00011_container_with_most_water.html">11. Container With Most Water</a></li>
 <li class="toctree-l1"><a class="reference internal" href="leetcode/00015_3_sum.html">15. 3Sum</a></li>
 <li class="toctree-l1"><a class="reference internal" href="leetcode/00020_valid_parentheses.html">20. Valid Parentheses</a></li>
@@ -252,114 +259,21 @@
 <li class="toctree-l1"><a class="reference internal" href="leetcode/00053_maximum_subarray.html">53. Maximum Subarray</a></li>
 <li class="toctree-l1"><a class="reference internal" href="leetcode/00056_merge_intervals.html">56. Merge Intervals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="leetcode/00057_insert_interval.html">57. Insert Interval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leetcode/00121_best_time_to_buy_and_sell_stock.html">121. Best Time to Buy and Sell Stock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leetcode/00125_valid_palindrome.html">125. Valid Palindrome</a></li>
 <li class="toctree-l1"><a class="reference internal" href="leetcode/00155_min_stack.html">155. Min Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="leetcode/00208_implement_trie_prefix_tree.html">208. Implement Trie (Prefix Tree)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="leetcode/00217_contains_duplicate.html">217. Contains Duplicate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="leetcode/00226_invert_binary_tree.html">226. Invert Binary Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leetcode/00235_lowest_common_ancestor_of_a_binary_search_tree.html">235. Lowest Common Ancestor of a Binary Search Tree</a></li>
 <li class="toctree-l1"><a class="reference internal" href="leetcode/00238_product_of_array_except_self.html">238. Product of Array Except Self</a></li>
 <li class="toctree-l1"><a class="reference internal" href="leetcode/00542_01_matrix.html">542. 01 Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leetcode/00560_subarray_sum_equals_k.html">560. Subarray Sum Equals K</a></li>
 <li class="toctree-l1"><a class="reference internal" href="leetcode/00876_middle_of_the_linked_list.html">876. Middle of the Linked List</a></li>
 <li class="toctree-l1"><a class="reference internal" href="leetcode/00973_k_closest_points_to_origin.html">973. K Closest Points to Origin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leetcode/02716_minimize_string_length.html">2716. Minimize String Length</a></li>
 </ul>
 </div>
-<section id="subarray-sum-equals-k">
-<h2><a class="reference external" href="https://leetcode.com/problems/subarray-sum-equals-k/">560. Subarray Sum Equals K</a><a class="headerlink" href="#subarray-sum-equals-k" title="Link to this heading">#</a></h2>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-0">
-Brute-force</label><div class="sd-tab-content docutils">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">subarraySum</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">nums</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nums</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nums</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="hll"><span class="w">      </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">nums</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
-</span><span class="hll"><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sum</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="n">count</span><span class="o">++</span><span class="p">;</span>
-</span><span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">count</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<div class="table-wrapper colwidths-auto docutils container">
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head text-center"><p>Time complexity</p></th>
-<th class="head text-center"><p>Space complexity</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-center"><p><span class="math">\(\mathcal{O}(n^2)\)</span></p></td>
-<td class="text-center"><p><span class="math">\(\mathcal{O}(1)\)</span></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-1">
-Prefix Sum + Hash Table</label><div class="sd-tab-content docutils">
-<p>Read about <a class="reference internal" href="algorithmic-techniques.html"><span class="doc std std-doc">Prefix Sum</span></a></p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">subarraySum</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">nums</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-
-<span class="w">  </span><span class="c1">// map: prefixSum -&gt; frequency</span>
-<span class="hll"><span class="w">  </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-</span><span class="hll"><span class="w">  </span><span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// 0 prefixSum</span>
-</span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">sum0toi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nums</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="hll"><span class="w">    </span><span class="n">sum0toi</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
-</span>
-<span class="hll"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sum0toj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum0toi</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">k</span><span class="p">;</span>
-</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">map</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="n">sum0toj</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">map</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">sum0toj</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">sum0toi</span><span class="p">,</span><span class="w"> </span><span class="n">map</span><span class="p">.</span><span class="na">getOrDefault</span><span class="p">(</span><span class="n">sum0toi</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">count</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<div class="table-wrapper colwidths-auto docutils container">
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head text-center"><p>Time complexity</p></th>
-<th class="head text-center"><p>Space complexity</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-center"><p><span class="math">\(\mathcal{O}(n)\)</span></p></td>
-<td class="text-center"><p><span class="math">\(\mathcal{O}(n)\)</span></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</section>
-<section id="minimize-string-length">
-<h2><a class="reference external" href="https://leetcode.com/problems/minimize-string-length/">2716. Minimize String Length</a><a class="headerlink" href="#minimize-string-length" title="Link to this heading">#</a></h2>
-<p><strong>Approach</strong></p>
-<p>As given string contains only lowercase english letters, we can have an array of size 26 and keeping track of the count and counting characters not seen already.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">minimizedStringLength</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">charCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="mi">26</span><span class="o">]</span><span class="p">;</span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-
-<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">charCount</span><span class="o">[</span><span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="n">charCount</span><span class="o">[</span><span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="o">]++</span><span class="p">;</span>
-<span class="w">      </span><span class="n">length</span><span class="o">++</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">}</span>
-
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">length</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</section>
 </section>
 
         </article>
@@ -367,12 +281,12 @@ Prefix Sum + Hash Table</label><div class="sd-tab-content docutils">
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="leetcode/00011_container_with_most_water.html">
+          <a class="next-page" href="leetcode/00001_two_sum.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">11. Container With Most Water</div>
+                <div class="title">1. Two Sum</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -405,28 +319,8 @@ Prefix Sum + Hash Table</label><div class="sd-tab-content docutils">
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">LeetCode</a><ul>
-<li><a class="reference internal" href="#subarray-sum-equals-k">560. Subarray Sum Equals K</a></li>
-<li><a class="reference internal" href="#minimize-string-length">2716. Minimize String Length</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
