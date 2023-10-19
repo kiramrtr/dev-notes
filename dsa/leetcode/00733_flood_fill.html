@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="15. 3Sum" href="00015_3_sum.html" /><link rel="prev" title="1. Two Sum" href="00001_two_sum.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="876. Middle of the Linked List" href="00876_middle_of_the_linked_list.html" /><link rel="prev" title="704. Binary Search" href="00704_binary_search.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>11. Container With Most Water - Kira&#39;s dev notes</title>
+        <title>733. Flood Fill - Kira&#39;s dev notes</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
@@ -183,7 +183,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../bit-manipulation.html">Bit Manipulation</a></li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../leetcode.html">LeetCode</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of LeetCode</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="00001_two_sum.html">1. Two Sum</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">11. Container With Most Water</a></li>
+<li class="toctree-l3"><a class="reference internal" href="00011_container_with_most_water.html">11. Container With Most Water</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00015_3_sum.html">15. 3Sum</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00020_valid_parentheses.html">20. Valid Parentheses</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00021_merge_two_sorted_lists.html">21. Merge Two Sorted Lists</a></li>
@@ -202,7 +202,7 @@
 <li class="toctree-l3"><a class="reference internal" href="00542_01_matrix.html">542. 01 Matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00560_subarray_sum_equals_k.html">560. Subarray Sum Equals K</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00704_binary_search.html">704. Binary Search</a></li>
-<li class="toctree-l3"><a class="reference internal" href="00733_flood_fill.html">733. Flood Fill</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">733. Flood Fill</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00876_middle_of_the_linked_list.html">876. Middle of the Linked List</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00973_k_closest_points_to_origin.html">973. K Closest Points to Origin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="02716_minimize_string_length.html">2716. Minimize String Length</a></li>
@@ -250,54 +250,37 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="container-with-most-water">
-<h1>11. Container With Most Water<a class="headerlink" href="#container-with-most-water" title="Link to this heading">#</a></h1>
-<p>You are given an integer array <code class="docutils literal notranslate"><span class="pre">height</span></code> of length <code class="docutils literal notranslate"><span class="pre">n</span></code>. There are <code class="docutils literal notranslate"><span class="pre">n</span></code> vertical lines drawn such that the two endpoints of the <code class="docutils literal notranslate"><span class="pre">ith</span></code> line are <code class="docutils literal notranslate"><span class="pre">(i,</span> <span class="pre">0)</span></code> and <code class="docutils literal notranslate"><span class="pre">(i,</span> <span class="pre">height[i])</span></code>.</p>
-<p>Find two lines that together with the x-axis form a container, such that the container contains the most water.</p>
-<p>Return the maximum amount of water a container can store.</p>
-<blockquote>
-<div><p>Input: height = <code class="docutils literal notranslate"><span class="pre">[1,8,6,2,5,4,8,3,7]</span></code></p>
-<p>Output: <code class="docutils literal notranslate"><span class="pre">49</span></code></p>
-<p>Explanation: The above vertical lines are represented by array <code class="docutils literal notranslate"><span class="pre">[1,8,6,2,5,4,8,3,7]</span></code>. In this case, the max area of water (blue section) the container can contain is <code class="docutils literal notranslate"><span class="pre">49</span></code>.</p>
-</div></blockquote>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-0">
-Two Pointer</label><div class="sd-tab-content docutils">
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">maxArea</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">height</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">maxArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">height</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-
-<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">minHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">height</span><span class="o">[</span><span class="n">left</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="o">[</span><span class="n">right</span><span class="o">]</span><span class="p">);</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">currentArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">right</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">left</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">minHeight</span><span class="p">;</span>
-<span class="w">    </span><span class="n">maxArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">maxArea</span><span class="p">,</span><span class="w"> </span><span class="n">currentArea</span><span class="p">);</span>
-
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">height</span><span class="o">[</span><span class="n">left</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">height</span><span class="o">[</span><span class="n">right</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="n">left</span><span class="o">++</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="n">right</span><span class="o">--</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">maxArea</span><span class="p">;</span>
-<span class="p">}</span>
+          <section class="tex2jax_ignore mathjax_ignore" id="flood-fill">
+<h1>733. Flood Fill<a class="headerlink" href="#flood-fill" title="Link to this heading">#</a></h1>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="nf">floodFill</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">image</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">sr</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">sc</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">color</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 2</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">currentColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="o">[</span><span class="n">sr</span><span class="o">][</span><span class="n">sc</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="n">dfs</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="w"> </span><span class="n">sr</span><span class="p">,</span><span class="w"> </span><span class="n">sc</span><span class="p">,</span><span class="w"> </span><span class="n">currentColor</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="linenos"> 4</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">image</span><span class="p">;</span>
+<span class="linenos"> 5</span><span class="p">}</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">dfs</span><span class="p">(</span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">image</span><span class="p">,</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="p">,</span>
+<span class="linenos">10</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span>
+<span class="linenos">11</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">currentColor</span><span class="p">,</span>
+<span class="linenos">12</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">newColor</span>
+<span class="linenos">13</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">14</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">image</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">image</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">15</span><span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos">16</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">image</span><span class="o">[</span><span class="n">m</span><span class="o">][</span><span class="n">n</span><span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">newColor</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">image</span><span class="o">[</span><span class="n">m</span><span class="o">][</span><span class="n">n</span><span class="o">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">currentColor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">19</span><span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos">20</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="w">  </span><span class="n">image</span><span class="o">[</span><span class="n">m</span><span class="o">][</span><span class="n">n</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newColor</span><span class="p">;</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span><span class="w">  </span><span class="n">dfs</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">currentColor</span><span class="p">,</span><span class="w"> </span><span class="n">newColor</span><span class="p">);</span>
+<span class="linenos">25</span><span class="w">  </span><span class="n">dfs</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">currentColor</span><span class="p">,</span><span class="w"> </span><span class="n">newColor</span><span class="p">);</span>
+<span class="linenos">26</span><span class="w">  </span><span class="n">dfs</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">currentColor</span><span class="p">,</span><span class="w"> </span><span class="n">newColor</span><span class="p">);</span>
+<span class="linenos">27</span><span class="w">  </span><span class="n">dfs</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">currentColor</span><span class="p">,</span><span class="w"> </span><span class="n">newColor</span><span class="p">);</span>
+<span class="linenos">28</span><span class="p">}</span>
 </pre></div>
-</div>
-<div class="table-wrapper colwidths-auto docutils container">
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head text-center"><p>Time Complexity</p></th>
-<th class="head text-center"><p>Space Complexity</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-center"><p><span class="math">\(\mathcal{O}(n)\)</span></p></td>
-<td class="text-center"><p><span class="math">\(\mathcal{O}(1)\)</span></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
 </div>
 </section>
 
@@ -306,23 +289,23 @@ Two Pointer</label><div class="sd-tab-content docutils">
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="00015_3_sum.html">
+          <a class="next-page" href="00876_middle_of_the_linked_list.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">15. 3Sum</div>
+                <div class="title">876. Middle of the Linked List</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="00001_two_sum.html">
+          <a class="prev-page" href="00704_binary_search.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">1. Two Sum</div>
+                <div class="title">704. Binary Search</div>
                 
               </div>
             </a>
