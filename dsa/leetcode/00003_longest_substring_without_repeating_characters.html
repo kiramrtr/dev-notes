@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="238. Product of Array Except Self" href="00238_product_of_array_except_self.html" /><link rel="prev" title="226. Invert Binary Tree" href="00226_invert_binary_tree.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="11. Container With Most Water" href="00011_container_with_most_water.html" /><link rel="prev" title="1. Two Sum" href="00001_two_sum.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>235. Lowest Common Ancestor of a Binary Search Tree - Kira&#39;s dev notes</title>
+        <title>3. Longest Substring Without Repeating Characters - Kira&#39;s dev notes</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
@@ -183,7 +183,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../bit-manipulation.html">Bit Manipulation</a></li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../leetcode.html">LeetCode</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of LeetCode</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="00001_two_sum.html">1. Two Sum</a></li>
-<li class="toctree-l3"><a class="reference internal" href="00003_longest_substring_without_repeating_characters.html">3. Longest Substring Without Repeating Characters</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">3. Longest Substring Without Repeating Characters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00011_container_with_most_water.html">11. Container With Most Water</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00015_3_sum.html">15. 3Sum</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00020_valid_parentheses.html">20. Valid Parentheses</a></li>
@@ -201,7 +201,7 @@
 <li class="toctree-l3"><a class="reference internal" href="00208_implement_trie_prefix_tree.html">208. Implement Trie (Prefix Tree)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00217_contains_duplicate.html">217. Contains Duplicate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00226_invert_binary_tree.html">226. Invert Binary Tree</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">235. Lowest Common Ancestor of a Binary Search Tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="00235_lowest_common_ancestor_of_a_binary_search_tree.html">235. Lowest Common Ancestor of a Binary Search Tree</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00238_product_of_array_except_self.html">238. Product of Array Except Self</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00242_valid_anagram.html">242. Valid Anagram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00542_01_matrix.html">542. 01 Matrix</a></li>
@@ -255,18 +255,27 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="lowest-common-ancestor-of-a-binary-search-tree">
-<h1>235. Lowest Common Ancestor of a Binary Search Tree<a class="headerlink" href="#lowest-common-ancestor-of-a-binary-search-tree" title="Link to this heading">#</a></h1>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 2</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">TreeNode</span><span class="w"> </span><span class="nf">lowestCommonAncestor</span><span class="p">(</span><span class="n">TreeNode</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="n">TreeNode</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">TreeNode</span><span class="w"> </span><span class="n">q</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 3</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">val</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">root</span><span class="p">.</span><span class="na">val</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">q</span><span class="p">.</span><span class="na">val</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">root</span><span class="p">.</span><span class="na">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 4</span><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">lowestCommonAncestor</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="na">left</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">q</span><span class="p">);</span>
-<span class="linenos"> 5</span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">val</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">root</span><span class="p">.</span><span class="na">val</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">q</span><span class="p">.</span><span class="na">val</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">root</span><span class="p">.</span><span class="na">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 6</span><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">lowestCommonAncestor</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="na">right</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">q</span><span class="p">);</span>
-<span class="linenos"> 7</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos"> 8</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">root</span><span class="p">;</span>
-<span class="linenos"> 9</span><span class="w">  </span><span class="p">}</span>
-<span class="linenos">10</span><span class="p">}</span>
+          <section class="tex2jax_ignore mathjax_ignore" id="longest-substring-without-repeating-characters">
+<h1>3. Longest Substring Without Repeating Characters<a class="headerlink" href="#longest-substring-without-repeating-characters" title="Link to this heading">#</a></h1>
+<p><strong>Approach:</strong>
+Sliding Window with a <code class="docutils literal notranslate"><span class="pre">Set</span></code> holding the unique characters</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">lengthOfLongestSubstring</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 2</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;</span><span class="w"> </span><span class="n">charsInWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">right</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">charsInWindow</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">right</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 7</span><span class="w">      </span><span class="n">charsInWindow</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">left</span><span class="p">));</span>
+<span class="linenos"> 8</span><span class="w">      </span><span class="n">left</span><span class="o">++</span><span class="p">;</span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">10</span><span class="w">      </span><span class="n">charsInWindow</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">right</span><span class="p">));</span>
+<span class="linenos">11</span><span class="w">      </span><span class="n">right</span><span class="o">++</span><span class="p">;</span>
+<span class="linenos">12</span><span class="w">      </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">max</span><span class="p">,</span><span class="w"> </span><span class="n">charsInWindow</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>
+<span class="linenos">13</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">14</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">max</span><span class="p">;</span>
+<span class="linenos">17</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -276,23 +285,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="00238_product_of_array_except_self.html">
+          <a class="next-page" href="00011_container_with_most_water.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">238. Product of Array Except Self</div>
+                <div class="title">11. Container With Most Water</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="00226_invert_binary_tree.html">
+          <a class="prev-page" href="00001_two_sum.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">226. Invert Binary Tree</div>
+                <div class="title">1. Two Sum</div>
                 
               </div>
             </a>
