@@ -29,18 +29,18 @@
 :::{table}
 :class: grind-75
 
-|   # | Problem                                                                 | Difficulty            | Time    | Topic         |
-| --: | :---------------------------------------------------------------------- | --------------------- | ------- | :------------ |
-|  1. | [01 Matrix](leetcode/00542_01_matrix)                                   | {bdg-warning}`Medium` | 30 mins | Graph         |
-|  2. | [K Closest Points to Origin](leetcode/00973_k_closest_points_to_origin) | {bdg-warning}`Medium` | 30 mins | Heap          |
-|  3. | Balanced Binary Tree                                                    | {bdg-success}`Easy`   | 15 mins | Binary Tree   |
-|  4. | Linked List Cycle                                                       | {bdg-success}`Easy`   | 20 mins | Linked List   |
-|  5. | Implement Queue using Stacks                                            | {bdg-success}`Easy`   | 20 mins | Stack         |
-|  6. | First Bad Version                                                       | {bdg-success}`Easy`   | 20 mins | Binary Search |
-|  7. | Ransom Note                                                             | {bdg-success}`Easy`   | 15 mins | Hash Table    |
-|  8. | Longest Substring Without Repeating Characters                          | {bdg-warning}`Medium` | 30 mins | String        |
-|  9. | [3Sum](leetcode/00015_3_sum)                                            | {bdg-warning}`Medium` | 30 mins | Array         |
-| 10. | Binary Tree Level Order Traversal                                       | {bdg-warning}`Medium` | 20 mins | Binary Tree   |
+|   # | Problem                                                                                                         | Difficulty            | Time    | Topic         |
+| --: | :-------------------------------------------------------------------------------------------------------------- | --------------------- | ------- | :------------ |
+|  1. | [01 Matrix](leetcode/00542_01_matrix)                                                                           | {bdg-warning}`Medium` | 30 mins | Graph         |
+|  2. | [K Closest Points to Origin](leetcode/00973_k_closest_points_to_origin)                                         | {bdg-warning}`Medium` | 30 mins | Heap          |
+|  3. | Balanced Binary Tree                                                                                            | {bdg-success}`Easy`   | 15 mins | Binary Tree   |
+|  4. | Linked List Cycle                                                                                               | {bdg-success}`Easy`   | 20 mins | Linked List   |
+|  5. | Implement Queue using Stacks                                                                                    | {bdg-success}`Easy`   | 20 mins | Stack         |
+|  6. | First Bad Version                                                                                               | {bdg-success}`Easy`   | 20 mins | Binary Search |
+|  7. | Ransom Note                                                                                                     | {bdg-success}`Easy`   | 15 mins | Hash Table    |
+|  8. | [Longest Substring Without Repeating Characters](leetcode/00003_longest_substring_without_repeating_characters) | {bdg-warning}`Medium` | 30 mins | String        |
+|  9. | [3Sum](leetcode/00015_3_sum)                                                                                    | {bdg-warning}`Medium` | 30 mins | Array         |
+| 10. | Binary Tree Level Order Traversal                                                                               | {bdg-warning}`Medium` | 20 mins | Binary Tree   |
 
 :::
 
@@ -68,17 +68,17 @@
 :::{table}
 :class: grind-75
 
-|   # | Problem                                 | Difficulty            | Time    | Topic              |
-| --: | :-------------------------------------- | --------------------- | ------- | :----------------- |
-|   1 | Reverse Linked List                     | {bdg-success}`Easy`   | 20 mins | Linked List        |
-|   2 | Validate Binary Search Tree             | {bdg-warning}`Medium` | 20 mins | Binary Search Tree |
-|   3 | Number of Islands                       | {bdg-warning}`Medium` | 25 mins | Graph              |
-|   4 | Rotting Oranges                         | {bdg-warning}`Medium` | 30 mins | Graph              |
-|   5 | Search in Rotated Sorted Array          | {bdg-warning}`Medium` | 30 mins | Binary Search      |
-|   6 | Combination Sum                         | {bdg-warning}`Medium` | 30 mins | Array              |
-|   7 | Permutations                            | {bdg-warning}`Medium` | 30 mins | Recursion          |
-|   8 | Merge Intervals                         | {bdg-warning}`Medium` | 30 mins | Array              |
-|   9 | Lowest Common Ancestor of a Binary Tree | {bdg-warning}`Medium` | 25 mins | Binary Tree        |
+|   # | Problem                                               | Difficulty            | Time    | Topic              |
+| --: | :---------------------------------------------------- | --------------------- | ------- | :----------------- |
+|   1 | Reverse Linked List                                   | {bdg-success}`Easy`   | 20 mins | Linked List        |
+|   2 | Validate Binary Search Tree                           | {bdg-warning}`Medium` | 20 mins | Binary Search Tree |
+|   3 | [Number of Islands](leetcode/00200_number_of_islands) | {bdg-warning}`Medium` | 25 mins | Graph              |
+|   4 | Rotting Oranges                                       | {bdg-warning}`Medium` | 30 mins | Graph              |
+|   5 | Search in Rotated Sorted Array                        | {bdg-warning}`Medium` | 30 mins | Binary Search      |
+|   6 | Combination Sum                                       | {bdg-warning}`Medium` | 30 mins | Array              |
+|   7 | [Permutations](leetcode/00046_permutations)           | {bdg-warning}`Medium` | 30 mins | Recursion          |
+|   8 | [Merge Intervals](leetcode/00056_merge_intervals)     | {bdg-warning}`Medium` | 30 mins | Array              |
+|   9 | Lowest Common Ancestor of a Binary Tree               | {bdg-warning}`Medium` | 25 mins | Binary Tree        |
 
 :::
 
@@ -87,16 +87,16 @@
 :::{table}
 :class: grind-75
 
-|   # | Problem                               | Difficulty            | Time    | Topic         |
-| --: | :------------------------------------ | --------------------- | ------- | :------------ |
-|   1 | Time Based Key-Value Store            | {bdg-warning}`Medium` | 35 mins | Binary Search |
-|   2 | Minimum Window Substring              | {bdg-danger}`Hard`    | 30 mins | String        |
-|   3 | Serialize and Deserialize Binary Tree | {bdg-danger}`Hard`    | 40 mins | Binary Tree   |
-|   4 | Trapping Rain Water                   | {bdg-danger}`Hard`    | 35 mins | Stack         |
-|   5 | Find Median from Data Stream          | {bdg-danger}`Hard`    | 30 mins | Heap          |
-|   6 | Majority Element                      | {bdg-success}`Easy`   | 20 mins | Array         |
-|   7 | Add Binary                            | {bdg-success}`Easy`   | 15 mins | Binary        |
-|   8 | Diameter of Binary Tree               | {bdg-success}`Easy`   | 30 mins | Binary Tree   |
+|   # | Problem                                                   | Difficulty            | Time    | Topic         |
+| --: | :-------------------------------------------------------- | --------------------- | ------- | :------------ |
+|   1 | Time Based Key-Value Store                                | {bdg-warning}`Medium` | 35 mins | Binary Search |
+|   2 | Minimum Window Substring                                  | {bdg-danger}`Hard`    | 30 mins | String        |
+|   3 | Serialize and Deserialize Binary Tree                     | {bdg-danger}`Hard`    | 40 mins | Binary Tree   |
+|   4 | [Trapping Rain Water](leetcode/00042_trapping_rain_water) | {bdg-danger}`Hard`    | 35 mins | Stack         |
+|   5 | Find Median from Data Stream                              | {bdg-danger}`Hard`    | 30 mins | Heap          |
+|   6 | Majority Element                                          | {bdg-success}`Easy`   | 20 mins | Array         |
+|   7 | Add Binary                                                | {bdg-success}`Easy`   | 15 mins | Binary        |
+|   8 | Diameter of Binary Tree                                   | {bdg-success}`Easy`   | 30 mins | Binary Tree   |
 
 :::
 
@@ -109,7 +109,7 @@
 | --: | :-------------------------------------------------------------------- | --------------------- | ------- | :------------------ |
 |   1 | [Middle of the Linked List](leetcode/00876_middle_of_the_linked_list) | {bdg-success}`Easy`   | 20 mins | Linked List         |
 |   2 | Accounts Merge                                                        | {bdg-warning}`Medium` | 30 mins | Graph               |
-|   3 | Sort Colors                                                           | {bdg-warning}`Medium` | 25 mins | Array               |
+|   3 | [Sort Colors](leetcode/00075_sort_colors)                             | {bdg-warning}`Medium` | 25 mins | Array               |
 |   4 | Word Break                                                            | {bdg-warning}`Medium` | 30 mins | Trie                |
 |   5 | Partition Equal Subset Sum                                            | {bdg-warning}`Medium` | 30 mins | Dynamic Programming |
 |   6 | String to Integer (atoi)                                              | {bdg-warning}`Medium` | 25 mins | String              |
