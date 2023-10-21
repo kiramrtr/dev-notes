@@ -40,7 +40,7 @@
 |  7. | Ransom Note                                                                                                     | {bdg-success}`Easy`   | 15 mins | Hash Table    |
 |  8. | [Longest Substring Without Repeating Characters](leetcode/00003_longest_substring_without_repeating_characters) | {bdg-warning}`Medium` | 30 mins | String        |
 |  9. | [3Sum](leetcode/00015_3_sum)                                                                                    | {bdg-warning}`Medium` | 30 mins | Array         |
-| 10. | Binary Tree Level Order Traversal                                                                               | {bdg-warning}`Medium` | 20 mins | Binary Tree   |
+| 10. | [Binary Tree Level Order Traversal](leetcode/00102_binary_tree_level_order_traversal)                           | {bdg-warning}`Medium` | 20 mins | Binary Tree   |
 
 :::
 
@@ -68,17 +68,17 @@
 :::{table}
 :class: grind-75
 
-|   # | Problem                                               | Difficulty            | Time    | Topic              |
-| --: | :---------------------------------------------------- | --------------------- | ------- | :----------------- |
-|   1 | Reverse Linked List                                   | {bdg-success}`Easy`   | 20 mins | Linked List        |
-|   2 | Validate Binary Search Tree                           | {bdg-warning}`Medium` | 20 mins | Binary Search Tree |
-|   3 | [Number of Islands](leetcode/00200_number_of_islands) | {bdg-warning}`Medium` | 25 mins | Graph              |
-|   4 | Rotting Oranges                                       | {bdg-warning}`Medium` | 30 mins | Graph              |
-|   5 | Search in Rotated Sorted Array                        | {bdg-warning}`Medium` | 30 mins | Binary Search      |
-|   6 | Combination Sum                                       | {bdg-warning}`Medium` | 30 mins | Array              |
-|   7 | [Permutations](leetcode/00046_permutations)           | {bdg-warning}`Medium` | 30 mins | Recursion          |
-|   8 | [Merge Intervals](leetcode/00056_merge_intervals)     | {bdg-warning}`Medium` | 30 mins | Array              |
-|   9 | Lowest Common Ancestor of a Binary Tree               | {bdg-warning}`Medium` | 25 mins | Binary Tree        |
+|   # | Problem                                                                                           | Difficulty            | Time    | Topic              |
+| --: | :------------------------------------------------------------------------------------------------ | --------------------- | ------- | :----------------- |
+|   1 | Reverse Linked List                                                                               | {bdg-success}`Easy`   | 20 mins | Linked List        |
+|   2 | Validate Binary Search Tree                                                                       | {bdg-warning}`Medium` | 20 mins | Binary Search Tree |
+|   3 | [Number of Islands](leetcode/00200_number_of_islands)                                             | {bdg-warning}`Medium` | 25 mins | Graph              |
+|   4 | Rotting Oranges                                                                                   | {bdg-warning}`Medium` | 30 mins | Graph              |
+|   5 | Search in Rotated Sorted Array                                                                    | {bdg-warning}`Medium` | 30 mins | Binary Search      |
+|   6 | Combination Sum                                                                                   | {bdg-warning}`Medium` | 30 mins | Array              |
+|   7 | [Permutations](leetcode/00046_permutations)                                                       | {bdg-warning}`Medium` | 30 mins | Recursion          |
+|   8 | [Merge Intervals](leetcode/00056_merge_intervals)                                                 | {bdg-warning}`Medium` | 30 mins | Array              |
+|   9 | [Lowest Common Ancestor of a Binary Tree](leetcode/00236_lowest_common_ancestor_of_a_binary_tree) | {bdg-warning}`Medium` | 25 mins | Binary Tree        |
 
 :::
 
