@@ -33,11 +33,11 @@
 | --: | :-------------------------------------------------------------------------------------------------------------- | --------------------- | ------- | :------------ |
 |  1. | [01 Matrix](leetcode/00542_01_matrix)                                                                           | {bdg-warning}`Medium` | 30 mins | Graph         |
 |  2. | [K Closest Points to Origin](leetcode/00973_k_closest_points_to_origin)                                         | {bdg-warning}`Medium` | 30 mins | Heap          |
-|  3. | Balanced Binary Tree                                                                                            | {bdg-success}`Easy`   | 15 mins | Binary Tree   |
-|  4. | Linked List Cycle                                                                                               | {bdg-success}`Easy`   | 20 mins | Linked List   |
-|  5. | Implement Queue using Stacks                                                                                    | {bdg-success}`Easy`   | 20 mins | Stack         |
-|  6. | First Bad Version                                                                                               | {bdg-success}`Easy`   | 20 mins | Binary Search |
-|  7. | Ransom Note                                                                                                     | {bdg-success}`Easy`   | 15 mins | Hash Table    |
+|  3. | [Balanced Binary Tree](leetcode/00110_balanced_binary_tree)                                                     | {bdg-success}`Easy`   | 15 mins | Binary Tree   |
+|  4. | [Linked List Cycle](leetcode/00141_linked_list_cycle)                                                           | {bdg-success}`Easy`   | 20 mins | Linked List   |
+|  5. | [Implement Queue using Stacks](leetcode/00232_implement_queue_using_stacks)                                     | {bdg-success}`Easy`   | 20 mins | Stack         |
+|  6. | [First Bad Version](leetcode/00278_first_bad_version)                                                           | {bdg-success}`Easy`   | 20 mins | Binary Search |
+|  7. | [Ransom Note](leetcode/00383_ransom_note)                                                                       | {bdg-success}`Easy`   | 15 mins | Hash Table    |
 |  8. | [Longest Substring Without Repeating Characters](leetcode/00003_longest_substring_without_repeating_characters) | {bdg-warning}`Medium` | 30 mins | String        |
 |  9. | [3Sum](leetcode/00015_3_sum)                                                                                    | {bdg-warning}`Medium` | 30 mins | Array         |
 | 10. | [Binary Tree Level Order Traversal](leetcode/00102_binary_tree_level_order_traversal)                           | {bdg-warning}`Medium` | 20 mins | Binary Tree   |
@@ -57,7 +57,7 @@
 |   4 | [Implement Trie (Prefix Tree)](leetcode/00208_implement_trie_prefix_tree)   | {bdg-warning}`Medium` | 35 mins | Trie                |
 |   5 | Coin Change                                                                 | {bdg-warning}`Medium` | 25 mins | Dynamic Programming |
 |   6 | [Product of Array Except Self](leetcode/00238_product_of_array_except_self) | {bdg-warning}`Medium` | 30 mins | Array               |
-|   7 | Climbing Stairs                                                             | {bdg-success}`Easy`   | 20 mins | Dynamic Programming |
+|   7 | [Climbing Stairs](leetcode/00070_climbing_stairs.md)                        | {bdg-success}`Easy`   | 20 mins | Dynamic Programming |
 |   8 | Longest Palindrome                                                          | {bdg-success}`Easy`   | 20 mins | String              |
 |   9 | [Min Stack](leetcode/00155_min_stack)                                       | {bdg-warning}`Medium` | 20 mins | Stack               |
 
