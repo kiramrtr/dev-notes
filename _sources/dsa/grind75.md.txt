@@ -87,16 +87,16 @@
 :::{table}
 :class: grind-75
 
-|   # | Problem                                                   | Difficulty            | Time    | Topic         |
-| --: | :-------------------------------------------------------- | --------------------- | ------- | :------------ |
-|   1 | Time Based Key-Value Store                                | {bdg-warning}`Medium` | 35 mins | Binary Search |
-|   2 | Minimum Window Substring                                  | {bdg-danger}`Hard`    | 30 mins | String        |
-|   3 | Serialize and Deserialize Binary Tree                     | {bdg-danger}`Hard`    | 40 mins | Binary Tree   |
-|   4 | [Trapping Rain Water](leetcode/00042_trapping_rain_water) | {bdg-danger}`Hard`    | 35 mins | Stack         |
-|   5 | Find Median from Data Stream                              | {bdg-danger}`Hard`    | 30 mins | Heap          |
-|   6 | Majority Element                                          | {bdg-success}`Easy`   | 20 mins | Array         |
-|   7 | Add Binary                                                | {bdg-success}`Easy`   | 15 mins | Binary        |
-|   8 | Diameter of Binary Tree                                   | {bdg-success}`Easy`   | 30 mins | Binary Tree   |
+|   # | Problem                                                                     | Difficulty            | Time    | Topic         |
+| --: | :-------------------------------------------------------------------------- | --------------------- | ------- | :------------ |
+|   1 | Time Based Key-Value Store                                                  | {bdg-warning}`Medium` | 35 mins | Binary Search |
+|   2 | Minimum Window Substring                                                    | {bdg-danger}`Hard`    | 30 mins | String        |
+|   3 | Serialize and Deserialize Binary Tree                                       | {bdg-danger}`Hard`    | 40 mins | Binary Tree   |
+|   4 | [Trapping Rain Water](leetcode/00042_trapping_rain_water)                   | {bdg-danger}`Hard`    | 35 mins | Stack         |
+|   5 | [Find Median from Data Stream](leetcode/00295_find_median_from_data_stream) | {bdg-danger}`Hard`    | 30 mins | Heap          |
+|   6 | Majority Element                                                            | {bdg-success}`Easy`   | 20 mins | Array         |
+|   7 | Add Binary                                                                  | {bdg-success}`Easy`   | 15 mins | Binary        |
+|   8 | Diameter of Binary Tree                                                     | {bdg-success}`Easy`   | 30 mins | Binary Tree   |
 
 :::
 
