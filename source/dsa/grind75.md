@@ -49,17 +49,17 @@
 :::{table}
 :class: grind-75
 
-|   # | Problem                                                                     | Difficulty            | Time    | Topic               |
-| --: | :-------------------------------------------------------------------------- | --------------------- | ------- | :------------------ |
-|   1 | Clone Graph                                                                 | {bdg-warning}`Medium` | 25 mins | Graph               |
-|   2 | Evaluate Reverse Polish Notation                                            | {bdg-warning}`Medium` | 30 mins | Stack               |
-|   3 | Course Schedule                                                             | {bdg-warning}`Medium` | 30 mins | Graph               |
-|   4 | [Implement Trie (Prefix Tree)](leetcode/00208_implement_trie_prefix_tree)   | {bdg-warning}`Medium` | 35 mins | Trie                |
-|   5 | Coin Change                                                                 | {bdg-warning}`Medium` | 25 mins | Dynamic Programming |
-|   6 | [Product of Array Except Self](leetcode/00238_product_of_array_except_self) | {bdg-warning}`Medium` | 30 mins | Array               |
-|   7 | [Climbing Stairs](leetcode/00070_climbing_stairs.md)                        | {bdg-success}`Easy`   | 20 mins | Dynamic Programming |
-|   8 | Longest Palindrome                                                          | {bdg-success}`Easy`   | 20 mins | String              |
-|   9 | [Min Stack](leetcode/00155_min_stack)                                       | {bdg-warning}`Medium` | 20 mins | Stack               |
+|   # | Problem                                                                             | Difficulty            | Time    | Topic               |
+| --: | :---------------------------------------------------------------------------------- | --------------------- | ------- | :------------------ |
+|   1 | Clone Graph                                                                         | {bdg-warning}`Medium` | 25 mins | Graph               |
+|   2 | [Evaluate Reverse Polish Notation](leetcode/00150_evaluate_reverse_polish_notation) | {bdg-warning}`Medium` | 30 mins | Stack               |
+|   3 | Course Schedule                                                                     | {bdg-warning}`Medium` | 30 mins | Graph               |
+|   4 | [Implement Trie (Prefix Tree)](leetcode/00208_implement_trie_prefix_tree)           | {bdg-warning}`Medium` | 35 mins | Trie                |
+|   5 | Coin Change                                                                         | {bdg-warning}`Medium` | 25 mins | Dynamic Programming |
+|   6 | [Product of Array Except Self](leetcode/00238_product_of_array_except_self)         | {bdg-warning}`Medium` | 30 mins | Array               |
+|   7 | [Climbing Stairs](leetcode/00070_climbing_stairs.md)                                | {bdg-success}`Easy`   | 20 mins | Dynamic Programming |
+|   8 | [Longest Palindrome](leetcode/00409_longest_palindrome)                             | {bdg-success}`Easy`   | 20 mins | String              |
+|   9 | [Min Stack](leetcode/00155_min_stack)                                               | {bdg-warning}`Medium` | 20 mins | Stack               |
 
 :::
 
