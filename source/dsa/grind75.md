@@ -94,7 +94,7 @@
 |   3 | Serialize and Deserialize Binary Tree                                       | {bdg-danger}`Hard`    | 40 mins | Binary Tree   |
 |   4 | [Trapping Rain Water](leetcode/00042_trapping_rain_water)                   | {bdg-danger}`Hard`    | 35 mins | Stack         |
 |   5 | [Find Median from Data Stream](leetcode/00295_find_median_from_data_stream) | {bdg-danger}`Hard`    | 30 mins | Heap          |
-|   6 | Majority Element                                                            | {bdg-success}`Easy`   | 20 mins | Array         |
+|   6 | [Majority Element](leetcode/00169_majority_element)                         | {bdg-success}`Easy`   | 20 mins | Array         |
 |   7 | Add Binary                                                                  | {bdg-success}`Easy`   | 15 mins | Binary        |
 |   8 | Diameter of Binary Tree                                                     | {bdg-success}`Easy`   | 30 mins | Binary Tree   |
 
@@ -141,18 +141,18 @@
 :::{table}
 :class: grind-75
 
-|   # | Problem                                                               | Difficulty            | Time    | Topic               |
-| --: | :-------------------------------------------------------------------- | --------------------- | ------- | :------------------ |
-|   1 | [Contains Duplicate](leetcode/00217_contains_duplicate)               | {bdg-success}`Easy`   | 15 mins | Array               |
-|   2 | Unique Paths                                                          | {bdg-warning}`Medium` | 20 mins | Dynamic Programming |
-|   3 | Construct Binary Tree from Preorder and Inorder Traversal             | {bdg-warning}`Medium` | 25 mins | Binary Tree         |
-|   4 | [Container With Most Water](leetcode/00011_container_with_most_water) | {bdg-warning}`Medium` | 35 mins | Array               |
-|   5 | Letter Combinations of a Phone Number                                 | {bdg-warning}`Medium` | 30 mins | Recursion           |
-|   6 | Word Search                                                           | {bdg-warning}`Medium` | 30 mins | Graph               |
-|   7 | Find All Anagrams in a String                                         | {bdg-warning}`Medium` | 30 mins | String              |
-|   8 | Minimum Height Trees                                                  | {bdg-warning}`Medium` | 30 mins | Graph               |
-|   9 | Task Scheduler                                                        | {bdg-warning}`Medium` | 35 mins | Heap                |
-|  10 | LRU Cache                                                             | {bdg-warning}`Medium` | 30 mins | Linked List         |
-|  11 | Kth Smallest Element in a BST                                         | {bdg-warning}`Medium` | 25 mins | Binary Search Tree  |
+|   # | Problem                                                                                       | Difficulty            | Time    | Topic               |
+| --: | :-------------------------------------------------------------------------------------------- | --------------------- | ------- | :------------------ |
+|   1 | [Contains Duplicate](leetcode/00217_contains_duplicate)                                       | {bdg-success}`Easy`   | 15 mins | Array               |
+|   2 | Unique Paths                                                                                  | {bdg-warning}`Medium` | 20 mins | Dynamic Programming |
+|   3 | Construct Binary Tree from Preorder and Inorder Traversal                                     | {bdg-warning}`Medium` | 25 mins | Binary Tree         |
+|   4 | [Container With Most Water](leetcode/00011_container_with_most_water)                         | {bdg-warning}`Medium` | 35 mins | Array               |
+|   5 | [Letter Combinations of a Phone Number](leetcode/00017_letter_combinations_of_a_phone_number) | {bdg-warning}`Medium` | 30 mins | Recursion           |
+|   6 | Word Search                                                                                   | {bdg-warning}`Medium` | 30 mins | Graph               |
+|   7 | Find All Anagrams in a String                                                                 | {bdg-warning}`Medium` | 30 mins | String              |
+|   8 | Minimum Height Trees                                                                          | {bdg-warning}`Medium` | 30 mins | Graph               |
+|   9 | Task Scheduler                                                                                | {bdg-warning}`Medium` | 35 mins | Heap                |
+|  10 | LRU Cache                                                                                     | {bdg-warning}`Medium` | 30 mins | Linked List         |
+|  11 | Kth Smallest Element in a BST                                                                 | {bdg-warning}`Medium` | 25 mins | Binary Search Tree  |
 
 :::
