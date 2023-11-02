@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="383. Ransom Note" href="00383_ransom_note.html" /><link rel="prev" title="278. First Bad Version" href="00278_first_bad_version.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="70. Climbing Stairs" href="00070_climbing_stairs.html" /><link rel="prev" title="57. Insert Interval" href="00057_insert_interval.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>295. Find Median from Data Stream - Kira&#39;s dev notes</title>
+        <title>62. Unique Paths - Kira&#39;s dev notes</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
@@ -194,7 +194,7 @@
 <li class="toctree-l3"><a class="reference internal" href="00053_maximum_subarray.html">53. Maximum Subarray</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00056_merge_intervals.html">56. Merge Intervals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00057_insert_interval.html">57. Insert Interval</a></li>
-<li class="toctree-l3"><a class="reference internal" href="00062_unique_paths.html">62. Unique Paths</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">62. Unique Paths</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00070_climbing_stairs.html">70. Climbing Stairs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00075_sort_colors.html">75. Sort Colors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00102_binary_tree_level_order_traversal.html">102. Binary Tree Level Order Traversal</a></li>
@@ -216,7 +216,7 @@
 <li class="toctree-l3"><a class="reference internal" href="00238_product_of_array_except_self.html">238. Product of Array Except Self</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00242_valid_anagram.html">242. Valid Anagram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00278_first_bad_version.html">278. First Bad Version</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">295. Find Median from Data Stream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="00295_find_median_from_data_stream.html">295. Find Median from Data Stream</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00383_ransom_note.html">383. Ransom Note</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00409_longest_palindrome.html">409. Longest Palindrome</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00542_01_matrix.html">542. 01 Matrix</a></li>
@@ -270,44 +270,22 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="find-median-from-data-stream">
-<h1><a class="reference external" href="https://leetcode.com/problems/find-median-from-data-stream/">295. Find Median from Data Stream</a><a class="headerlink" href="#find-median-from-data-stream" title="Link to this heading">#</a></h1>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">class</span> <span class="nc">MedianFinder</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 2</span><span class="w">  </span><span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lowers</span><span class="p">;</span>
-<span class="linenos"> 3</span><span class="w">  </span><span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">highers</span><span class="p">;</span>
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">MedianFinder</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 6</span><span class="w">    </span><span class="n">lowers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Collections</span><span class="p">.</span><span class="na">reverseOrder</span><span class="p">());</span>
-<span class="linenos"> 7</span><span class="w">    </span><span class="n">highers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-<span class="linenos"> 8</span><span class="w">  </span><span class="p">}</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">addNum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">11</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lowers</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">lowers</span><span class="p">.</span><span class="na">peek</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">12</span><span class="w">      </span><span class="n">lowers</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
-<span class="linenos">13</span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">14</span><span class="w">      </span><span class="n">highers</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
-<span class="linenos">15</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">16</span>
-<span class="linenos">17</span><span class="w">    </span><span class="c1">// re-balance</span>
-<span class="linenos">18</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lowers</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">highers</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">19</span><span class="w">      </span><span class="n">highers</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">lowers</span><span class="p">.</span><span class="na">remove</span><span class="p">());</span>
-<span class="linenos">20</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">21</span>
-<span class="linenos">22</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">highers</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">lowers</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">23</span><span class="w">      </span><span class="n">lowers</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">highers</span><span class="p">.</span><span class="na">remove</span><span class="p">());</span>
-<span class="linenos">24</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">25</span><span class="w">  </span><span class="p">}</span>
-<span class="linenos">26</span>
-<span class="linenos">27</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">findMedian</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">28</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lowers</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">highers</span><span class="p">.</span><span class="na">size</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">29</span><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">lowers</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span>
-<span class="linenos">30</span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">highers</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">lowers</span><span class="p">.</span><span class="na">size</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">31</span><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">highers</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span>
-<span class="linenos">32</span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">33</span><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">((</span><span class="kt">double</span><span class="p">)</span><span class="w"> </span><span class="n">highers</span><span class="p">.</span><span class="na">peek</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">lowers</span><span class="p">.</span><span class="na">peek</span><span class="p">())</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-<span class="linenos">34</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">35</span><span class="w">  </span><span class="p">}</span>
-<span class="linenos">36</span><span class="p">}</span>
+          <section class="tex2jax_ignore mathjax_ignore" id="unique-paths">
+<h1>62. Unique Paths<a class="headerlink" href="#unique-paths" title="Link to this heading">#</a></h1>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">uniquePaths</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 2</span><span class="w">  </span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">dp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="n">m</span><span class="o">][</span><span class="n">n</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 5</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 6</span><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 7</span><span class="w">        </span><span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="linenos"> 8</span><span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 9</span><span class="w">        </span><span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos">10</span><span class="w">      </span><span class="p">}</span>
+<span class="linenos">11</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">12</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">13</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">dp</span><span class="o">[</span><span class="n">m</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="o">][</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos">14</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -317,23 +295,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="00383_ransom_note.html">
+          <a class="next-page" href="00070_climbing_stairs.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">383. Ransom Note</div>
+                <div class="title">70. Climbing Stairs</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="00278_first_bad_version.html">
+          <a class="prev-page" href="00057_insert_interval.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">278. First Bad Version</div>
+                <div class="title">57. Insert Interval</div>
                 
               </div>
             </a>
