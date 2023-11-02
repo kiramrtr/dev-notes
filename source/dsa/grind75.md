@@ -144,7 +144,7 @@
 |   # | Problem                                                                                       | Difficulty            | Time    | Topic               |
 | --: | :-------------------------------------------------------------------------------------------- | --------------------- | ------- | :------------------ |
 |   1 | [Contains Duplicate](leetcode/00217_contains_duplicate)                                       | {bdg-success}`Easy`   | 15 mins | Array               |
-|   2 | Unique Paths                                                                                  | {bdg-warning}`Medium` | 20 mins | Dynamic Programming |
+|   2 | [Unique Paths](leetcode/00062_unique_paths)                                                   | {bdg-warning}`Medium` | 20 mins | Dynamic Programming |
 |   3 | Construct Binary Tree from Preorder and Inorder Traversal                                     | {bdg-warning}`Medium` | 25 mins | Binary Tree         |
 |   4 | [Container With Most Water](leetcode/00011_container_with_most_water)                         | {bdg-warning}`Medium` | 35 mins | Array               |
 |   5 | [Letter Combinations of a Phone Number](leetcode/00017_letter_combinations_of_a_phone_number) | {bdg-warning}`Medium` | 30 mins | Recursion           |
