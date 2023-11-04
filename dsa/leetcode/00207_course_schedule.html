@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Grind 75" href="../grind75.html" /><link rel="prev" title="973. K Closest Points to Origin" href="00973_k_closest_points_to_origin.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="208. Implement Trie (Prefix Tree)" href="00208_implement_trie_prefix_tree.html" /><link rel="prev" title="206. Reverse Linked List" href="00206_reverse_linked_list.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>2716. Minimize String Length - Kira&#39;s dev notes</title>
+        <title>207. Course Schedule - Kira&#39;s dev notes</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
@@ -210,7 +210,7 @@
 <li class="toctree-l3"><a class="reference internal" href="00169_majority_element.html">169. Majority Element</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00200_number_of_islands.html">200. Number of Islands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00206_reverse_linked_list.html">206. Reverse Linked List</a></li>
-<li class="toctree-l3"><a class="reference internal" href="00207_course_schedule.html">207. Course Schedule</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">207. Course Schedule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00208_implement_trie_prefix_tree.html">208. Implement Trie (Prefix Tree)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00217_contains_duplicate.html">217. Contains Duplicate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00226_invert_binary_tree.html">226. Invert Binary Tree</a></li>
@@ -230,7 +230,7 @@
 <li class="toctree-l3"><a class="reference internal" href="00733_flood_fill.html">733. Flood Fill</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00876_middle_of_the_linked_list.html">876. Middle of the Linked List</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00973_k_closest_points_to_origin.html">973. K Closest Points to Origin</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">2716. Minimize String Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02716_minimize_string_length.html">2716. Minimize String Length</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../grind75.html">Grind 75</a></li>
@@ -275,23 +275,53 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="minimize-string-length">
-<h1><a class="reference external" href="https://leetcode.com/problems/minimize-string-length/">2716. Minimize String Length</a><a class="headerlink" href="#minimize-string-length" title="Link to this heading">#</a></h1>
-<p><strong>Approach</strong></p>
-<p>As given string contains only lowercase english letters, we can have an array of size 26 and keeping track of the count and counting characters not seen already.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">minimizedStringLength</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 2</span><span class="w">  </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">charCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="mi">26</span><span class="o">]</span><span class="p">;</span>
-<span class="linenos"> 3</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 6</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">charCount</span><span class="o">[</span><span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 7</span><span class="w">      </span><span class="n">charCount</span><span class="o">[</span><span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="o">]++</span><span class="p">;</span>
-<span class="linenos"> 8</span><span class="w">      </span><span class="n">length</span><span class="o">++</span><span class="p">;</span>
-<span class="linenos"> 9</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">10</span><span class="w">  </span><span class="p">}</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">length</span><span class="p">;</span>
-<span class="linenos">13</span><span class="p">}</span>
+          <section class="tex2jax_ignore mathjax_ignore" id="course-schedule">
+<h1>207. Course Schedule<a class="headerlink" href="#course-schedule" title="Link to this heading">#</a></h1>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">canFinish</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">numCourses</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">prerequisites</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[]</span><span class="w"> </span><span class="n">adjList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">[</span><span class="n">numCourses</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">numCourses</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 7</span><span class="w">      </span><span class="n">adjList</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">prereq</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">prerequisites</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">11</span><span class="w">      </span><span class="n">adjList</span><span class="o">[</span><span class="n">prereq</span><span class="o">[</span><span class="mi">1</span><span class="o">]]</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">prereq</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+<span class="linenos">12</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="w">    </span><span class="kt">boolean</span><span class="o">[]</span><span class="w"> </span><span class="n">visited</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">boolean</span><span class="o">[</span><span class="n">numCourses</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos">15</span><span class="w">    </span><span class="kt">boolean</span><span class="o">[]</span><span class="w"> </span><span class="n">completed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">boolean</span><span class="o">[</span><span class="n">numCourses</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">numCourses</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">18</span><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">hasCycle</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">adjList</span><span class="p">,</span><span class="w"> </span><span class="n">visited</span><span class="p">,</span><span class="w"> </span><span class="n">completed</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">19</span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="linenos">20</span><span class="w">      </span><span class="p">}</span>
+<span class="linenos">21</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="linenos">24</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">hasCycle</span><span class="p">(</span>
+<span class="linenos">27</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span>
+<span class="linenos">28</span><span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[]</span><span class="w"> </span><span class="n">adjList</span><span class="p">,</span>
+<span class="linenos">29</span><span class="w">    </span><span class="kt">boolean</span><span class="o">[]</span><span class="w"> </span><span class="n">visited</span><span class="p">,</span>
+<span class="linenos">30</span><span class="w">    </span><span class="kt">boolean</span><span class="o">[]</span><span class="w"> </span><span class="n">completed</span>
+<span class="linenos">31</span><span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">32</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">completed</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="linenos">33</span>
+<span class="linenos">34</span><span class="w">    </span><span class="n">visited</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="linenos">35</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">adjList</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">36</span><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">visited</span><span class="o">[</span><span class="n">n</span><span class="o">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">hasCycle</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">adjList</span><span class="p">,</span><span class="w"> </span><span class="n">visited</span><span class="p">,</span><span class="w"> </span><span class="n">completed</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">37</span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="linenos">38</span><span class="w">      </span><span class="p">}</span>
+<span class="linenos">39</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">40</span><span class="w">    </span><span class="n">visited</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="linenos">41</span><span class="w">    </span><span class="n">completed</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="linenos">42</span>
+<span class="linenos">43</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="linenos">44</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">45</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -301,23 +331,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../grind75.html">
+          <a class="next-page" href="00208_implement_trie_prefix_tree.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Grind 75</div>
+                <div class="title">208. Implement Trie (Prefix Tree)</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="00973_k_closest_points_to_origin.html">
+          <a class="prev-page" href="00206_reverse_linked_list.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">973. K Closest Points to Origin</div>
+                <div class="title">206. Reverse Linked List</div>
                 
               </div>
             </a>
