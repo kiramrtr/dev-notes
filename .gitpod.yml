@@ -1,0 +1,13 @@
+# Commands that will run on workspace start
+tasks:
+    - name: Setup, Install & Build
+      before: pip install -r requirements.txt
+      command: sphinx-autobuild source build/html
+
+# Ports to expose on workspace startup
+ports:
+    - port: 8000
+      onOpen: open-preview
+      name: Sphinx Preview
+      visibility: private
+      protocol: https
