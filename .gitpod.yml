@@ -2,7 +2,7 @@
 tasks:
     - name: Setup, Install & Build
       before: pip install -r requirements.txt
-      command: sphinx-autobuild source build/html
+      command: TZ=UTC sphinx-autobuild source build/html
 
 # Ports to expose on workspace startup
 ports:
