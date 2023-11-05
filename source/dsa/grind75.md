@@ -71,7 +71,7 @@
 |   # | Problem                                                                                           | Difficulty            | Time    | Topic              |
 | --: | :------------------------------------------------------------------------------------------------ | --------------------- | ------- | :----------------- |
 |   1 | [Reverse Linked List](leetcode/00206_reverse_linked_list)                                         | {bdg-success}`Easy`   | 20 mins | Linked List        |
-|   2 | Validate Binary Search Tree                                                                       | {bdg-warning}`Medium` | 20 mins | Binary Search Tree |
+|   2 | [Validate Binary Search Tree](leetcode/00098_validate_binary_search_tree)                         | {bdg-warning}`Medium` | 20 mins | Binary Search Tree |
 |   3 | [Number of Islands](leetcode/00200_number_of_islands)                                             | {bdg-warning}`Medium` | 25 mins | Graph              |
 |   4 | Rotting Oranges                                                                                   | {bdg-warning}`Medium` | 30 mins | Graph              |
 |   5 | Search in Rotated Sorted Array                                                                    | {bdg-warning}`Medium` | 30 mins | Binary Search      |
