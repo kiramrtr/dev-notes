@@ -1,6 +1,6 @@
 # 133. Clone Graph
 
-```{code-blokc} java
+```{code-block} java
 :linenos:
 
 class Solution {

@@ -190,6 +190,7 @@
 <li class="toctree-l3"><a class="reference internal" href="00017_letter_combinations_of_a_phone_number.html">17. Letter Combinations of a Phone Number</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00020_valid_parentheses.html">20. Valid Parentheses</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00021_merge_two_sorted_lists.html">21. Merge Two Sorted Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="00033_search_in_rotated_sorted_array.html">33. Search in Rotated Sorted Array</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00042_trapping_rain_water.html">42. Trapping Rain Water</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00046_permutations.html">46. Permutations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00053_maximum_subarray.html">53. Maximum Subarray</a></li>
@@ -279,6 +280,27 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="clone-graph">
 <h1>133. Clone Graph<a class="headerlink" href="#clone-graph" title="Link to this heading">#</a></h1>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 2</span><span class="w">  </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">Node</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="nf">cloneGraph</span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="n">node</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 5</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">node</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 6</span><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">node</span><span class="p">;</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">map</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="n">node</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">10</span><span class="w">      </span><span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="na">val</span><span class="p">));</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="n">neighbor</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">node</span><span class="p">.</span><span class="na">neighbors</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">13</span><span class="w">        </span><span class="n">map</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">node</span><span class="p">).</span><span class="na">neighbors</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">cloneGraph</span><span class="p">(</span><span class="n">neighbor</span><span class="p">));</span>
+<span class="linenos">14</span><span class="w">      </span><span class="p">}</span>
+<span class="linenos">15</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">map</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+<span class="linenos">18</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">19</span><span class="p">}</span>
+</pre></div>
+</div>
 </section>
 
         </article>
