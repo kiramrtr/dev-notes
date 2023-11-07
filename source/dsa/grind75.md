@@ -74,7 +74,7 @@
 |   2 | [Validate Binary Search Tree](leetcode/00098_validate_binary_search_tree)                         | {bdg-warning}`Medium` | 20 mins | Binary Search Tree |
 |   3 | [Number of Islands](leetcode/00200_number_of_islands)                                             | {bdg-warning}`Medium` | 25 mins | Graph              |
 |   4 | [Rotting Oranges](leetcode/00994_rotting_oranges)                                                 | {bdg-warning}`Medium` | 30 mins | Graph              |
-|   5 | Search in Rotated Sorted Array                                                                    | {bdg-warning}`Medium` | 30 mins | Binary Search      |
+|   5 | [Search in Rotated Sorted Array](leetcode/00033_search_in_rotated_sorted_array)                   | {bdg-warning}`Medium` | 30 mins | Binary Search      |
 |   6 | Combination Sum                                                                                   | {bdg-warning}`Medium` | 30 mins | Array              |
 |   7 | [Permutations](leetcode/00046_permutations)                                                       | {bdg-warning}`Medium` | 30 mins | Recursion          |
 |   8 | [Merge Intervals](leetcode/00056_merge_intervals)                                                 | {bdg-warning}`Medium` | 30 mins | Array              |
