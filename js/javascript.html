@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="JavaScript Ecosystem" href="../js/index.html" /><link rel="prev" title="Optional" href="optional.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Docker" href="../docker/index.html" /><link rel="prev" title="JavaScript Ecosystem" href="index.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>Concurrency - Kira&#39;s dev notes</title>
+        <title>JavaScript - Kira&#39;s dev notes</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
@@ -167,16 +167,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../dev-tools/keys-and-certificates.html">Keys and Certificates</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Java</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Java</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="core-java.html">Core Java</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functional-interfaces.html">Functional Interfaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="streams.html">Streams</a></li>
-<li class="toctree-l2"><a class="reference internal" href="optional.html">Optional</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Concurrency</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../java/index.html">Java</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Java</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../java/core-java.html">Core Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../java/functional-interfaces.html">Functional Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../java/streams.html">Streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../java/optional.html">Optional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../java/concurrency.html">Concurrency</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../js/index.html">JavaScript Ecosystem</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of JavaScript Ecosystem</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../js/javascript.html">JavaScript</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">JavaScript Ecosystem</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of JavaScript Ecosystem</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">JavaScript</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../docker/index.html">Docker</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Docker</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
@@ -285,109 +285,78 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="concurrency">
-<h1>Concurrency<a class="headerlink" href="#concurrency" title="Link to this heading">#</a></h1>
-<section id="todo">
-<h2>Todo:<a class="headerlink" href="#todo" title="Link to this heading">#</a></h2>
+          <section class="tex2jax_ignore mathjax_ignore" id="javascript">
+<h1>JavaScript<a class="headerlink" href="#javascript" title="Link to this heading">#</a></h1>
+<section id="basics">
+<h2>Basics<a class="headerlink" href="#basics" title="Link to this heading">#</a></h2>
+<section id="data-types">
+<h3>Data Types<a class="headerlink" href="#data-types" title="Link to this heading">#</a></h3>
+<p><strong>Primitive</strong>:</p>
 <ul class="simple">
-<li><p>[ ] <em>lost update</em></p></li>
-<li><p>[ ] <em>happens before</em></p></li>
+<li><p>Number</p></li>
+<li><p>String</p></li>
+<li><p>Boolean</p></li>
 </ul>
-<section id="race-condition">
-<h3>Race Condition<a class="headerlink" href="#race-condition" title="Link to this heading">#</a></h3>
-<blockquote>
-<div><p>https://web.mit.edu/6.031/www/sp21/classes/20-concurrency/#race_condition</p>
-</div></blockquote>
-<p>A <strong><em>race condition</em></strong> means that the correctness of the program depends on the relative timing of events in concurrent computations <em>A</em> and <em>B</em>. When this happens we say “A is in race with B.”</p>
+<p><strong>Composite</strong>:</p>
 <ul class="simple">
-<li><p><em>check-then-act</em>: a potentially stale observation is used to decide what to do next.</p></li>
-<li><p><em>read-modify-write</em>: new state is derived from previous state (may be stale). e.g., <code class="docutils literal notranslate"><span class="pre">count++</span></code>.</p></li>
+<li><p>Object</p></li>
+<li><p>Function</p></li>
+<li><p>Array</p></li>
+</ul>
+<p><strong>Trivial</strong></p>
+<ul class="simple">
+<li><p>Null</p></li>
+<li><p>Undefined</p></li>
+</ul>
+<p><strong>Hoisting</strong></p>
+<p>The process whereby the interpreter appears to move the declaration of <em>functions</em>, <em>variables</em>, classes or imports to the top of their scope, prior to execution of the code.</p>
+</section>
+<section id="this">
+<h3><code class="docutils literal notranslate"><span class="pre">this</span></code><a class="headerlink" href="#this" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">this</span></code> refers to the object that is executing the current function.</p></li>
+<li><p>If the function that is being referenced is a regular one, <code class="docutils literal notranslate"><span class="pre">this</span></code> references the global object.</p></li>
+<li><p>If the function is a method of an object, <code class="docutils literal notranslate"><span class="pre">this</span></code> refers to the object itself.</p></li>
 </ul>
 </section>
-</section>
-<section id="synchronizers">
-<h2>Synchronizers<a class="headerlink" href="#synchronizers" title="Link to this heading">#</a></h2>
-<section id="countdownlatch">
-<h3><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CountDownLatch.html"><code class="docutils literal notranslate"><span class="pre">CountDownLatch</span></code></a><a class="headerlink" href="#countdownlatch" title="Link to this heading">#</a></h3>
-<p>A synchronization aid that allows one or more threads (by calling <code class="docutils literal notranslate"><span class="pre">await()</span></code>) to wait until a set of operations being performed in other threads completes.</p>
-<ul class="simple">
-<li><p>Initialized with a given <em>count</em>.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">await</span></code> method blocks until the current count is reached to zero due to invocations of the <code class="docutils literal notranslate"><span class="pre">countDown()</span></code>.</p></li>
-<li><p>If <em>count</em> is already zero invocation to <code class="docutils literal notranslate"><span class="pre">await</span></code> returns immediately.</p></li>
-<li><p>The <em>count</em> cannot be reset.</p></li>
-<li><p>Threads calling <code class="docutils literal notranslate"><span class="pre">countDown</span></code> need not wait for the count.</p></li>
-</ul>
-<p><strong>Use cases:</strong></p>
-<ul class="simple">
-<li><p>A CountDownLatch with a count of one serves as a simple on/off latch, or gate: all thread invoking <code class="docutils literal notranslate"><span class="pre">await</span></code> wait at the gate until it is opened by a thread invoking <code class="docutils literal notranslate"><span class="pre">countDown()</span></code>.</p></li>
-<li><p>A CountDownLatch initialized to <em>N</em> can be used to make one thread wait until <em>N</em> threads have completed some action, or some action has been completed <em>N</em> times.</p></li>
-</ul>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Driver</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">InterruptedException</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">CountDownLatch</span><span class="w"> </span><span class="n">startSignal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CountDownLatch</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="w">        </span><span class="n">CountDownLatch</span><span class="w"> </span><span class="n">doneSignal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CountDownLatch</span><span class="p">(</span><span class="n">N</span><span class="p">);</span>
-
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="n">Thread</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Workder</span><span class="p">(</span><span class="n">startSignal</span><span class="p">,</span><span class="w"> </span><span class="n">doneSignal</span><span class="p">)).</span><span class="na">start</span><span class="p">();</span>
-<span class="w">        </span><span class="p">}</span>
-
-<span class="w">        </span><span class="n">doSomeWorkBeforeWorker</span><span class="p">();</span>
-<span class="w">        </span><span class="n">startSignal</span><span class="p">.</span><span class="na">countDown</span><span class="p">();</span>
-<span class="w">        </span><span class="n">doSomeWork</span><span class="p">();</span>
-<span class="w">        </span><span class="n">doneSignal</span><span class="p">.</span><span class="na">await</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">class</span> <span class="nc">Worker</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Runnable</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">CountDownLatch</span><span class="w"> </span><span class="n">startSignal</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">CountDownLatch</span><span class="w"> </span><span class="n">doneSignal</span><span class="p">;</span>
-
-<span class="w">    </span><span class="n">Worker</span><span class="p">(</span><span class="n">CountDownLatch</span><span class="w"> </span><span class="n">startSignal</span><span class="p">,</span><span class="w"> </span><span class="n">CountDownLatch</span><span class="w"> </span><span class="n">doneSignal</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">startSignal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">startSignal</span><span class="p">;</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">doneSignal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">doneSignal</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">startSignal</span><span class="p">.</span><span class="na">await</span><span class="p">();</span>
-<span class="w">            </span><span class="n">doWork</span><span class="p">();</span>
-<span class="w">            </span><span class="n">doneSignal</span><span class="p">.</span><span class="na">countDown</span><span class="p">();</span>
-<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">InterruptedException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;I got interrupted :-()&quot;</span><span class="p">);</span>
-<span class="w">            </span><span class="k">return</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">doWork</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Doing work...&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
+<section id="let-var-const">
+<h3><code class="docutils literal notranslate"><span class="pre">let</span></code>, <code class="docutils literal notranslate"><span class="pre">var</span></code>, <code class="docutils literal notranslate"><span class="pre">const</span></code><a class="headerlink" href="#let-var-const" title="Link to this heading">#</a></h3>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Scope</p></th>
+<th class="head"><p>Hoisting</p></th>
+<th class="head"><p>Reassignment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">var</span></code></p></td>
+<td><p><strong>function</strong></p></td>
+<td><p>hoisted, but not initialized</p></td>
+<td><p>Can be reassigned and redeclared</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">let</span></code></p></td>
+<td><p><strong>block</strong></p></td>
+<td><p>hoisted, but accessing them before declaration results in a <code class="docutils literal notranslate"><span class="pre">ReferenceError</span></code></p></td>
+<td><p>Can be reassigned but cannot be redeclared in same scope</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">const</span></code></p></td>
+<td><p><strong>block</strong></p></td>
+<td><p>–do–</p></td>
+<td><p>Cannot be reassigned or redeclared. Must be initialized at the time of declaration</p></td>
+</tr>
+</tbody>
+</table>
 </div>
+<p>Closure</p>
 </section>
-</section>
-<section id="liveness">
-<h2>Liveness<a class="headerlink" href="#liveness" title="Link to this heading">#</a></h2>
-<p>Ability to make progress.</p>
+<section id="misc">
+<h3>Misc<a class="headerlink" href="#misc" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Deadlock</p></li>
-<li><p>Livelock</p></li>
-<li><p>Starvation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">===</span></code> checks for both the value and the type.</p></li>
+<li><p>Local Storage vs Session Storage</p></li>
 </ul>
-<section id="deadlock">
-<h3>Deadlock<a class="headerlink" href="#deadlock" title="Link to this heading">#</a></h3>
-</section>
-<section id="livelock">
-<h3>Livelock<a class="headerlink" href="#livelock" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>A thread often acts in response to the action of another thread. If the other thread’s action is also a response to the action of another thread, then <em>livelock</em> may result.</p></li>
-<li><p>As with deadlock, livelocked threads are unable to make further progress. However, the threads are not blocked they are simply too busy responding to each other to resume work.</p></li>
-</ul>
-<blockquote>
-<div><p>https://docs.oracle.com/javase/tutorial/essential/concurrency/newlocks.html</p>
-</div></blockquote>
 </section>
 </section>
 </section>
@@ -397,23 +366,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../js/index.html">
+          <a class="next-page" href="../docker/index.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">JavaScript Ecosystem</div>
+                <div class="title">Docker</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="optional.html">
+          <a class="prev-page" href="index.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Optional</div>
+                <div class="title">JavaScript Ecosystem</div>
                 
               </div>
             </a>
@@ -447,18 +416,12 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Concurrency</a><ul>
-<li><a class="reference internal" href="#todo">Todo:</a><ul>
-<li><a class="reference internal" href="#race-condition">Race Condition</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#synchronizers">Synchronizers</a><ul>
-<li><a class="reference internal" href="#countdownlatch"><code class="docutils literal notranslate"><span class="pre">CountDownLatch</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#liveness">Liveness</a><ul>
-<li><a class="reference internal" href="#deadlock">Deadlock</a></li>
-<li><a class="reference internal" href="#livelock">Livelock</a></li>
+<li><a class="reference internal" href="#">JavaScript</a><ul>
+<li><a class="reference internal" href="#basics">Basics</a><ul>
+<li><a class="reference internal" href="#data-types">Data Types</a></li>
+<li><a class="reference internal" href="#this"><code class="docutils literal notranslate"><span class="pre">this</span></code></a></li>
+<li><a class="reference internal" href="#let-var-const"><code class="docutils literal notranslate"><span class="pre">let</span></code>, <code class="docutils literal notranslate"><span class="pre">var</span></code>, <code class="docutils literal notranslate"><span class="pre">const</span></code></a></li>
+<li><a class="reference internal" href="#misc">Misc</a></li>
 </ul>
 </li>
 </ul>

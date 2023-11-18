@@ -11,6 +11,7 @@ Just yet another developer notes which I have made for my reference and re-colle
 
 dev-tools/index
 java/index
+js/index
 docker/index
 kubernetes/index
 dsa/index
