@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Core Java" href="core-java.html" /><link rel="prev" title="Keys and Certificates" href="../dev-tools/keys-and-certificates.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Functional Interfaces" href="functional-interfaces.html" /><link rel="prev" title="Java" href="index.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>Java - Kira&#39;s dev notes</title>
+        <title>Core Java - Kira&#39;s dev notes</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
@@ -167,8 +167,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../dev-tools/keys-and-certificates.html">Keys and Certificates</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Java</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Java</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="core-java.html">Core Java</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Java</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Java</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Core Java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functional-interfaces.html">Functional Interfaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html">Streams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="optional.html">Optional</a></li>
@@ -281,92 +281,139 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="java">
-<h1>Java<a class="headerlink" href="#java" title="Link to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="core-java.html">Core Java</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="core-java.html#hashcode-and-equals">hashCode() and equals()</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="core-java.html#overriding-equals">Overriding equals()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="core-java.html#overriding-hashcode">Overriding hashCode()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="core-java.html#comparable">Comparable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="core-java.html#comparator">Comparator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="core-java.html#comparator-vs-comparable">Comparator vs Comparable</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="functional-interfaces.html">Functional Interfaces</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="functional-interfaces.html#basic-function-shapes">Basic function shapes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functional-interfaces.html#lambda-expression">Lambda Expression</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="functional-interfaces.html#closure">Closure</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="functional-interfaces.html#method-reference">Method Reference</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="streams.html#reduce">Reduce</a></li>
-<li class="toctree-l2"><a class="reference internal" href="streams.html#collect">Collect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="streams.html#processing-methods">Processing methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="streams.html#map-vs-flatmap">map() vs flatMap()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="streams.html#collectors">Collectors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="streams.html#reduction-concurrency-and-ordering">Reduction, concurrency and ordering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="streams.html#parallel-streams">Parallel Streams</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="optional.html">Optional</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="optional.html#creating-optional-objects">Creating <code class="docutils literal notranslate"><span class="pre">Optional</span></code> objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="optional.html#using-map-on-optional">Using <code class="docutils literal notranslate"><span class="pre">map</span></code> on <code class="docutils literal notranslate"><span class="pre">Optional</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="optional.html#chaining-optional-objects-with-flatmap">Chaining <code class="docutils literal notranslate"><span class="pre">Optional</span></code> objects with <code class="docutils literal notranslate"><span class="pre">flatMap</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="concurrency.html">Concurrency</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="concurrency.html#todo">Todo:</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="concurrency.html#race-condition">Race Condition</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="concurrency.html#synchronizers">Synchronizers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="concurrency.html#countdownlatch"><code class="docutils literal notranslate"><span class="pre">CountDownLatch</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="concurrency.html#liveness">Liveness</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="concurrency.html#deadlock">Deadlock</a></li>
-<li class="toctree-l3"><a class="reference internal" href="concurrency.html#livelock">Livelock</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+          <section class="tex2jax_ignore mathjax_ignore" id="core-java">
+<h1>Core Java<a class="headerlink" href="#core-java" title="Link to this heading">#</a></h1>
+<section id="hashcode-and-equals">
+<h2><a class="reference external" href="https://hyperskill.org/learn/step/3586">hashCode() and equals()</a><a class="headerlink" href="#hashcode-and-equals" title="Link to this heading">#</a></h2>
+<section id="overriding-equals">
+<h3>Overriding equals()<a class="headerlink" href="#overriding-equals" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>If the other object is <code class="docutils literal notranslate"><span class="pre">null</span></code> or is of different type, <strong>the objects are not equal</strong>.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">this</span></code> and other object have the same reference, <strong>the objects are equal</strong>.</p></li>
+<li><p>If all the <strong>selected fields</strong> are equal, <strong>the objects are equal</strong>, otherwise, <strong>the objects are not equal</strong></p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">firstName</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">lastName</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// constructor, getters and setters</span>
+
+<span class="w">  </span><span class="nd">@Override</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Check this and other refer to the same object */</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/* Check other is Person and not null */</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">other</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Person</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">Person</span><span class="w"> </span><span class="n">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Person</span><span class="p">)</span><span class="w"> </span><span class="n">other</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Compare all required fields */</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">      </span><span class="n">age</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">person</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">      </span><span class="n">Objects</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">firstName</span><span class="p">,</span><span class="w"> </span><span class="n">person</span><span class="p">.</span><span class="na">firstName</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">      </span><span class="n">Objects</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">lastName</span><span class="p">,</span><span class="w"> </span><span class="n">person</span><span class="p">.</span><span class="na">lastName</span><span class="p">)</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 </div>
-<section id="java-8-features">
-<h2>Java 8 Features<a class="headerlink" href="#java-8-features" title="Link to this heading">#</a></h2>
+<p>Using <code class="docutils literal notranslate"><span class="pre">java.util.Objects.equals(obj1,</span> <span class="pre">obj2)</span></code> can avoid <code class="docutils literal notranslate"><span class="pre">NullPointerException</span></code></p>
 </section>
-<section id="java-11-features">
-<h2>Java 11 Features<a class="headerlink" href="#java-11-features" title="Link to this heading">#</a></h2>
+<section id="overriding-hashcode">
+<h3>Overriding hashCode()<a class="headerlink" href="#overriding-hashcode" title="Link to this heading">#</a></h3>
+<p>If <code class="docutils literal notranslate"><span class="pre">hashCode()</span></code> is not overridden, the class cannot be used correctly in collection that applies hashing mechanism (<code class="docutils literal notranslate"><span class="pre">HashMap</span></code>, <code class="docutils literal notranslate"><span class="pre">HashSet</span></code>, <code class="docutils literal notranslate"><span class="pre">HashTable</span></code>).</p>
+<p>Since Java 7, we have an <code class="docutils literal notranslate"><span class="pre">java.util.Objects.hash(Object...</span> <span class="pre">objects)</span></code> utility method for hashing e.g., <code class="docutils literal notranslate"><span class="pre">Objects.hash(firstName,</span> <span class="pre">lastName,</span> <span class="pre">age)</span></code></p>
+<ul class="simple">
+<li><p>If two objects are equal, they MUST have same hash code.</p></li>
+<li><p>If two objects have same hash code, they do NOT have to be equal too.</p></li>
+</ul>
 </section>
-<section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h2>
-<div class="table-wrapper colwidths-auto docutils container">
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Term</p></th>
-<th class="head"><p>Meaning</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><em>reference equality</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></td>
-</tr>
-</tbody>
-</table>
+<section id="comparable">
+<h3><a class="reference external" href="https://hyperskill.org/learn/step/14456">Comparable</a><a class="headerlink" href="#comparable" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>A sequence of data has the <strong>natural ordering</strong>, if for each 2 elements <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>, where <code class="docutils literal notranslate"><span class="pre">a</span></code> is located to the left of <code class="docutils literal notranslate"><span class="pre">b</span></code>, the condition <code class="docutils literal notranslate"><span class="pre">a.compareTo(b)</span> <span class="pre">&lt;=</span> <span class="pre">0</span></code> is true.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Comparable</span></code> provides <code class="docutils literal notranslate"><span class="pre">compareTo()</span></code> method which allows comparing an object with other objects of the same type.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compareTo</span></code> should be consistent with the <code class="docutils literal notranslate"><span class="pre">equals</span></code> method.</p></li>
+</ul>
+<p><strong>Implementing the compareTo method</strong></p>
+<p>Return:</p>
+<ul class="simple">
+<li><p>A positive integer (e.g., 1), if the current object is greater</p></li>
+<li><p>A negative integer (e.g., -1), if the current object is less</p></li>
+<li><p>Zero, if they are equal</p></li>
+</ul>
+<p>Example of how the <code class="docutils literal notranslate"><span class="pre">compareTo</span></code> method is implemented in <code class="docutils literal notranslate"><span class="pre">Integer</span></code> class.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Override</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compareTo</span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">anotherInteger</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">compare</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">value</span><span class="p">,</span><span class="w"> </span><span class="n">anotherInteger</span><span class="p">.</span><span class="na">value</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compare</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 </div>
 </section>
-<section id="terms-concepts">
-<h2>Terms &amp; Concepts<a class="headerlink" href="#terms-concepts" title="Link to this heading">#</a></h2>
-<section id="value-based-classes">
-<h3>Value-based Classes<a class="headerlink" href="#value-based-classes" title="Link to this heading">#</a></h3>
-<p>https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/doc-files/ValueBased.html</p>
+<section id="comparator">
+<h3><a class="reference external" href="https://hyperskill.org/learn/step/12966">Comparator</a><a class="headerlink" href="#comparator" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Comparator&lt;T&gt;</span></code> is a generic interface that has a single abstract method (SAM) <code class="docutils literal notranslate"><span class="pre">compare</span></code> and few non-abstract methods, which can define rules for comparing Java objects.</p>
+<p><code class="docutils literal notranslate"><span class="pre">compare</span></code> method should return:</p>
+<ul class="simple">
+<li><p>0 if both arguments are equal</p></li>
+<li><p>positive number if first argument is greater than second one</p></li>
+<li><p>negative number if first argument is less than second one</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">PersonAgeComparator</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="nd">@Override</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compare</span><span class="p">(</span><span class="n">Person</span><span class="w"> </span><span class="n">person1</span><span class="p">,</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="n">person2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">person1</span><span class="p">.</span><span class="na">getAge</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">person2</span><span class="p">.</span><span class="na">getAge</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">person1</span><span class="p">.</span><span class="na">getAge</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">person2</span><span class="p">.</span><span class="na">getAge</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Since <code class="docutils literal notranslate"><span class="pre">Comparator</span></code> has only a single abstract method (SAM) and therefore is a functional interface, <code class="docutils literal notranslate"><span class="pre">Comparator</span></code> instance can be created using lambda expression.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span><span class="w"> </span><span class="n">personAgeComparator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">p2</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span>
+<span class="w">  </span><span class="n">Integer</span><span class="p">.</span><span class="na">compare</span><span class="p">(</span><span class="n">p1</span><span class="p">.</span><span class="na">getAge</span><span class="p">(),</span><span class="w"> </span><span class="n">p2</span><span class="p">.</span><span class="na">getAge</span><span class="p">());</span>
+</pre></div>
+</div>
+<p><strong>Utility methods</strong></p>
+<p>[ ] TODO: add examples</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Comparator.naturalOrder</span></code> returns a <code class="docutils literal notranslate"><span class="pre">Comparator</span></code> of the type that compares <code class="docutils literal notranslate"><span class="pre">Comparable</span></code> objects in the natural order. You will get compilation error if <code class="docutils literal notranslate"><span class="pre">Comparable</span></code> interface is not implemented.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Comparator.reverseOrder</span></code> compares <code class="docutils literal notranslate"><span class="pre">Comparable</span></code> objects in reverse natural order.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reversed</span></code> when called on <code class="docutils literal notranslate"><span class="pre">Comparator</span></code> return a new <code class="docutils literal notranslate"><span class="pre">Comparator</span></code> which is reverse of the given <code class="docutils literal notranslate"><span class="pre">Comparator</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Comparator.comparing</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">thenComparing</span></code></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">reversed()</span></code> method will reverse the whole chain of preceding comparators. Scope can be limited using parenthesis.</p>
+</div>
+</section>
+<section id="comparator-vs-comparable">
+<h3>Comparator vs Comparable<a class="headerlink" href="#comparator-vs-comparable" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Comparable</span></code> defines the natural order of a class implementing it, perfect where objects have natural order e.g., primitive types, ComplexNumber etc…</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Comparator</span></code> allows for customizing the ordering process.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Comparator</span></code> can also be useful when we don’t have access to source code of class for implementing <code class="docutils literal notranslate"><span class="pre">Comparable</span></code>.</p></li>
+<li><p>With <code class="docutils literal notranslate"><span class="pre">Comparator</span></code> multiple can be joined to create a complex one or extract <code class="docutils literal notranslate"><span class="pre">Comparable</span></code> sort keys.</p></li>
+</ul>
 </section>
 </section>
 </section>
@@ -376,23 +423,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="core-java.html">
+          <a class="next-page" href="functional-interfaces.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Core Java</div>
+                <div class="title">Functional Interfaces</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../dev-tools/keys-and-certificates.html">
+          <a class="prev-page" href="index.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Keys and Certificates</div>
+                <div class="title">Java</div>
                 
               </div>
             </a>
@@ -426,12 +473,13 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Java</a><ul>
-<li><a class="reference internal" href="#java-8-features">Java 8 Features</a></li>
-<li><a class="reference internal" href="#java-11-features">Java 11 Features</a></li>
-<li><a class="reference internal" href="#glossary">Glossary</a></li>
-<li><a class="reference internal" href="#terms-concepts">Terms &amp; Concepts</a><ul>
-<li><a class="reference internal" href="#value-based-classes">Value-based Classes</a></li>
+<li><a class="reference internal" href="#">Core Java</a><ul>
+<li><a class="reference internal" href="#hashcode-and-equals">hashCode() and equals()</a><ul>
+<li><a class="reference internal" href="#overriding-equals">Overriding equals()</a></li>
+<li><a class="reference internal" href="#overriding-hashcode">Overriding hashCode()</a></li>
+<li><a class="reference internal" href="#comparable">Comparable</a></li>
+<li><a class="reference internal" href="#comparator">Comparator</a></li>
+<li><a class="reference internal" href="#comparator-vs-comparable">Comparator vs Comparable</a></li>
 </ul>
 </li>
 </ul>

@@ -1,6 +1,7 @@
 # Spring
 
 ```{toctree}
+jpa
 spring-security
 ```
 
