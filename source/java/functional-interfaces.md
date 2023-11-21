@@ -12,10 +12,18 @@ Functional interfaces can provide a target type in multiple contexts
 
 ## Basic function shapes
 
-- `Function` (unary function from `T` to `R`)
-- `Consumer` (unary function from `T` to `void`)
-- `Predicate` (unary function from `T` to `boolean`)
-- `Supplier` (nullary function to `R`)
+- `Function` (unary function from `T` to `R`) `R apply(T t)`
+- `Consumer` (unary function from `T` to `void`) `accept(T t)`
+- `Predicate` (unary function from `T` to `boolean`) `boolean test(T t)`
+- `Supplier` (nullary function to `R`) `T get()`
+
+### `Consumer<T>`
+
+### `Supplier<T>`
+
+### `Predicate<T>`
+
+### `Function<T, R>`
 
 ## Lambda Expression
 
