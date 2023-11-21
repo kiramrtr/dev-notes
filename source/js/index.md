@@ -1,0 +1,5 @@
+# JavaScript Ecosystem
+
+```{toctree}
+javascript
+```

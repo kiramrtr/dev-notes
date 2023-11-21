@@ -1,6 +1,7 @@
 # Java
 
 ```{toctree}
+core-java
 functional-interfaces
 streams
 optional
