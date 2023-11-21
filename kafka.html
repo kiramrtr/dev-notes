@@ -2,10 +2,12 @@
 <html class="no-js" lang="en" data-content_root="./">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="#" /><link rel="search" title="Search" href="search.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Kubernetes" href="kubernetes/index.html" /><link rel="prev" title="JavaScript" href="js/javascript.html" />
 
-    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 --><title>Index - Kira&#39;s dev notes</title>
-<link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Kafka - Kira&#39;s dev notes</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -138,7 +140,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -158,7 +160,7 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul>
+  <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="agile.html">Agile</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="dev-tools/index.html">Dev Tools</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Dev Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="dev-tools/curl.html">cURL</a></li>
@@ -243,7 +245,7 @@
 <li class="toctree-l2"><a class="reference internal" href="js/javascript.html">JavaScript</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="kafka.html">Kafka</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Kafka</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kubernetes/index.html">Kubernetes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="microservices/index.html">Microservices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="redis.html">Redis</a></li>
@@ -271,7 +273,8 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -279,16 +282,85 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          
-<section class="genindex-section">
-  <h1 id="index">Index</h1>
-  <div class="genindex-jumpbox"></div>
+          <section class="tex2jax_ignore mathjax_ignore" id="kafka">
+<h1>Kafka<a class="headerlink" href="#kafka" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p>https://developers.redhat.com/learn/apache-kafka</p>
+</div></blockquote>
+<p>Apache Kafka is a distributed data streaming platform enabling applications to publish, subscribe to, store, and process message streams in real-time.</p>
+<p>In aPublish/Subscribe (pub/sub) system, sender publishes messages to a central point, and subscribers receive messages of interest from this central point.</p>
+<p>Advantages over traditional pub/sub systems:</p>
+<ul class="simple">
+<li><p>Fault tolerance message store</p></li>
+<li><p>Real-time stream processing</p></li>
+<li><p>Guarantees messages are never overridden</p></li>
+<li><p>High throughput</p></li>
+</ul>
+<p>Broker is the central point in a publish/subscribe system.</p>
+<ul class="simple">
+<li><p>A typical Kafka cluster contains multiple brokers</p></li>
+<li><p>Topics are hosted on the brokers</p></li>
+<li><p>Each topic is split into one or more partitions</p></li>
+</ul>
+<section id="topic">
+<h2>Topic<a class="headerlink" href="#topic" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>A <em>topic</em> is a collection of messages, such as ‘Orders Placed’, grouped for consumer processing</p></li>
+<li><p>Each topic is persisted to disk, replicated across brokers for fault-tolerance</p></li>
+<li><p>Each topic consists of one or more partitions</p></li>
+<li><p>Messages in the topic are stored for specific duration (default of 1 week)</p></li>
+</ul>
+</section>
+<section id="partition">
+<h2>Partition<a class="headerlink" href="#partition" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>A partition contains subset of messages written to a topic</p></li>
+<li><p>New messages are appended to the partition guaranteeing message order at partition level</p></li>
+<li><p>Multiple partitions enables improved performance in case of heavy load, data sharing and replication</p></li>
+<li><p>Topic partitions are distributed across brokers, maximizing parallelism in production and consumption</p></li>
+<li><p>A topic is sum of all events of all its partitions</p></li>
+<li><p>Partition can be configured to be replicated across brokers, and one of the broker is designated as the <em>partition leader</em></p></li>
+<li><p>All messages are produced and consumed via the leader, and the partition replicas stay in sync with the leader</p></li>
+<li><p>If the leader becomes unavailable, one of the replica is promoted as leader</p></li>
+</ul>
+<p><img alt="Partition replication" src="https://developers.redhat.com/sites/default/files/styles/article_floated/public/RHOSAK%20LP1%20Fig4.png?itok=zGET7b7K" /></p>
+</section>
+<section id="message">
+<h2>Message<a class="headerlink" href="#message" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>A <em>message</em> or record is key(optional)/value pair with data for consumer</p></li>
+<li><p>Messages are stored within topics</p></li>
+<li><p>The message is persisted and durable during its configured lifespan</p></li>
+<li><p>The position of each message within a topic is its <em>offset</em></p></li>
+<li><p>Messages are generally consumed in the order they were added</p></li>
+<li><p>If key exists, the hash is used for determining which partition it goes in</p></li>
+<li><p>Each message contains metadata timestamp attribute set by producer or broker on insertion, and an optional set of key-value pair headers</p></li>
+<li><p>Message can be up to 1MB in size by default, can be configured with large size. But, for efficiency few kilobytes is recommended</p></li>
+</ul>
+</section>
+<section id="producer">
+<h2>Producer<a class="headerlink" href="#producer" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Producer publishes message to topics</p></li>
+<li><p>Messages with the same key are stored in the same partition</p></li>
+</ul>
+</section>
+<section id="consumer">
+<h2>Consumer<a class="headerlink" href="#consumer" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Consumers subscribe to topic for receiving published messages</p></li>
+<li><p>A consumer can read data from any offset within a topic partition</p></li>
+<li><p>Each consumer belong to a <em>consumer group</em>, a list of consumer instances</p></li>
+<li><p>With multiple consumers in a group, each consumer received messages from only a subset of partitions</p></li>
+<li><p>If more consumers are there than number of partitions for a topic, additional consumers stay idle.</p></li>
+</ul>
+</section>
 </section>
 
         </article>
@@ -296,8 +368,26 @@
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="kubernetes/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Kubernetes</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="js/javascript.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">JavaScript</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -316,8 +406,31 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Kafka</a><ul>
+<li><a class="reference internal" href="#topic">Topic</a></li>
+<li><a class="reference internal" href="#partition">Partition</a></li>
+<li><a class="reference internal" href="#message">Message</a></li>
+<li><a class="reference internal" href="#producer">Producer</a></li>
+<li><a class="reference internal" href="#consumer">Consumer</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

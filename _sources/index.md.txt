@@ -11,12 +11,14 @@ Just yet another developer notes which I have made for my reference and re-colle
 
 agile
 dev-tools/index
+docker/index
+dsa/index
 java/index
 js/index
-docker/index
+kafka
 kubernetes/index
-dsa/index
 microservices/index
+redis
 spring/index
 ```
 
