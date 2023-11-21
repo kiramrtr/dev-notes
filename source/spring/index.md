@@ -16,3 +16,15 @@ Common annotations
 | `@Service`               |                                                                                                       |
 | `@Repository`            |                                                                                                       |
 | `@Bean`                  |                                                                                                       |
+
+## Spring Cloud
+
+- Distributed/versioned configuration
+- Service registration and discovery
+- Routing
+- Service-to-service calls
+- Load balancing
+- Circuit Breakers
+- Global locks
+- Leadership election and cluster state
+- Distributed messaging
