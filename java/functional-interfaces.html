@@ -161,6 +161,7 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../agile.html">Agile</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dev-tools/index.html">Dev Tools</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Dev Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dev-tools/curl.html">cURL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dev-tools/git.html">Git</a></li>
@@ -301,11 +302,23 @@
 <section id="basic-function-shapes">
 <h2>Basic function shapes<a class="headerlink" href="#basic-function-shapes" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Function</span></code> (unary function from <code class="docutils literal notranslate"><span class="pre">T</span></code> to <code class="docutils literal notranslate"><span class="pre">R</span></code>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Consumer</span></code> (unary function from <code class="docutils literal notranslate"><span class="pre">T</span></code> to <code class="docutils literal notranslate"><span class="pre">void</span></code>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Predicate</span></code> (unary function from <code class="docutils literal notranslate"><span class="pre">T</span></code> to <code class="docutils literal notranslate"><span class="pre">boolean</span></code>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Supplier</span></code> (nullary function to <code class="docutils literal notranslate"><span class="pre">R</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Function</span></code> (unary function from <code class="docutils literal notranslate"><span class="pre">T</span></code> to <code class="docutils literal notranslate"><span class="pre">R</span></code>) <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">apply(T</span> <span class="pre">t)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Consumer</span></code> (unary function from <code class="docutils literal notranslate"><span class="pre">T</span></code> to <code class="docutils literal notranslate"><span class="pre">void</span></code>) <code class="docutils literal notranslate"><span class="pre">accept(T</span> <span class="pre">t)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Predicate</span></code> (unary function from <code class="docutils literal notranslate"><span class="pre">T</span></code> to <code class="docutils literal notranslate"><span class="pre">boolean</span></code>) <code class="docutils literal notranslate"><span class="pre">boolean</span> <span class="pre">test(T</span> <span class="pre">t)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Supplier</span></code> (nullary function to <code class="docutils literal notranslate"><span class="pre">R</span></code>) <code class="docutils literal notranslate"><span class="pre">T</span> <span class="pre">get()</span></code></p></li>
 </ul>
+<section id="consumer-t">
+<h3><code class="docutils literal notranslate"><span class="pre">Consumer&lt;T&gt;</span></code><a class="headerlink" href="#consumer-t" title="Link to this heading">#</a></h3>
+</section>
+<section id="supplier-t">
+<h3><code class="docutils literal notranslate"><span class="pre">Supplier&lt;T&gt;</span></code><a class="headerlink" href="#supplier-t" title="Link to this heading">#</a></h3>
+</section>
+<section id="predicate-t">
+<h3><code class="docutils literal notranslate"><span class="pre">Predicate&lt;T&gt;</span></code><a class="headerlink" href="#predicate-t" title="Link to this heading">#</a></h3>
+</section>
+<section id="function-t-r">
+<h3><code class="docutils literal notranslate"><span class="pre">Function&lt;T,</span> <span class="pre">R&gt;</span></code><a class="headerlink" href="#function-t-r" title="Link to this heading">#</a></h3>
+</section>
 </section>
 <section id="lambda-expression">
 <h2>Lambda Expression<a class="headerlink" href="#lambda-expression" title="Link to this heading">#</a></h2>
@@ -455,7 +468,13 @@ This is another way of referring non-static methods</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Functional Interfaces</a><ul>
-<li><a class="reference internal" href="#basic-function-shapes">Basic function shapes</a></li>
+<li><a class="reference internal" href="#basic-function-shapes">Basic function shapes</a><ul>
+<li><a class="reference internal" href="#consumer-t"><code class="docutils literal notranslate"><span class="pre">Consumer&lt;T&gt;</span></code></a></li>
+<li><a class="reference internal" href="#supplier-t"><code class="docutils literal notranslate"><span class="pre">Supplier&lt;T&gt;</span></code></a></li>
+<li><a class="reference internal" href="#predicate-t"><code class="docutils literal notranslate"><span class="pre">Predicate&lt;T&gt;</span></code></a></li>
+<li><a class="reference internal" href="#function-t-r"><code class="docutils literal notranslate"><span class="pre">Function&lt;T,</span> <span class="pre">R&gt;</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#lambda-expression">Lambda Expression</a><ul>
 <li><a class="reference internal" href="#closure">Closure</a></li>
 </ul>
