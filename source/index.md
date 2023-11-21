@@ -9,6 +9,7 @@ Just yet another developer notes which I have made for my reference and re-colle
 ```{toctree}
 :maxdepth: 2
 
+agile
 dev-tools/index
 java/index
 docker/index
