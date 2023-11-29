@@ -310,8 +310,10 @@
 </pre></div>
 </div>
 </section>
+<section id="lazy-initialization">
+<h2>Lazy initialization<a class="headerlink" href="#lazy-initialization" title="Link to this heading">#</a></h2>
 <section id="double-checked-locking">
-<h2>Double checked locking<a class="headerlink" href="#double-checked-locking" title="Link to this heading">#</a></h2>
+<h3>Double checked locking<a class="headerlink" href="#double-checked-locking" title="Link to this heading">#</a></h3>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Resource</span><span class="w"> </span><span class="p">{</span>
 <span class="hll"><span class="linenos"> 2</span><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">volatile</span><span class="w"> </span><span class="n">Resource</span><span class="w"> </span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 </span><span class="linenos"> 3</span>
@@ -332,7 +334,7 @@
 </div>
 </section>
 <section id="concise">
-<h2>Concise<a class="headerlink" href="#concise" title="Link to this heading">#</a></h2>
+<h3>Concise<a class="headerlink" href="#concise" title="Link to this heading">#</a></h3>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Resource</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 2</span><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="nf">Resource</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
 <span class="linenos"> 3</span>
@@ -347,6 +349,17 @@
 </pre></div>
 </div>
 <p>On calling <code class="docutils literal notranslate"><span class="pre">Holder.INSTANCE</span></code> only creates resource using <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Resource()</span></code>.</p>
+</section>
+<section id="enum">
+<h3>Enum<a class="headerlink" href="#enum" title="Link to this heading">#</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">enum</span><span class="w"> </span><span class="n">Resource</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">2</span><span class="w">  </span><span class="n">INSTANCE</span><span class="p">;</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="w">  </span><span class="n">Resource</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+<span class="linenos">5</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -407,8 +420,12 @@
             <ul>
 <li><a class="reference internal" href="#">Singleton</a><ul>
 <li><a class="reference internal" href="#eager-initialization">Eager initialization</a></li>
+<li><a class="reference internal" href="#lazy-initialization">Lazy initialization</a><ul>
 <li><a class="reference internal" href="#double-checked-locking">Double checked locking</a></li>
 <li><a class="reference internal" href="#concise">Concise</a></li>
+<li><a class="reference internal" href="#enum">Enum</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
