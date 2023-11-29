@@ -387,7 +387,167 @@
 </ul>
 <section id="deadlock">
 <h3>Deadlock<a class="headerlink" href="#deadlock" title="Link to this heading">#</a></h3>
-</section>
+<p><em>Deadlock</em> is a situation where two or more threads are blocked forever, waiting for each other.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Broken<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Deadlock</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 2</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 3</span><span class="w">    </span><span class="n">Account</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Account</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="n">Account</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Account</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="n">Thread</span><span class="w"> </span><span class="n">t1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Thread</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">transfer</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">));</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="n">Thread</span><span class="w"> </span><span class="n">t2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Thread</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">transfer</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">));</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="n">t1</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+<span class="linenos">10</span><span class="w">    </span><span class="n">t2</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+<span class="linenos">11</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">transfer</span><span class="p">(</span><span class="n">Account</span><span class="w"> </span><span class="n">from</span><span class="p">,</span><span class="w"> </span><span class="n">Account</span><span class="w"> </span><span class="n">to</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">14</span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+<span class="linenos">15</span><span class="w">      </span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos">16</span><span class="w">      </span><span class="s">&quot;: trying to acquired lock of &quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos">17</span><span class="w">      </span><span class="n">from</span><span class="p">.</span><span class="na">getId</span><span class="p">()</span>
+<span class="linenos">18</span><span class="w">    </span><span class="p">);</span>
+<span class="hll"><span class="linenos">19</span><span class="w">    </span><span class="kd">synchronized</span><span class="w"> </span><span class="p">(</span><span class="n">from</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="linenos">20</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+<span class="linenos">21</span><span class="w">        </span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;: lock acquired on &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">from</span><span class="p">.</span><span class="na">getId</span><span class="p">()</span>
+<span class="linenos">22</span><span class="w">      </span><span class="p">);</span>
+<span class="linenos">23</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+<span class="linenos">24</span><span class="w">        </span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos">25</span><span class="w">        </span><span class="s">&quot;: trying to acquired lock of &quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos">26</span><span class="w">        </span><span class="n">to</span><span class="p">.</span><span class="na">getId</span><span class="p">()</span>
+<span class="linenos">27</span><span class="w">      </span><span class="p">);</span>
+<span class="hll"><span class="linenos">28</span><span class="w">      </span><span class="kd">synchronized</span><span class="w"> </span><span class="p">(</span><span class="n">to</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="linenos">29</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+<span class="linenos">30</span><span class="w">          </span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;: lock acquired on &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">to</span><span class="p">.</span><span class="na">getId</span><span class="p">()</span>
+<span class="linenos">31</span><span class="w">        </span><span class="p">);</span>
+<span class="linenos">32</span><span class="w">        </span><span class="n">from</span><span class="p">.</span><span class="na">debit</span><span class="p">(</span><span class="n">amount</span><span class="p">);</span>
+<span class="linenos">33</span><span class="w">        </span><span class="n">to</span><span class="p">.</span><span class="na">credit</span><span class="p">(</span><span class="n">amount</span><span class="p">);</span>
+<span class="linenos">34</span><span class="w">      </span><span class="p">}</span>
+<span class="linenos">35</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">36</span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Transfer completed&quot;</span><span class="p">);</span>
+<span class="linenos">37</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">38</span><span class="p">}</span>
+<span class="linenos">39</span>
+<span class="linenos">40</span><span class="kd">class</span> <span class="nc">Account</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">41</span><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="linenos">42</span><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">balance</span><span class="p">;</span>
+<span class="linenos">43</span>
+<span class="linenos">44</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">Account</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">balance</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">45</span><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="linenos">46</span><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="p">;</span>
+<span class="linenos">47</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">48</span>
+<span class="linenos">49</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">debit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">50</span><span class="w">    </span><span class="n">balance</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">amount</span><span class="p">;</span>
+<span class="linenos">51</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">52</span>
+<span class="linenos">53</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">credit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">54</span><span class="w">    </span><span class="n">balance</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">amount</span><span class="p">;</span>
+<span class="linenos">55</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">56</span>
+<span class="linenos">57</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getId</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">58</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="linenos">59</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">60</span>
+<span class="linenos">61</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getBalance</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">62</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">balance</span><span class="p">;</span>
+<span class="linenos">63</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">64</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Fixed<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Deadlock</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="n">Account</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Account</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
+<span class="linenos"> 5</span><span class="w">    </span><span class="n">Account</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Account</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="n">Thread</span><span class="w"> </span><span class="n">t1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Thread</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">transfer</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">));</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="n">Thread</span><span class="w"> </span><span class="n">t2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Thread</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">transfer</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">));</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="w">    </span><span class="n">t1</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+<span class="linenos">11</span><span class="w">    </span><span class="n">t2</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+<span class="linenos">12</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">transfer</span><span class="p">(</span><span class="n">Account</span><span class="w"> </span><span class="n">from</span><span class="p">,</span><span class="w"> </span><span class="n">Account</span><span class="w"> </span><span class="n">to</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="linenos">15</span><span class="w">    </span><span class="n">Account</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">from</span><span class="p">;</span>
+</span><span class="hll"><span class="linenos">16</span><span class="w">    </span><span class="n">Account</span><span class="w"> </span><span class="n">second</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">to</span><span class="p">;</span>
+</span><span class="linenos">17</span>
+<span class="hll"><span class="linenos">18</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">from</span><span class="p">.</span><span class="na">getId</span><span class="p">().</span><span class="na">compareTo</span><span class="p">(</span><span class="n">to</span><span class="p">.</span><span class="na">getId</span><span class="p">())</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="linenos">19</span><span class="w">      </span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">to</span><span class="p">;</span>
+</span><span class="hll"><span class="linenos">20</span><span class="w">      </span><span class="n">second</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">from</span><span class="p">;</span>
+</span><span class="hll"><span class="linenos">21</span><span class="w">    </span><span class="p">}</span>
+</span><span class="linenos">22</span>
+<span class="linenos">23</span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+<span class="linenos">24</span><span class="w">      </span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos">25</span><span class="w">      </span><span class="s">&quot;: trying to acquired lock of &quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos">26</span><span class="w">      </span><span class="n">first</span><span class="p">.</span><span class="na">getId</span><span class="p">()</span>
+<span class="linenos">27</span><span class="w">    </span><span class="p">);</span>
+<span class="hll"><span class="linenos">28</span><span class="w">    </span><span class="kd">synchronized</span><span class="w"> </span><span class="p">(</span><span class="n">first</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="linenos">29</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+<span class="linenos">30</span><span class="w">        </span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;: lock acquired on &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">first</span><span class="p">.</span><span class="na">getId</span><span class="p">()</span>
+<span class="linenos">31</span><span class="w">      </span><span class="p">);</span>
+<span class="linenos">32</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+<span class="linenos">33</span><span class="w">        </span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos">34</span><span class="w">        </span><span class="s">&quot;: trying to acquired lock of &quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos">35</span><span class="w">        </span><span class="n">to</span><span class="p">.</span><span class="na">getId</span><span class="p">()</span>
+<span class="linenos">36</span><span class="w">      </span><span class="p">);</span>
+<span class="hll"><span class="linenos">37</span><span class="w">      </span><span class="kd">synchronized</span><span class="w"> </span><span class="p">(</span><span class="n">second</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class="linenos">38</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+<span class="linenos">39</span><span class="w">          </span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos">40</span><span class="w">          </span><span class="s">&quot;: lock acquired on &quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="linenos">41</span><span class="w">          </span><span class="n">second</span><span class="p">.</span><span class="na">getId</span><span class="p">()</span>
+<span class="linenos">42</span><span class="w">        </span><span class="p">);</span>
+<span class="linenos">43</span><span class="w">        </span><span class="n">from</span><span class="p">.</span><span class="na">debit</span><span class="p">(</span><span class="n">amount</span><span class="p">);</span>
+<span class="linenos">44</span><span class="w">        </span><span class="n">to</span><span class="p">.</span><span class="na">credit</span><span class="p">(</span><span class="n">amount</span><span class="p">);</span>
+<span class="linenos">45</span><span class="w">      </span><span class="p">}</span>
+<span class="linenos">46</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">47</span><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Transfer completed&quot;</span><span class="p">);</span>
+<span class="linenos">48</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">49</span><span class="p">}</span>
+<span class="linenos">50</span>
+<span class="linenos">51</span><span class="kd">class</span> <span class="nc">Account</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">52</span><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="linenos">53</span><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">balance</span><span class="p">;</span>
+<span class="linenos">54</span>
+<span class="linenos">55</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">Account</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">balance</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">56</span><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="linenos">57</span><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="p">;</span>
+<span class="linenos">58</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">59</span>
+<span class="linenos">60</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">debit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">61</span><span class="w">    </span><span class="n">balance</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">amount</span><span class="p">;</span>
+<span class="linenos">62</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">63</span>
+<span class="linenos">64</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">credit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">65</span><span class="w">    </span><span class="n">balance</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">amount</span><span class="p">;</span>
+<span class="linenos">66</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">67</span>
+<span class="linenos">68</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getId</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">69</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="linenos">70</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">71</span>
+<span class="linenos">72</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getBalance</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">73</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">balance</span><span class="p">;</span>
+<span class="linenos">74</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">75</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</details></section>
 <section id="livelock">
 <h3>Livelock<a class="headerlink" href="#livelock" title="Link to this heading">#</a></h3>
 <ul class="simple">

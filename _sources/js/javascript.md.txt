@@ -39,7 +39,7 @@ The process whereby the interpreter appears to move the declaration of _function
 | `let`   | **block**    | hoisted, but accessing them before declaration results in a `ReferenceError` | Can be reassigned but cannot be redeclared in same scope                           |
 | `const` | **block**    | --do--                                                                       | Cannot be reassigned or redeclared. Must be initialized at the time of declaration |
 
-Closure
+### Closure
 
 ### Misc
 

@@ -86,6 +86,167 @@ Ability to make progress.
 
 ### Deadlock
 
+_Deadlock_ is a situation where two or more threads are blocked forever, waiting for each other.
+
+:::{dropdown} Broken
+
+```{code-block} java
+:linenos:
+:emphasize-lines: 19,28
+
+public class Deadlock {
+  public static void main(String[] args) {
+    Account a = new Account("A", 1000);
+    Account b = new Account("B", 1000);
+
+    Thread t1 = new Thread(() -> transfer(a, b, 200));
+    Thread t2 = new Thread(() -> transfer(b, a, 100));
+
+    t1.start();
+    t2.start();
+  }
+
+  public static void transfer(Account from, Account to, int amount) {
+    System.out.println(
+      Thread.currentThread().getName() +
+      ": trying to acquired lock of " +
+      from.getId()
+    );
+    synchronized (from) {
+      System.out.println(
+        Thread.currentThread().getName() + ": lock acquired on " + from.getId()
+      );
+      System.out.println(
+        Thread.currentThread().getName() +
+        ": trying to acquired lock of " +
+        to.getId()
+      );
+      synchronized (to) {
+        System.out.println(
+          Thread.currentThread().getName() + ": lock acquired on " + to.getId()
+        );
+        from.debit(amount);
+        to.credit(amount);
+      }
+    }
+    System.out.println("Transfer completed");
+  }
+}
+
+class Account {
+  private final String id;
+  private int balance;
+
+  public Account(String id, int balance) {
+    this.id = id;
+    this.balance = balance;
+  }
+
+  public void debit(int amount) {
+    balance -= amount;
+  }
+
+  public void credit(int amount) {
+    balance += amount;
+  }
+
+  public String getId() {
+    return id;
+  }
+
+  public int getBalance() {
+    return balance;
+  }
+}
+```
+
+:::
+
+:::{dropdown} Fixed
+
+```{code-block} java
+:linenos:
+:emphasize-lines: 15-16,18-21,28,37
+
+public class Deadlock {
+
+  public static void main(String[] args) {
+    Account a = new Account("A", 1000);
+    Account b = new Account("B", 1000);
+
+    Thread t1 = new Thread(() -> transfer(a, b, 200));
+    Thread t2 = new Thread(() -> transfer(b, a, 100));
+
+    t1.start();
+    t2.start();
+  }
+
+  public static void transfer(Account from, Account to, int amount) {
+    Account first = from;
+    Account second = to;
+
+    if (from.getId().compareTo(to.getId()) >= 0) {
+      first = to;
+      second = from;
+    }
+
+    System.out.println(
+      Thread.currentThread().getName() +
+      ": trying to acquired lock of " +
+      first.getId()
+    );
+    synchronized (first) {
+      System.out.println(
+        Thread.currentThread().getName() + ": lock acquired on " + first.getId()
+      );
+      System.out.println(
+        Thread.currentThread().getName() +
+        ": trying to acquired lock of " +
+        to.getId()
+      );
+      synchronized (second) {
+        System.out.println(
+          Thread.currentThread().getName() +
+          ": lock acquired on " +
+          second.getId()
+        );
+        from.debit(amount);
+        to.credit(amount);
+      }
+    }
+    System.out.println("Transfer completed");
+  }
+}
+
+class Account {
+  private final String id;
+  private int balance;
+
+  public Account(String id, int balance) {
+    this.id = id;
+    this.balance = balance;
+  }
+
+  public void debit(int amount) {
+    balance -= amount;
+  }
+
+  public void credit(int amount) {
+    balance += amount;
+  }
+
+  public String getId() {
+    return id;
+  }
+
+  public int getBalance() {
+    return balance;
+  }
+}
+```
+
+:::
+
 ### Livelock
 
 - A thread often acts in response to the action of another thread. If the other thread's action is also a response to the action of another thread, then _livelock_ may result.
