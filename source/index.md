@@ -11,6 +11,7 @@ Just yet another developer notes which I have made for my reference and re-colle
 
 agile
 dev-tools/index
+design-patterns/index
 docker/index
 dsa/index
 java/index
