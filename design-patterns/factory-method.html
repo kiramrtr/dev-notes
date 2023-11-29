@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="cURL" href="curl.html" /><link rel="prev" title="Agile" href="../agile.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Singleton" href="singleton.html" /><link rel="prev" title="Design Patterns" href="index.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>Dev Tools - Kira&#39;s dev notes</title>
+        <title>Factory Method - Kira&#39;s dev notes</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
@@ -140,7 +140,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -162,16 +162,16 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../agile.html">Agile</a></li>
-<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Dev Tools</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Dev Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="curl.html">cURL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html">Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="keys-and-certificates.html">Keys and Certificates</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dev-tools/index.html">Dev Tools</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Dev Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dev-tools/curl.html">cURL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-tools/git.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-tools/keys-and-certificates.html">Keys and Certificates</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../design-patterns/index.html">Design Patterns</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Design Patterns</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../design-patterns/factory-method.html">Factory Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../design-patterns/singleton.html">Singleton</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../design-patterns/builder.html">Builder</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Design Patterns</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Design Patterns</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Factory Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="singleton.html">Singleton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="builder.html">Builder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../docker/index.html">Docker</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Docker</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
@@ -288,36 +288,25 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="dev-tools">
-<h1>Dev Tools<a class="headerlink" href="#dev-tools" title="Link to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="curl.html">cURL</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="curl.html#how-to-s">How to’s</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="curl.html#download-file">Download file</a></li>
+          <section class="tex2jax_ignore mathjax_ignore" id="factory-method">
+<h1>Factory Method<a class="headerlink" href="#factory-method" title="Link to this heading">#</a></h1>
+<section id="uml">
+<h2>UML<a class="headerlink" href="#uml" title="Link to this heading">#</a></h2>
+<p><img alt="Factory method class diagram" src="../_images/factory-method-class-diagram.svg" /></p>
+</section>
+<section id="uses">
+<h2>Uses<a class="headerlink" href="#uses" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>When it’s not know which subclass to work with.</p></li>
+<li><p>Reusing existing object/s instead of creating a new one each time.</p></li>
 </ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="git.html#how-to-s">How to’s</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="git.html#delete-branch">Delete branch</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="keys-and-certificates.html">Keys and Certificates</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="keys-and-certificates.html#pem">PEM</a></li>
-</ul>
-</li>
-</ul>
-</div>
+</section>
 </section>
 
         </article>
@@ -325,23 +314,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="curl.html">
+          <a class="next-page" href="singleton.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">cURL</div>
+                <div class="title">Singleton</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../agile.html">
+          <a class="prev-page" href="index.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Agile</div>
+                <div class="title">Design Patterns</div>
                 
               </div>
             </a>
@@ -363,8 +352,28 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Factory Method</a><ul>
+<li><a class="reference internal" href="#uml">UML</a></li>
+<li><a class="reference internal" href="#uses">Uses</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
