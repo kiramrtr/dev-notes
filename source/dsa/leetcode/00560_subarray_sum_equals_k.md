@@ -30,7 +30,7 @@ private int subarraySum(int[] nums, int k) {
 
 :::{tab-item} Prefix Sum + Hash Table
 
-Read about [Prefix Sum](algorithmic-techniques)
+Read about [Prefix Sum](../algorithmic-techniques)
 
 ```{code-block} java
 ---
