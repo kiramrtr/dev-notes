@@ -17,7 +17,9 @@ class Resource {
 }
 ```
 
-## Double checked locking
+## Lazy initialization
+
+### Double checked locking
 
 ```{code-block} java
 :linenos:
@@ -41,7 +43,7 @@ public class Resource {
 }
 ```
 
-## Concise
+### Concise
 
 ```{code-block} java
 :linenos:
@@ -61,3 +63,15 @@ public class Resource {
 ```
 
 On calling `Holder.INSTANCE` only creates resource using `new Resource()`.
+
+### Enum
+
+```{code-block} java
+:linenos:
+
+enum Resource {
+  INSTANCE;
+
+  Resource() {}
+}
+```
