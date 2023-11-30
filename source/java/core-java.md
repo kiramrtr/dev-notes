@@ -52,7 +52,7 @@ Since Java 7, we have an `java.util.Objects.hash(Object... objects)` utility met
 - If two objects are equal, they MUST have same hash code.
 - If two objects have same hash code, they do NOT have to be equal too.
 
-### [Comparable](https://hyperskill.org/learn/step/14456)
+## [Comparable](https://hyperskill.org/learn/step/14456)
 
 > A sequence of data has the **natural ordering**, if for each 2 elements `a` and `b`, where `a` is located to the left of `b`, the condition `a.compareTo(b) <= 0` is true.
 
@@ -80,7 +80,7 @@ public static int compare(int x, int y) {
 }
 ```
 
-### [Comparator](https://hyperskill.org/learn/step/12966)
+## [Comparator](https://hyperskill.org/learn/step/12966)
 
 `Comparator<T>` is a generic interface that has a single abstract method (SAM) `compare` and few non-abstract methods, which can define rules for comparing Java objects.
 
@@ -109,7 +109,7 @@ class PersonAgeComparator implements Comparator<Person> {
 Since `Comparator` has only a single abstract method (SAM) and therefore is a functional interface, `Comparator` instance can be created using lambda expression.
 
 ```java
-Comparator<Person> personAgeComparator = (p1, p2) -> 
+Comparator<Person> personAgeComparator = (p1, p2) ->
   Integer.compare(p1.getAge(), p2.getAge());
 ```
 
@@ -127,9 +127,26 @@ Comparator<Person> personAgeComparator = (p1, p2) ->
 `reversed()` method will reverse the whole chain of preceding comparators. Scope can be limited using parenthesis.
 ```
 
-### Comparator vs Comparable
+## Comparator vs Comparable
 
 - `Comparable` defines the natural order of a class implementing it, perfect where objects have natural order e.g., primitive types, ComplexNumber etc...
 - `Comparator` allows for customizing the ordering process.
 - `Comparator` can also be useful when we don't have access to source code of class for implementing `Comparable`.
 - With `Comparator` multiple can be joined to create a complex one or extract `Comparable` sort keys.
+
+## Immutable
+
+An object is considered _immutable_ if its state cannot change after it is constructed.
+
+**Weak immutability** is when some fields of an object are immutable and others are mutable. **Strong immutability** is when all fields of an object are immutable
+
+**A strategy for defining immutable objects**
+
+1. Avoid "setter" methods that change field values or referenced objects.
+2. Make all fields `final` and `private` to prevent external modification.
+3. Prevent method overriding in subclasses by declaring the class as `final` or using `private` constructors with factory methods for instance creation.
+4. For fields referencing mutable objects:
+   - a. Do not provide methods that alter these mutable objects.
+   - b. Avoid sharing or storing external mutable object references. Instead, use copies of these objects for internal storage and method returns
+
+> https://docs.oracle.com/javase/tutorial/essential/concurrency/imstrat.html
