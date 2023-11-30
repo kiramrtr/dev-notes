@@ -76,6 +76,10 @@ class Worker implements Runnable {
 }
 ```
 
+### Semaphore
+
+A counting _semaphore_ maintains a set of permits that can be acquired and released. If a permit is unavailable, the acquire operation will block the thread."
+
 ## Liveness
 
 Ability to make progress.
