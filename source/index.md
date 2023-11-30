@@ -44,3 +44,80 @@ Why?:
 - Prevent DDoS
 - Implement service limits like free user can make 100 calls per day
 - Prevent abuse or brute-force attacks e.g., login
+
+## PS IMP
+
+- Microservices Patterns:
+  - Saga
+  - Transactions (please research on these)
+  - CQRS
+  - API Composer
+  - Service Discovery
+  - Circuit Breaker
+- Caching (in MS or Application level)
+- Exposure on Hystrix, Eureka – Good to have
+- Swagger for API Documentation
+- How to roll back the Transactions in case of exceptions, How to cancel?
+- CQRS in API Strategy and DB Strategy
+- OAuth 2.0
+- JWT
+- API Gateway:
+  - Any enterprise API gateways like Kong, APIGee, Mulesoft, AWS API gateway, Zuul etc, Policies, roles and responsibilities, reverse proxy, rate limiting, filters etc.
+- Jackson Library, Json to map etc.
+- Deep understanding of SOLID design principles – Must have
+- Design Patterns:
+  - Singleton
+  - Factory
+  - Builder
+  - Template
+  - Strategy
+  - Adaptor
+  - Decorator
+- Generics Upper and Lower Bounds, Wild Card, Type Eraser
+- Collections:
+  - LinkedHashSet
+  - TreeSet
+  - LinkedHashMap
+  - TreeMap,
+  - ArrayList, Vector
+  - LinkedList,
+  - Hashmap
+  - HashTable
+  - HashSet
+- When should we use linked blocking queue and when array blocking queue
+- Implementation of blocking queue
+- Executor Framework, Deadlock, Fork & Join, Synchronization, Latch and barrier, Reentrantlock and Concept of Threadlocal
+- How do you take Heap dump in Java?
+- What’s the difference etweek heap and Thread Dump?
+- Blocking Queue functionality (Array and Linked)
+- Concurrent Hashmap internal working, Difference between Concurrent Hashmap and hashmap
+- Concept of Threadlocal, Completable Future
+- Threadpool and its implementation. How to write a custom threadpool? Different types of Threadpool – Fixed, Cached, - Single, Scheduler, Work Stealing
+- Object level vs class level locking
+- `wait()`, `notify()` and `notifyAll()` with use cases
+- Difference between `Callable` and `Runnable` Interfaces
+- Difference between `yield()` and `join()`
+- Semaphores
+- Profiler
+- Finalize method
+- JVM Configuration
+- GC Algos (Mark & Sweep, Series & parallel GC, Full and partial GC) should be aware how to do memory profiling
+- Java 8
+  - Lambda Expressions
+  - Streams (Parallel, Serial, lazy), Streams
+  - Predicate
+  - Function Interface and its various flavours
+  - CompletableFuture
+  - Optional in Java 8
+- Able to write queries using different types of aggregate functions, Group By, Having Clause
+- Good understanding of indexes – Clustered and Non Clustered, Concept of sharding in databases
+- NoSQL experience is a huge advantage.
+- Queue and Topic (Difference)
+- Event based programming
+- Distributed Tracing
+- Scaling
+- REST Versioning, Pagiing, Pagination, Mocking Concepts
+- Production Support/Production Deployment & Bug Fixing (Canary/Blue Green deployment)
+- How have you been involved? Production deployment checklist that was followed and operational steps taken?
+- Log Monitoring Tools:
+- ELK Stack, Greylog, Splunk, appdynamic, Grafana, Sumologic, etc…

@@ -257,3 +257,24 @@ class Account {
 - As with deadlock, livelocked threads are unable to make further progress. However, the threads are not blocked they are simply too busy responding to each other to resume work.
 
 > https://docs.oracle.com/javase/tutorial/essential/concurrency/newlocks.html
+
+## BlockingQueue
+
+> A _Queue_ that additionally supports operations that wait for the queue to become non-empty when retrieving an element, and wait for space to become available in the queue when storing an element.
+
+|             | Throws exception | Special value | Blocks           | Times out              |
+| ----------- | ---------------- | ------------- | ---------------- | ---------------------- |
+| **Insert**  | `add(e)`         | `offer(e)`    | `put(e)`         | `offer(e, time, unit)` |
+| **Remove**  | `remove()`       | `poll()`      | `take()`         | `poll(time, unit)`     |
+| **Examine** | `element()`      | `peek()`      | _not applicable_ | _not applicable_       |
+
+- Does not accept `null` elements
+
+### Producer Consumer
+
+```{literalinclude} concurrency/BlockingQueueUsage.java
+:language: java
+:linenos:
+:lines: 5-
+
+```

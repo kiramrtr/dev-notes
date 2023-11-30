@@ -17,7 +17,9 @@
       "extensions": [
         "streetsidesoftware.code-spell-checker",
         "esbenp.prettier-vscode",
-        "wmaurer.change-case"
+        "mwpb.java-prettier-formatter",
+        "wmaurer.change-case",
+        "vscjava.vscode-java-pack"
       ]
     }
   }

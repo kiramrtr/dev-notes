@@ -1,5 +1,10 @@
 # Microservices
 
+```{toctree}
+patterns
+transactions
+```
+
 ## Advantages
 
 - Faster delivery - Small size encourages frequent releases with less risk.
