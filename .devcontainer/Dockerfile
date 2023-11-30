@@ -1,4 +1,4 @@
-FROM python:3.10
+FROM mcr.microsoft.com/devcontainers/universal:2-linux
 
 ## PIP
 RUN pip install --upgrade pip
