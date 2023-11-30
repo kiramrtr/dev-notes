@@ -162,16 +162,17 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../agile.html">Agile</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dev-tools/index.html">Dev Tools</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Dev Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dev-tools/curl.html">cURL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dev-tools/git.html">Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dev-tools/keys-and-certificates.html">Keys and Certificates</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../design-patterns/index.html">Design Patterns</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Design Patterns</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">Database</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../design-patterns/index.html">Design Patterns</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Design Patterns</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../design-patterns/factory-method.html">Factory Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../design-patterns/singleton.html">Singleton</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../design-patterns/builder.html">Builder</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dev-tools/index.html">Dev Tools</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Dev Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dev-tools/curl.html">cURL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-tools/git.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-tools/keys-and-certificates.html">Keys and Certificates</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../docker/index.html">Docker</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Docker</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
@@ -348,8 +349,9 @@
 <li><p>If two objects have same hash code, they do NOT have to be equal too.</p></li>
 </ul>
 </section>
+</section>
 <section id="comparable">
-<h3><a class="reference external" href="https://hyperskill.org/learn/step/14456">Comparable</a><a class="headerlink" href="#comparable" title="Link to this heading">#</a></h3>
+<h2><a class="reference external" href="https://hyperskill.org/learn/step/14456">Comparable</a><a class="headerlink" href="#comparable" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>A sequence of data has the <strong>natural ordering</strong>, if for each 2 elements <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>, where <code class="docutils literal notranslate"><span class="pre">a</span></code> is located to the left of <code class="docutils literal notranslate"><span class="pre">b</span></code>, the condition <code class="docutils literal notranslate"><span class="pre">a.compareTo(b)</span> <span class="pre">&lt;=</span> <span class="pre">0</span></code> is true.</p>
 </div></blockquote>
@@ -377,7 +379,7 @@
 </div>
 </section>
 <section id="comparator">
-<h3><a class="reference external" href="https://hyperskill.org/learn/step/12966">Comparator</a><a class="headerlink" href="#comparator" title="Link to this heading">#</a></h3>
+<h2><a class="reference external" href="https://hyperskill.org/learn/step/12966">Comparator</a><a class="headerlink" href="#comparator" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Comparator&lt;T&gt;</span></code> is a generic interface that has a single abstract method (SAM) <code class="docutils literal notranslate"><span class="pre">compare</span></code> and few non-abstract methods, which can define rules for comparing Java objects.</p>
 <p><code class="docutils literal notranslate"><span class="pre">compare</span></code> method should return:</p>
 <ul class="simple">
@@ -401,7 +403,7 @@
 </pre></div>
 </div>
 <p>Since <code class="docutils literal notranslate"><span class="pre">Comparator</span></code> has only a single abstract method (SAM) and therefore is a functional interface, <code class="docutils literal notranslate"><span class="pre">Comparator</span></code> instance can be created using lambda expression.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span><span class="w"> </span><span class="n">personAgeComparator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">p2</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span><span class="w"> </span><span class="n">personAgeComparator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">p2</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span>
 <span class="w">  </span><span class="n">Integer</span><span class="p">.</span><span class="na">compare</span><span class="p">(</span><span class="n">p1</span><span class="p">.</span><span class="na">getAge</span><span class="p">(),</span><span class="w"> </span><span class="n">p2</span><span class="p">.</span><span class="na">getAge</span><span class="p">());</span>
 </pre></div>
 </div>
@@ -420,7 +422,7 @@
 </div>
 </section>
 <section id="comparator-vs-comparable">
-<h3>Comparator vs Comparable<a class="headerlink" href="#comparator-vs-comparable" title="Link to this heading">#</a></h3>
+<h2>Comparator vs Comparable<a class="headerlink" href="#comparator-vs-comparable" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Comparable</span></code> defines the natural order of a class implementing it, perfect where objects have natural order e.g., primitive types, ComplexNumber etc…</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Comparator</span></code> allows for customizing the ordering process.</p></li>
@@ -428,6 +430,25 @@
 <li><p>With <code class="docutils literal notranslate"><span class="pre">Comparator</span></code> multiple can be joined to create a complex one or extract <code class="docutils literal notranslate"><span class="pre">Comparable</span></code> sort keys.</p></li>
 </ul>
 </section>
+<section id="immutable">
+<h2>Immutable<a class="headerlink" href="#immutable" title="Link to this heading">#</a></h2>
+<p>An object is considered <em>immutable</em> if its state cannot change after it is constructed.</p>
+<p><strong>Weak immutability</strong> is when some fields of an object are immutable and others are mutable. <strong>Strong immutability</strong> is when all fields of an object are immutable</p>
+<p><strong>A strategy for defining immutable objects</strong></p>
+<ol class="arabic simple">
+<li><p>Avoid “setter” methods that change field values or referenced objects.</p></li>
+<li><p>Make all fields <code class="docutils literal notranslate"><span class="pre">final</span></code> and <code class="docutils literal notranslate"><span class="pre">private</span></code> to prevent external modification.</p></li>
+<li><p>Prevent method overriding in subclasses by declaring the class as <code class="docutils literal notranslate"><span class="pre">final</span></code> or using <code class="docutils literal notranslate"><span class="pre">private</span></code> constructors with factory methods for instance creation.</p></li>
+<li><p>For fields referencing mutable objects:</p>
+<ul class="simple">
+<li><p>a. Do not provide methods that alter these mutable objects.</p></li>
+<li><p>b. Avoid sharing or storing external mutable object references. Instead, use copies of these objects for internal storage and method returns</p></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<div><p>https://docs.oracle.com/javase/tutorial/essential/concurrency/imstrat.html</p>
+</div></blockquote>
 </section>
 </section>
 
@@ -490,11 +511,12 @@
 <li><a class="reference internal" href="#hashcode-and-equals">hashCode() and equals()</a><ul>
 <li><a class="reference internal" href="#overriding-equals">Overriding equals()</a></li>
 <li><a class="reference internal" href="#overriding-hashcode">Overriding hashCode()</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#comparable">Comparable</a></li>
 <li><a class="reference internal" href="#comparator">Comparator</a></li>
 <li><a class="reference internal" href="#comparator-vs-comparable">Comparator vs Comparable</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#immutable">Immutable</a></li>
 </ul>
 </li>
 </ul>

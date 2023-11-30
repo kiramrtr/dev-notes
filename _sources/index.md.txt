@@ -10,8 +10,9 @@ Just yet another developer notes which I have made for my reference and re-colle
 :maxdepth: 2
 
 agile
-dev-tools/index
+database/index
 design-patterns/index
+dev-tools/index
 docker/index
 dsa/index
 java/index

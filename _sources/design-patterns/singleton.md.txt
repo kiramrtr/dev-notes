@@ -17,6 +17,9 @@ class Resource {
 }
 ```
 
+- {octicon}`check-circle` Thread-safe.
+- {octicon}`circle-slash` Instance is created even if it's never used.
+
 ## Lazy initialization
 
 ### Double checked locking
@@ -67,11 +70,18 @@ On calling `Holder.INSTANCE` only creates resource using `new Resource()`.
 ### Enum
 
 ```{code-block} java
-:linenos:
+:linenos: 4,7
 
 enum Resource {
   INSTANCE;
 
-  Resource() {}
+  Resource() {
+    // initialization
+  }
+  // instance methods
 }
 ```
+
+## References
+
+- https://rules.sonarsource.com/java/RSPEC-6548/

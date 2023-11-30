@@ -162,16 +162,17 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../agile.html">Agile</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dev-tools/index.html">Dev Tools</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Dev Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dev-tools/curl.html">cURL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dev-tools/git.html">Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dev-tools/keys-and-certificates.html">Keys and Certificates</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Design Patterns</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Design Patterns</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">Database</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Design Patterns</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Design Patterns</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="factory-method.html">Factory Method</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Singleton</a></li>
 <li class="toctree-l2"><a class="reference internal" href="builder.html">Builder</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dev-tools/index.html">Dev Tools</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Dev Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dev-tools/curl.html">cURL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-tools/git.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-tools/keys-and-certificates.html">Keys and Certificates</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../docker/index.html">Docker</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Docker</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
@@ -309,6 +310,10 @@
 <span class="linenos">9</span><span class="p">}</span>
 </pre></div>
 </div>
+<ul class="simple">
+<li><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-check-circle" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM0 8a8 8 0 1116 0A8 8 0 010 8zm11.78-1.72a.75.75 0 00-1.06-1.06L6.75 9.19 5.28 7.72a.75.75 0 00-1.06 1.06l2 2a.75.75 0 001.06 0l4.5-4.5z"></path></svg> Thread-safe.</p></li>
+<li><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-circle-slash" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 0110.535-5.096l-9.131 9.131A6.472 6.472 0 011.5 8zm2.465 5.096a6.5 6.5 0 009.131-9.131l-9.131 9.131zM8 0a8 8 0 100 16A8 8 0 008 0z"></path></svg> Instance is created even if it’s never used.</p></li>
+</ul>
 </section>
 <section id="lazy-initialization">
 <h2>Lazy initialization<a class="headerlink" href="#lazy-initialization" title="Link to this heading">#</a></h2>
@@ -352,14 +357,23 @@
 </section>
 <section id="enum">
 <h3>Enum<a class="headerlink" href="#enum" title="Link to this heading">#</a></h3>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">enum</span><span class="w"> </span><span class="n">Resource</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">2</span><span class="w">  </span><span class="n">INSTANCE</span><span class="p">;</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="w">  </span><span class="n">Resource</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
-<span class="linenos">5</span><span class="p">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">enum</span><span class="w"> </span><span class="n">Resource</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">INSTANCE</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">Resource</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// initialization</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="c1">// instance methods</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>https://rules.sonarsource.com/java/RSPEC-6548/</p></li>
+</ul>
 </section>
 </section>
 
@@ -426,6 +440,7 @@
 <li><a class="reference internal" href="#enum">Enum</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#references">References</a></li>
 </ul>
 </li>
 </ul>
