@@ -1,5 +1,65 @@
 # Streams
 
+## Collectors
+
+Collectors in Java are a part of the `java.util.stream` package and are typically used with streams to perform various operations such as grouping, summarizing, and partitioning data.
+
+1. **Collecting to a List:**
+
+```java
+List<String> list = stream.collect(Collectors.toList());
+```
+
+2. **Collecting to a Set:**
+
+```java
+Set<String> set = stream.collect(Collectors.toSet());
+```
+
+3. **Joining Strings:**
+
+```java
+String result = stream.collect(Collectors.joining(", "));
+```
+
+4. **Summarizing Integers:**
+
+```java
+IntSummaryStatistics summary = stream.collect(Collectors.summarizingInt(Integer::intValue));
+```
+
+5. **Grouping by a Classifier:**
+
+```java
+Map<Integer, List<String>> groupedByLength = stream.collect(Collectors.groupingBy(String::length));
+```
+
+6. **Partitioning by a Predicate:**
+
+```java
+Map<Boolean, List<String>> partitioned = stream.collect(Collectors.partitioningBy(s -> s.length() > 3));
+```
+
+7. **Counting Elements:**
+
+```java
+long count = stream.collect(Collectors.counting());
+```
+
+8. **Mapping and Collecting:**
+
+```java
+List<Integer> lengths = stream.collect(Collectors.mapping(String::length, Collectors.toList()));
+```
+
+9. **Reducing to a Single Value:**
+
+```java
+Optional<String> concatenated = stream.collect(Collectors.reducing((s1, s2) -> s1 + s2));
+```
+
+Collectors provide a powerful way to perform complex collection operations succinctly and efficiently in Java.
+
 ## Reduce
 
 **`Optional<T> reduce(BinaryOperator<T> accumulator)`**

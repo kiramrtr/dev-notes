@@ -297,6 +297,65 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="streams">
 <h1>Streams<a class="headerlink" href="#streams" title="Link to this heading">#</a></h1>
+<section id="collectors">
+<h2>Collectors<a class="headerlink" href="#collectors" title="Link to this heading">#</a></h2>
+<p>Collectors in Java are a part of the <code class="docutils literal notranslate"><span class="pre">java.util.stream</span></code> package and are typically used with streams to perform various operations such as grouping, summarizing, and partitioning data.</p>
+<ol class="arabic simple">
+<li><p><strong>Collecting to a List:</strong></p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stream</span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Collecting to a Set:</strong></p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stream</span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toSet</span><span class="p">());</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Joining Strings:</strong></p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stream</span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">joining</span><span class="p">(</span><span class="s">&quot;, &quot;</span><span class="p">));</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>Summarizing Integers:</strong></p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">IntSummaryStatistics</span><span class="w"> </span><span class="n">summary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stream</span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">summarizingInt</span><span class="p">(</span><span class="n">Integer</span><span class="p">::</span><span class="n">intValue</span><span class="p">));</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p><strong>Grouping by a Classifier:</strong></p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">groupedByLength</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stream</span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">groupingBy</span><span class="p">(</span><span class="n">String</span><span class="p">::</span><span class="n">length</span><span class="p">));</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p><strong>Partitioning by a Predicate:</strong></p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="o">&lt;</span><span class="n">Boolean</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">partitioned</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stream</span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">partitioningBy</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="p">));</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p><strong>Counting Elements:</strong></p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">long</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stream</span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">counting</span><span class="p">());</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p><strong>Mapping and Collecting:</strong></p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lengths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stream</span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">mapping</span><span class="p">(</span><span class="n">String</span><span class="p">::</span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">()));</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="9">
+<li><p><strong>Reducing to a Single Value:</strong></p></li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">concatenated</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stream</span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">reducing</span><span class="p">((</span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">s2</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">s2</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Collectors provide a powerful way to perform complex collection operations succinctly and efficiently in Java.</p>
+</section>
 <section id="reduce">
 <h2>Reduce<a class="headerlink" href="#reduce" title="Link to this heading">#</a></h2>
 <p><strong><code class="docutils literal notranslate"><span class="pre">Optional&lt;T&gt;</span> <span class="pre">reduce(BinaryOperator&lt;T&gt;</span> <span class="pre">accumulator)</span></code></strong></p>
@@ -347,8 +406,8 @@
 <section id="map-vs-flatmap">
 <h2>map() vs flatMap()<a class="headerlink" href="#map-vs-flatmap" title="Link to this heading">#</a></h2>
 </section>
-<section id="collectors">
-<h2>Collectors<a class="headerlink" href="#collectors" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h2>Collectors<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span>
 
 <span class="n">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toSet</span><span class="p">());</span>
@@ -446,11 +505,12 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Streams</a><ul>
+<li><a class="reference internal" href="#collectors">Collectors</a></li>
 <li><a class="reference internal" href="#reduce">Reduce</a></li>
 <li><a class="reference internal" href="#collect">Collect</a></li>
 <li><a class="reference internal" href="#processing-methods">Processing methods</a></li>
 <li><a class="reference internal" href="#map-vs-flatmap">map() vs flatMap()</a></li>
-<li><a class="reference internal" href="#collectors">Collectors</a></li>
+<li><a class="reference internal" href="#id1">Collectors</a></li>
 <li><a class="reference internal" href="#reduction-concurrency-and-ordering">Reduction, concurrency and ordering</a></li>
 <li><a class="reference internal" href="#parallel-streams">Parallel Streams</a></li>
 </ul>
