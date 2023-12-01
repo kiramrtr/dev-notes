@@ -13,6 +13,7 @@ agile
 database/index
 design-patterns/index
 dev-tools/index
+devops/index
 docker/index
 dsa/index
 java/index
@@ -58,7 +59,7 @@ Why?:
 - Exposure on Hystrix, Eureka – Good to have
 - Swagger for API Documentation
 - How to roll back the Transactions in case of exceptions, How to cancel?
-- CQRS in API Strategy and DB Strategy
+- CQRS in API and DB
 - OAuth 2.0
 - JWT
 - API Gateway:
@@ -82,8 +83,7 @@ Why?:
   - HashTable
   - LinkedHashMap
   - TreeMap,
-  - ArrayList, Vector
-  - LinkedList,
+  - ArrayList, Vector, LinkedList
 - When should we use linked blocking queue and when array blocking queue
 - Implementation of blocking queue
 - Executor Framework, Deadlock, Fork & Join, Synchronization, Latch and barrier, `ReentrantLock`
