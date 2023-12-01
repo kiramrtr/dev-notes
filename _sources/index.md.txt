@@ -75,24 +75,25 @@ Why?:
   - Decorator
 - Generics Upper and Lower Bounds, Wild Card, Type Eraser
 - Collections:
+  - HashSet
   - LinkedHashSet
   - TreeSet
+  - Hashmap
+  - HashTable
   - LinkedHashMap
   - TreeMap,
   - ArrayList, Vector
   - LinkedList,
-  - Hashmap
-  - HashTable
-  - HashSet
 - When should we use linked blocking queue and when array blocking queue
 - Implementation of blocking queue
-- Executor Framework, Deadlock, Fork & Join, Synchronization, Latch and barrier, Reentrantlock and Concept of Threadlocal
+- Executor Framework, Deadlock, Fork & Join, Synchronization, Latch and barrier, `ReentrantLock`
 - How do you take Heap dump in Java?
-- What’s the difference etweek heap and Thread Dump?
+- What’s the difference heap dump and Thread Dump?
 - Blocking Queue functionality (Array and Linked)
 - Concurrent Hashmap internal working, Difference between Concurrent Hashmap and hashmap
-- Concept of Threadlocal, Completable Future
-- Threadpool and its implementation. How to write a custom threadpool? Different types of Threadpool – Fixed, Cached, - Single, Scheduler, Work Stealing
+- Concept of `ThreadLocal`,
+- `CompletableFuture`
+- Thread pool and its implementation. How to write a custom thread pool? Different types of Threadpool – Fixed, Cached, - Single, Scheduler, Work Stealing
 - Object level vs class level locking
 - `wait()`, `notify()` and `notifyAll()` with use cases
 - Difference between `Callable` and `Runnable` Interfaces
@@ -112,12 +113,11 @@ Why?:
 - Able to write queries using different types of aggregate functions, Group By, Having Clause
 - Good understanding of indexes – Clustered and Non Clustered, Concept of sharding in databases
 - NoSQL experience is a huge advantage.
-- Queue and Topic (Difference)
 - Event based programming
 - Distributed Tracing
 - Scaling
-- REST Versioning, Pagiing, Pagination, Mocking Concepts
+- REST API: Versioning, Pagination, Mocking
 - Production Support/Production Deployment & Bug Fixing (Canary/Blue Green deployment)
 - How have you been involved? Production deployment checklist that was followed and operational steps taken?
 - Log Monitoring Tools:
-- ELK Stack, Greylog, Splunk, appdynamic, Grafana, Sumologic, etc…
+- ELK Stack, Splunk, Grafana

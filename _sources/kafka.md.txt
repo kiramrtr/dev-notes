@@ -62,3 +62,13 @@ Broker is the central point in a publish/subscribe system.
 - Each consumer belong to a _consumer group_, a list of consumer instances
 - With multiple consumers in a group, each consumer received messages from only a subset of partitions
 - If more consumers are there than number of partitions for a topic, additional consumers stay idle.
+
+## Queue vs Topic
+
+| Queue                                                                                                 | Topic                                                                                   |
+| ----------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| Point-to-Point                                                                                        | Publish-Subscribe                                                                       |
+| Producer --> Queue --> Consumer                                                                       | Publisher --> Topic --> Subscriber                                                      |
+| Each message in the _Queue_ is delivered to and processed by one consumer                             | Each message published to at _Topic_ can be received by all interested subscribers      |
+| Once a message is consumed, it is removed from the _Queue_                                            | The message remains in the _Topic_ until all subscribers have received it or it expires |
+| Ideal when a message must be processed only once and by a single consumer <br> e.g., Sending an email | Suitable for multiple consumers <br> e.g., Fan-out notifications to various channels    |

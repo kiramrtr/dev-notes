@@ -372,6 +372,35 @@
 <li><p>If more consumers are there than number of partitions for a topic, additional consumers stay idle.</p></li>
 </ul>
 </section>
+<section id="queue-vs-topic">
+<h2>Queue vs Topic<a class="headerlink" href="#queue-vs-topic" title="Link to this heading">#</a></h2>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Queue</p></th>
+<th class="head"><p>Topic</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Point-to-Point</p></td>
+<td><p>Publish-Subscribe</p></td>
+</tr>
+<tr class="row-odd"><td><p>Producer –&gt; Queue –&gt; Consumer</p></td>
+<td><p>Publisher –&gt; Topic –&gt; Subscriber</p></td>
+</tr>
+<tr class="row-even"><td><p>Each message in the <em>Queue</em> is delivered to and processed by one consumer</p></td>
+<td><p>Each message published to at <em>Topic</em> can be received by all interested subscribers</p></td>
+</tr>
+<tr class="row-odd"><td><p>Once a message is consumed, it is removed from the <em>Queue</em></p></td>
+<td><p>The message remains in the <em>Topic</em> until all subscribers have received it or it expires</p></td>
+</tr>
+<tr class="row-even"><td><p>Ideal when a message must be processed only once and by a single consumer <br> e.g., Sending an email</p></td>
+<td><p>Suitable for multiple consumers <br> e.g., Fan-out notifications to various channels</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 
         </article>
@@ -435,6 +464,7 @@
 <li><a class="reference internal" href="#message">Message</a></li>
 <li><a class="reference internal" href="#producer">Producer</a></li>
 <li><a class="reference internal" href="#consumer">Consumer</a></li>
+<li><a class="reference internal" href="#queue-vs-topic">Queue vs Topic</a></li>
 </ul>
 </li>
 </ul>
