@@ -64,7 +64,6 @@ Why?:
 - JWT
 - API Gateway:
   - Any enterprise API gateways like Kong, APIGee, Mulesoft, AWS API gateway, Zuul etc, Policies, roles and responsibilities, reverse proxy, rate limiting, filters etc.
-- Jackson Library, Json to map etc.
 - Deep understanding of SOLID design principles – Must have
 - Design Patterns:
   - Singleton
@@ -91,7 +90,6 @@ Why?:
 - What’s the difference heap dump and Thread Dump?
 - Blocking Queue functionality (Array and Linked)
 - Concurrent Hashmap internal working, Difference between Concurrent Hashmap and hashmap
-- Concept of `ThreadLocal`,
 - `CompletableFuture`
 - Thread pool and its implementation. How to write a custom thread pool? Different types of Threadpool – Fixed, Cached, - Single, Scheduler, Work Stealing
 - Object level vs class level locking
@@ -100,7 +98,6 @@ Why?:
 - Difference between `yield()` and `join()`
 - Semaphores
 - Profiler
-- Finalize method
 - JVM Configuration
 - GC Algos (Mark & Sweep, Series & parallel GC, Full and partial GC) should be aware how to do memory profiling
 - Java 8
