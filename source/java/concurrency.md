@@ -278,3 +278,28 @@ class Account {
 :lines: 5-
 
 ```
+
+## ThreadLocal
+
+- This class provides thread-local variables, which are distinct from regular variables in that each thread accessing one via its `get` or `set` method has a separate, independently initialized copy.
+- `ThreadLocal` instances are commonly `private static` fields in classes that aim to associate state with a thread, such as a user ID or transaction ID.
+- Each thread maintains an implicit reference to its thread-local variable copy as long as the thread is alive and the `ThreadLocal` instance is accessible. Once the thread ceases, all its thread-local variable copies become eligible for garbage collection, unless there are other references to these copies.
+
+Use cases:
+
+- Thread confinement
+- Per thread object for performance
+- Per thread context
+
+```{literalinclude} concurrency/ThreadLocalUsage.java
+:language: java
+:linenos:
+:lines: 6-
+:emphasize-lines:
+
+```
+
+Tips:
+
+- Cleanup once not required anymore
+- Delegate to frameworks e.g., Spring context holders
