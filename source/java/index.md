@@ -6,6 +6,7 @@ functional-interfaces
 streams
 optional
 concurrency
+jvm
 ```
 
 ## Java 8 Features
