@@ -1,5 +1,44 @@
 # Core Java
 
+## Generics
+
+```java
+<T extends A & B & C>
+```
+
+`A` can be a `class` or `interface`. `B` & `C` must be `interface`
+
+**Invariance**
+
+```java
+class Book {}
+class Album extends Book {}
+
+List<Album> albums = new ArrayList<>();
+List<Book> books = albums; // compile-time error
+
+// called invariance as container List<Book> does not extend List<Album>
+
+// using wildcard will be helpful here
+List<? extends Book> albumBooks = albums;
+```
+
+1. _unbounded_ wildcards `?`
+2. _upper bounded_ wildcards `? extends ReferenceType`
+3. _lower bounded_ wildcards `? super ReferenceType`
+
+**Get and Put Principle**
+
+- Use _upper bounded_ wildcards when you only get values.
+- Use _lower bounded_ wildcards when you only put values.
+- User _unbounded_ wildcards when you get and put values.
+
+### Type Erasure
+
+- To support backward compatibility with previous Java versions, information about generic types is erased by the compiler. The transformation process is called _type erasure_.
+- `List<Integer> integers = new List<>()` will become `List integers = new List()`
+- 
+
 ## [hashCode() and equals()](https://hyperskill.org/learn/step/3586)
 
 ### Overriding equals()

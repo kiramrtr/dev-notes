@@ -61,18 +61,17 @@ Why?:
 - How to roll back the Transactions in case of exceptions, How to cancel?
 - CQRS in API and DB
 - OAuth 2.0
-- JWT
 - API Gateway:
   - Any enterprise API gateways like Kong, APIGee, Mulesoft, AWS API gateway, Zuul etc, Policies, roles and responsibilities, reverse proxy, rate limiting, filters etc.
 - Deep understanding of SOLID design principles – Must have
 - Design Patterns:
-  - Singleton
-  - Factory
-  - Builder
-  - Template
-  - Strategy
   - Adaptor
+  - Builder
   - Decorator
+  - Factory
+  - Singleton
+  - Strategy
+  - Template
 - Generics Upper and Lower Bounds, Wild Card, Type Eraser
 - Collections:
   - HashSet
