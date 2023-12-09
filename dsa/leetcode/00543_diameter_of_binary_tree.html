@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="383. Ransom Note" href="00383_ransom_note.html" /><link rel="prev" title="295. Find Median from Data Stream" href="00295_find_median_from_data_stream.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="560. Subarray Sum Equals K" href="00560_subarray_sum_equals_k.html" /><link rel="prev" title="542. 01 Matrix" href="00542_01_matrix.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>322. Coin Change - Kira&#39;s dev notes</title>
+        <title>543. Diameter of Binary Tree - Kira&#39;s dev notes</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
@@ -140,7 +140,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -229,11 +229,11 @@
 <li class="toctree-l3"><a class="reference internal" href="00242_valid_anagram.html">242. Valid Anagram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00278_first_bad_version.html">278. First Bad Version</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00295_find_median_from_data_stream.html">295. Find Median from Data Stream</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">322. Coin Change</a></li>
+<li class="toctree-l3"><a class="reference internal" href="00322_coin_change.html">322. Coin Change</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00383_ransom_note.html">383. Ransom Note</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00409_longest_palindrome.html">409. Longest Palindrome</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00542_01_matrix.html">542. 01 Matrix</a></li>
-<li class="toctree-l3"><a class="reference internal" href="00543_diameter_of_binary_tree.html">543. Diameter of Binary Tree</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">543. Diameter of Binary Tree</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00560_subarray_sum_equals_k.html">560. Subarray Sum Equals K</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00704_binary_search.html">704. Binary Search</a></li>
 <li class="toctree-l3"><a class="reference internal" href="00733_flood_fill.html">733. Flood Fill</a></li>
@@ -300,68 +300,37 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="coin-change">
-<h1>322. Coin Change<a class="headerlink" href="#coin-change" title="Link to this heading">#</a></h1>
-<section id="recursion-with-memoization">
-<h2>Recursion with Memoization<a class="headerlink" href="#recursion-with-memoization" title="Link to this heading">#</a></h2>
+          <section class="tex2jax_ignore mathjax_ignore" id="diameter-of-binary-tree">
+<h1>543. Diameter of Binary Tree<a class="headerlink" href="#diameter-of-binary-tree" title="Link to this heading">#</a></h1>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 2</span><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">memo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="linenos"> 2</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">diameter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">coinChange</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">coins</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 5</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">dp</span><span class="p">(</span><span class="n">coins</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">);</span>
-<span class="linenos"> 6</span><span class="w">  </span><span class="p">}</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">dp</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">coins</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 9</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">memo</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">memo</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
-<span class="linenos">10</span>
-<span class="linenos">11</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="linenos">12</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-<span class="linenos">13</span>
-<span class="linenos">14</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">MAX_VALUE</span><span class="p">;</span>
-<span class="linenos">15</span>
-<span class="linenos">16</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">coin</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">coins</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">17</span><span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">subProblem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dp</span><span class="p">(</span><span class="n">coins</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">coin</span><span class="p">);</span>
-<span class="linenos">18</span><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">subProblem</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span>
-<span class="linenos">19</span><span class="w">      </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">subProblem</span><span class="p">);</span>
-<span class="linenos">20</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">21</span>
-<span class="linenos">22</span><span class="w">    </span><span class="n">memo</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">res</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">MAX_VALUE</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">res</span><span class="p">));</span>
-<span class="linenos">23</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">memo</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
-<span class="linenos">24</span><span class="w">  </span><span class="p">}</span>
-<span class="linenos">25</span><span class="p">}</span>
-</pre></div>
-</div>
-</section>
-<section id="dp">
-<h2>DP<a class="headerlink" href="#dp" title="Link to this heading">#</a></h2>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">coinChange</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">coins</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 2</span><span class="w">  </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">dp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="n">amount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">dp</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 5</span><span class="w">    </span><span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="linenos"> 6</span><span class="w">  </span><span class="p">}</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="w">  </span><span class="n">dp</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="linenos"> 9</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">dp</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">10</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">coin</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">coins</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">11</span><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">coin</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">12</span><span class="w">        </span><span class="k">continue</span><span class="p">;</span>
-<span class="linenos">13</span><span class="w">      </span><span class="p">}</span>
-<span class="linenos">14</span><span class="w">      </span><span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">coin</span><span class="o">]</span><span class="p">);</span>
-<span class="linenos">15</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">16</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos"> 4</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">diameterOfBinaryTree</span><span class="p">(</span><span class="n">TreeNode</span><span class="w"> </span><span class="n">root</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 5</span><span class="w">    </span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">);</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">diameter</span><span class="p">;</span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">helper</span><span class="p">(</span><span class="n">TreeNode</span><span class="w"> </span><span class="n">node</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">10</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">node</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">helper</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="na">left</span><span class="p">);</span>
+<span class="linenos">13</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">helper</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="na">right</span><span class="p">);</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="w">    </span><span class="c1">// update diameter if it has max from current node</span>
+<span class="linenos">16</span><span class="w">    </span><span class="n">diameter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">diameter</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">right</span><span class="p">));</span>
 <span class="linenos">17</span>
-<span class="linenos">18</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">dp</span><span class="o">[</span><span class="n">amount</span><span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">dp</span><span class="o">[</span><span class="n">amount</span><span class="o">]</span><span class="p">;</span>
-<span class="linenos">19</span><span class="p">}</span>
+<span class="linenos">18</span><span class="w">    </span><span class="c1">// returning for higher-level</span>
+<span class="linenos">19</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="linenos">20</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">21</span><span class="p">}</span>
 </pre></div>
 </div>
-</section>
 </section>
 
         </article>
@@ -369,23 +338,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="00383_ransom_note.html">
+          <a class="next-page" href="00560_subarray_sum_equals_k.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">383. Ransom Note</div>
+                <div class="title">560. Subarray Sum Equals K</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="00295_find_median_from_data_stream.html">
+          <a class="prev-page" href="00542_01_matrix.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">295. Find Median from Data Stream</div>
+                <div class="title">542. 01 Matrix</div>
                 
               </div>
             </a>
@@ -407,28 +376,8 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">322. Coin Change</a><ul>
-<li><a class="reference internal" href="#recursion-with-memoization">Recursion with Memoization</a></li>
-<li><a class="reference internal" href="#dp">DP</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

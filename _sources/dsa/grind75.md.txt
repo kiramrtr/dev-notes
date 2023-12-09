@@ -96,7 +96,7 @@
 |   5 | [Find Median from Data Stream](leetcode/00295_find_median_from_data_stream) | {bdg-danger}`Hard`    | 30 mins | Heap          |
 |   6 | [Majority Element](leetcode/00169_majority_element)                         | {bdg-success}`Easy`   | 20 mins | Array         |
 |   7 | Add Binary                                                                  | {bdg-success}`Easy`   | 15 mins | Binary        |
-|   8 | Diameter of Binary Tree                                                     | {bdg-success}`Easy`   | 30 mins | Binary Tree   |
+|   8 | [Diameter of Binary Tree](leetcode/00543_diameter_of_binary_tree)           | {bdg-success}`Easy`   | 30 mins | Binary Tree   |
 
 :::
 

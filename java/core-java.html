@@ -233,6 +233,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../dsa/leetcode/00383_ransom_note.html">383. Ransom Note</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dsa/leetcode/00409_longest_palindrome.html">409. Longest Palindrome</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dsa/leetcode/00542_01_matrix.html">542. 01 Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dsa/leetcode/00543_diameter_of_binary_tree.html">543. Diameter of Binary Tree</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dsa/leetcode/00560_subarray_sum_equals_k.html">560. Subarray Sum Equals K</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dsa/leetcode/00704_binary_search.html">704. Binary Search</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dsa/leetcode/00733_flood_fill.html">733. Flood Fill</a></li>
@@ -307,6 +308,21 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="core-java">
 <h1>Core Java<a class="headerlink" href="#core-java" title="Link to this heading">#</a></h1>
+<section id="fail-fast-and-fail-safe-weakly-consistent-iterators">
+<h2>Fail-fast and Fail-safe (weakly consistent) Iterators<a class="headerlink" href="#fail-fast-and-fail-safe-weakly-consistent-iterators" title="Link to this heading">#</a></h2>
+<p><strong>Fail-fast:</strong> Fail-fast iterator throws <code class="docutils literal notranslate"><span class="pre">ConcurrentModificationException</span></code> when any change has taken place to the collection.</p>
+<p><strong>Fail-safe:</strong> If a collection is modified concurrently with an iteration, the guarantees of what the iteration sees are weaker (may be it is working on a copy and don’t see the changes)</p>
+<p>Fail-fast iterators are typically implemented using a volatile counter on the collection object.</p>
+<ul class="simple">
+<li><p>When the collection is updated, the counter is incremented.</p></li>
+<li><p>When an Iterator is created, the current value of the counter is embedded in the Iterator object.</p></li>
+<li><p>When an Iterator operation is performed, the method compares the two counter values and throws a CME if they are different.</p></li>
+</ul>
+<p>By contrast, weakly consistent iterators are typically light-weight and leverage properties of each concurrent collection’s internal data structures. There is no general pattern.</p>
+<blockquote>
+<div><p>Ref.: https://stackoverflow.com/questions/17377407/what-are-fail-safe-fail-fast-iterators-in-java</p>
+</div></blockquote>
+</section>
 <section id="generics">
 <h2>Generics<a class="headerlink" href="#generics" title="Link to this heading">#</a></h2>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">T</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">C</span><span class="o">&gt;</span>
@@ -557,6 +573,7 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Core Java</a><ul>
+<li><a class="reference internal" href="#fail-fast-and-fail-safe-weakly-consistent-iterators">Fail-fast and Fail-safe (weakly consistent) Iterators</a></li>
 <li><a class="reference internal" href="#generics">Generics</a><ul>
 <li><a class="reference internal" href="#type-erasure">Type Erasure</a></li>
 </ul>

@@ -1,5 +1,21 @@
 # Core Java
 
+## Fail-fast and Fail-safe (weakly consistent) Iterators
+
+**Fail-fast:** Fail-fast iterator throws `ConcurrentModificationException` when any change has taken place to the collection.
+
+**Fail-safe:** If a collection is modified concurrently with an iteration, the guarantees of what the iteration sees are weaker (may be it is working on a copy and don't see the changes)
+
+Fail-fast iterators are typically implemented using a volatile counter on the collection object.
+
+- When the collection is updated, the counter is incremented.
+- When an Iterator is created, the current value of the counter is embedded in the Iterator object.
+- When an Iterator operation is performed, the method compares the two counter values and throws a CME if they are different.
+
+By contrast, weakly consistent iterators are typically light-weight and leverage properties of each concurrent collection's internal data structures. There is no general pattern.
+
+> Ref.: https://stackoverflow.com/questions/17377407/what-are-fail-safe-fail-fast-iterators-in-java
+
 ## Generics
 
 ```java
@@ -37,7 +53,7 @@ List<? extends Book> albumBooks = albums;
 
 - To support backward compatibility with previous Java versions, information about generic types is erased by the compiler. The transformation process is called _type erasure_.
 - `List<Integer> integers = new List<>()` will become `List integers = new List()`
-- 
+-
 
 ## [hashCode() and equals()](https://hyperskill.org/learn/step/3586)
 
