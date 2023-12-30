@@ -44,3 +44,11 @@ $$
 $$
 
 > Read more at: https://usaco.guide/silver/prefix-sums and https://labuladong.gitbook.io/algo-en/iii.-algorithmic-thinking/prefix_sum
+
+## Backtracking
+
+Types of problems
+
+1. Decision - Search for a solution.
+2. Optimization - Search for best solution.
+3. Enumeration - Find all possible/feasible solutions.
