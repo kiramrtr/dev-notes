@@ -12,6 +12,5 @@
 ```{literalinclude} code/BuilderPattern.java
 :language: java
 :linenos:
-:lines:
 
 ```

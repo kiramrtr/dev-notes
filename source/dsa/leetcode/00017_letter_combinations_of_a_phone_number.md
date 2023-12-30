@@ -29,7 +29,7 @@ class Solution {
 }
 ```
 
-## Recursion Approach
+## Recursion Approach 1
 
 ```{code-block} java
 :linenos:
@@ -71,6 +71,53 @@ class Solution {
     }
 
     return result;
+  }
+}
+```
+
+## Recursion Approach 2
+
+```{code-block} java
+:linenos: 
+
+class Solution {
+
+  private static final Map<Character, String> map = Map.of(
+    '2', "abc",
+    '3', "def",
+    '4', "ghi",
+    '5', "jkl",
+    '6', "mno",
+    '7', "pqrs",
+    '8', "tuv",
+    '9', "wxyz"
+  );
+
+  public List<String> letterCombinations(String digits) {
+    List<String> result = new ArrayList<>();
+
+    if (digits.length() == 0) {
+      return result;
+    }
+
+    combine(digits, 0, "", result);
+    return result;
+  }
+
+  private static void combine(
+    String digits,
+    int index,
+    String current,
+    List<String> result
+  ) {
+    if (index == digits.length()) { // base case
+      result.add(current);
+      return;
+    }
+
+    for (char c : map.get(digits.charAt(index)).toCharArray()) {
+      combine(digits, index + 1, current + c, result);
+    }
   }
 }
 ```
