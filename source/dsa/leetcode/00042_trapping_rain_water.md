@@ -1,4 +1,4 @@
-# 42. Trapping Rain Water
+# [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
 
 ## Brute-force
 
@@ -49,6 +49,14 @@ class Solution {
 
     return result;
   }
+}
+```
+
+## Memoization
+
+```{code-block} java
+:linenos:
+:dedent: 2
 
   /**
    * Approach 2: Memoization - Calculate left max and right max for all indices
@@ -83,20 +91,6 @@ class Solution {
 
     return result;
   }
-
-
-
-}
-```
-
-## Memoization
-
-```{code-block} java
-:linenos:
-:dedent: 2
-
-
-
 ```
 
 ## Two-pointer

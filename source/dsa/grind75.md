@@ -114,7 +114,7 @@
 |   5 | Partition Equal Subset Sum                                            | {bdg-warning}`Medium` | 30 mins | Dynamic Programming |
 |   6 | [String to Integer (atoi)](leetcode/00008_string_to_integer_atoi)     | {bdg-warning}`Medium` | 25 mins | String              |
 |   7 | Spiral Matrix                                                         | {bdg-warning}`Medium` | 25 mins | Matrix              |
-|   8 | Subsets                                                               | {bdg-warning}`Medium` | 30 mins | Recursion           |
+|   8 | [Subsets](leetcode/00078_subsets)                                     | {bdg-warning}`Medium` | 30 mins | Recursion           |
 |   9 | Binary Tree Right Side View                                           | {bdg-warning}`Medium` | 20 mins | Binary Tree         |
 
 :::
