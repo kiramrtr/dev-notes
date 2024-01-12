@@ -205,6 +205,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../dsa/leetcode/00062_unique_paths.html">62. Unique Paths</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dsa/leetcode/00070_climbing_stairs.html">70. Climbing Stairs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dsa/leetcode/00075_sort_colors.html">75. Sort Colors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dsa/leetcode/00078_subsets.html">78. Subsets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dsa/leetcode/00098_validate_binary_search_tree.html">98. Validate Binary Search Tree</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dsa/leetcode/00102_binary_tree_level_order_traversal.html">102. Binary Tree Level Order Traversal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dsa/leetcode/00104_maximum_depth_of_binary_tree.html">104. Maximum Depth of Binary Tree</a></li>
@@ -392,27 +393,38 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&#64;SpringBootApplication</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&#64;EnableAutoConfiguration</span></code></p></td>
+<td><p>Enable auto-configuration of Spring Application Context, attempts to guess and configure the beans that you are likely to need based on the classpath and the beans you’ve already set up.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&#64;SpringBootApplication</span></code></p></td>
 <td><p>Composition annotation of <code class="docutils literal notranslate"><span class="pre">&#64;SpringBootConfiguration</span></code>, <code class="docutils literal notranslate"><span class="pre">&#64;EnableAutoConfiguration</span></code> and <code class="docutils literal notranslate"><span class="pre">&#64;ComponentScan</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&#64;Configuration</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&#64;Configuration</span></code></p></td>
 <td><p>Indicates that class declares one or more <code class="docutils literal notranslate"><span class="pre">&#64;Bean</span></code> methods and may be processed by Spring Container</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&#64;EnableWebSecurity</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&#64;EnableWebSecurity</span></code></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&#64;Service</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&#64;Service</span></code></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&#64;Repository</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&#64;Repository</span></code></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&#64;Bean</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&#64;Bean</span></code></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
 </div>
+</section>
+<section id="design-patterns-used-in-spring-framework">
+<h2>Design Patterns Used in Spring Framework<a class="headerlink" href="#design-patterns-used-in-spring-framework" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Factory</p></li>
+<li><p>Inversion of Control</p></li>
+<li><p>Proxy</p></li>
+</ul>
 </section>
 <section id="spring-cloud">
 <h2>Spring Cloud<a class="headerlink" href="#spring-cloud" title="Link to this heading">#</a></h2>
@@ -459,7 +471,7 @@
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2022-2023, Kiran Marturu
+                Copyright &#169; 2022-2024, Kiran Marturu
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
@@ -493,6 +505,7 @@
 <li><a class="reference internal" href="#transaction-propagations">Transaction propagations</a></li>
 <li><a class="reference internal" href="#solution-architecture-document">Solution Architecture Document</a></li>
 <li><a class="reference internal" href="#draft">Draft</a></li>
+<li><a class="reference internal" href="#design-patterns-used-in-spring-framework">Design Patterns Used in Spring Framework</a></li>
 <li><a class="reference internal" href="#spring-cloud">Spring Cloud</a></li>
 </ul>
 </li>

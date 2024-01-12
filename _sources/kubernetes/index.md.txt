@@ -60,6 +60,14 @@ kubectl create -f nginx-pod.yaml
 - `create` command instantiates a new object, if executed for existing object will result in an error.
 - `apply` command meant to update an existing object fully or incrementally. If object doesn't exist it behaves same as `create`.
 
+##
+
+### Service
+
+- A Service is a method for exposing a network application that is running as one or more pods in your cluster.
+- The Servie API, part of Kubernetes, is an abstraction to help you expose groups of Pods over a network.
+- `selector` determines the set pods targeted by a Service.
+
 ## Tips for CKAD
 
 ```

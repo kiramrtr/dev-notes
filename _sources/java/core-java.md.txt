@@ -18,6 +18,8 @@ By contrast, weakly consistent iterators are typically light-weight and leverage
 
 ## Generics
 
+Allowing a type or method to operate on objects of various types while providing compile-time type safety. e.g., The Java Collection Framework supports generics to specify the type of objects stored in a collection instance.
+
 ```java
 <T extends A & B & C>
 ```
