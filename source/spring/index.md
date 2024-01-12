@@ -55,14 +55,21 @@ As mentioned above, there are several specializations of components depending on
 
 Common annotations
 
-| Annotation               | Description                                                                                           |
-| ------------------------ | ----------------------------------------------------------------------------------------------------- |
-| `@SpringBootApplication` | Composition annotation of `@SpringBootConfiguration`, `@EnableAutoConfiguration` and `@ComponentScan` |
-| `@Configuration`         | Indicates that class declares one or more `@Bean` methods and may be processed by Spring Container    |
-| `@EnableWebSecurity`     |                                                                                                       |
-| `@Service`               |                                                                                                       |
-| `@Repository`            |                                                                                                       |
-| `@Bean`                  |                                                                                                       |
+| Annotation                 | Description                                                                                                                                                                                |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `@EnableAutoConfiguration` | Enable auto-configuration of Spring Application Context, attempts to guess and configure the beans that you are likely to need based on the classpath and the beans you've already set up. |
+| `@SpringBootApplication`   | Composition annotation of `@SpringBootConfiguration`, `@EnableAutoConfiguration` and `@ComponentScan`                                                                                      |
+| `@Configuration`           | Indicates that class declares one or more `@Bean` methods and may be processed by Spring Container                                                                                         |
+| `@EnableWebSecurity`       |                                                                                                                                                                                            |
+| `@Service`                 |                                                                                                                                                                                            |
+| `@Repository`              |                                                                                                                                                                                            |
+| `@Bean`                    |                                                                                                                                                                                            |
+
+## Design Patterns Used in Spring Framework
+
+- Factory
+- Inversion of Control
+- Proxy
 
 ## Spring Cloud
 
