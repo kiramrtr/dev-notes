@@ -2,11 +2,13 @@
 
 ```{toctree}
 core-java
+collections
 functional-interfaces
 streams
 optional
 concurrency
 jvm
+testing
 ```
 
 ## Java 8 Features
