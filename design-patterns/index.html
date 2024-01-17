@@ -251,11 +251,13 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../java/index.html">Java</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Java</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../java/core-java.html">Core Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../java/collections.html">Collections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../java/functional-interfaces.html">Functional Interfaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../java/streams.html">Streams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../java/optional.html">Optional</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../java/concurrency.html">Concurrency</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../java/jvm.html">JVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../java/testing.html">Testing</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../js/index.html">JavaScript Ecosystem</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of JavaScript Ecosystem</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -333,6 +335,35 @@
 </li>
 </ul>
 </div>
+<section id="solid-principles">
+<h2>Solid Principles<a class="headerlink" href="#solid-principles" title="Link to this heading">#</a></h2>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Principle</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Single responsibility</p></td>
+<td><p>A class should have one and only one reason to change, meaning that a class should have only one job.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Open/closed</p></td>
+<td><p>Objects or entities should be open for extension but closed for modification.</p></td>
+</tr>
+<tr class="row-even"><td><p>Liskov substitution</p></td>
+<td><p>Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for objects y of type S where S is a subtype of T.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Interface seggregation</p></td>
+<td><p>A client should never be forced to implement an interface that it doesn’t use, or clients shouldn’t be forced to depend on methods they do not use.</p></td>
+</tr>
+<tr class="row-even"><td><p>Dependency inversion</p></td>
+<td><p>Entities must depend on abstractions, not on concretions. It states that the high-level module must not depend on the low-level module, but they should depend on abstractions.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 <section id="creational">
 <h2>Creational<a class="headerlink" href="#creational" title="Link to this heading">#</a></h2>
 <div class="table-wrapper colwidths-auto docutils container">
@@ -454,6 +485,7 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Design Patterns</a><ul>
+<li><a class="reference internal" href="#solid-principles">Solid Principles</a></li>
 <li><a class="reference internal" href="#creational">Creational</a></li>
 <li><a class="reference internal" href="#behavioral">Behavioral</a></li>
 <li><a class="reference internal" href="#structural">Structural</a></li>

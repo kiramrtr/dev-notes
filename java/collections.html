@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Dev Tools" href="../dev-tools/index.html" /><link rel="prev" title="Factory Method" href="factory-method.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Functional Interfaces" href="functional-interfaces.html" /><link rel="prev" title="Core Java" href="core-java.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>Singleton - Kira&#39;s dev notes</title>
+        <title>Collections - Kira&#39;s dev notes</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
@@ -140,7 +140,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -163,11 +163,11 @@
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../agile.html">Agile</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">Database</a></li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Design Patterns</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Design Patterns</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="builder.html">Builder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="decorator.html">Decorator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="factory-method.html">Factory Method</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Singleton</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../design-patterns/index.html">Design Patterns</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Design Patterns</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design-patterns/builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design-patterns/decorator.html">Decorator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design-patterns/factory-method.html">Factory Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design-patterns/singleton.html">Singleton</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dev-tools/index.html">Dev Tools</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Dev Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -249,15 +249,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../dsa/grind75.html">Grind 75</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../java/index.html">Java</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Java</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../java/core-java.html">Core Java</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../java/collections.html">Collections</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../java/functional-interfaces.html">Functional Interfaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../java/streams.html">Streams</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../java/optional.html">Optional</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../java/concurrency.html">Concurrency</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../java/jvm.html">JVM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../java/testing.html">Testing</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Java</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Java</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="core-java.html">Core Java</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functional-interfaces.html">Functional Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="streams.html">Streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional.html">Optional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concurrency.html">Concurrency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jvm.html">JVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html">Testing</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../js/index.html">JavaScript Ecosystem</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of JavaScript Ecosystem</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -305,90 +305,14 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="singleton">
-<h1>Singleton<a class="headerlink" href="#singleton" title="Link to this heading">#</a></h1>
-<section id="eager-initialization">
-<h2>Eager initialization<a class="headerlink" href="#eager-initialization" title="Link to this heading">#</a></h2>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">class</span> <span class="nc">Resource</span><span class="w"> </span><span class="p">{</span>
-<span class="hll"><span class="linenos">2</span><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Resource</span><span class="w"> </span><span class="n">INSTANCE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Resource</span><span class="p">();</span>
-</span><span class="linenos">3</span>
-<span class="linenos">4</span><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="nf">Resource</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
-<span class="linenos">5</span>
-<span class="linenos">6</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Resource</span><span class="w"> </span><span class="nf">getInstance</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">7</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">INSTANCE</span><span class="p">;</span>
-<span class="linenos">8</span><span class="w">  </span><span class="p">}</span>
-<span class="linenos">9</span><span class="p">}</span>
-</pre></div>
-</div>
-<p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-check-circle" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM0 8a8 8 0 1116 0A8 8 0 010 8zm11.78-1.72a.75.75 0 00-1.06-1.06L6.75 9.19 5.28 7.72a.75.75 0 00-1.06 1.06l2 2a.75.75 0 001.06 0l4.5-4.5z"></path></svg> Thread-safe.</p>
-<p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-circle-slash" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 0110.535-5.096l-9.131 9.131A6.472 6.472 0 011.5 8zm2.465 5.096a6.5 6.5 0 009.131-9.131l-9.131 9.131zM8 0a8 8 0 100 16A8 8 0 008 0z"></path></svg> Instance is created even if it’s never used.</p>
-</section>
-<section id="lazy-initialization">
-<h2>Lazy initialization<a class="headerlink" href="#lazy-initialization" title="Link to this heading">#</a></h2>
-<section id="double-checked-locking">
-<h3>Double checked locking<a class="headerlink" href="#double-checked-locking" title="Link to this heading">#</a></h3>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Resource</span><span class="w"> </span><span class="p">{</span>
-<span class="hll"><span class="linenos"> 2</span><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">volatile</span><span class="w"> </span><span class="n">Resource</span><span class="w"> </span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
-</span><span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="nf">Resource</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
-<span class="linenos"> 5</span>
-<span class="hll"><span class="linenos"> 6</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Resource</span><span class="w"> </span><span class="nf">getInstance</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span class="hll"><span class="linenos"> 7</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">instance</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// First check</span>
-</span><span class="linenos"> 8</span><span class="w">      </span><span class="kd">synchronized</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="hll"><span class="linenos"> 9</span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">instance</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Second check</span>
-</span><span class="hll"><span class="linenos">10</span><span class="w">          </span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Instance</span><span class="p">();</span>
-</span><span class="linenos">11</span><span class="w">        </span><span class="p">}</span>
-<span class="linenos">12</span><span class="w">      </span><span class="p">}</span>
-<span class="linenos">13</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">14</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">instance</span><span class="p">;</span>
-<span class="linenos">15</span><span class="w">  </span><span class="p">}</span>
-<span class="linenos">16</span><span class="p">}</span>
-</pre></div>
-</div>
-</section>
-<section id="concise">
-<h3>Concise<a class="headerlink" href="#concise" title="Link to this heading">#</a></h3>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Resource</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 2</span><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="nf">Resource</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
-<span class="linenos"> 3</span>
-<span class="hll"><span class="linenos"> 4</span><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Holder</span><span class="w"> </span><span class="p">{</span>
-</span><span class="hll"><span class="linenos"> 5</span><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Resource</span><span class="w"> </span><span class="n">INSTANCE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Resource</span><span class="p">();</span>
-</span><span class="hll"><span class="linenos"> 6</span><span class="w">  </span><span class="p">}</span>
-</span><span class="linenos"> 7</span>
-<span class="hll"><span class="linenos"> 8</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Resource</span><span class="w"> </span><span class="nf">getInstance</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span class="hll"><span class="linenos"> 9</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Holder</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">;</span>
-</span><span class="hll"><span class="linenos">10</span><span class="w">  </span><span class="p">}</span>
-</span><span class="linenos">11</span><span class="p">}</span>
-</pre></div>
-</div>
-<p>On calling <code class="docutils literal notranslate"><span class="pre">Holder.INSTANCE</span></code> only creates resource using <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Resource()</span></code>.</p>
-</section>
-<section id="enum">
-<h3>Enum<a class="headerlink" href="#enum" title="Link to this heading">#</a></h3>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">enum</span><span class="w"> </span><span class="n">Resource</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">INSTANCE</span><span class="p">;</span>
-
-<span class="w">  </span><span class="n">Resource</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// initialization</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="w">  </span><span class="c1">// instance methods</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="references">
-<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>https://rules.sonarsource.com/java/RSPEC-6548/</p></li>
-</ul>
-</section>
+          <section class="tex2jax_ignore mathjax_ignore" id="collections">
+<h1>Collections<a class="headerlink" href="#collections" title="Link to this heading">#</a></h1>
 </section>
 
         </article>
@@ -396,23 +320,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../dev-tools/index.html">
+          <a class="next-page" href="functional-interfaces.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Dev Tools</div>
+                <div class="title">Functional Interfaces</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="factory-method.html">
+          <a class="prev-page" href="core-java.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Factory Method</div>
+                <div class="title">Core Java</div>
                 
               </div>
             </a>
@@ -434,34 +358,8 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Singleton</a><ul>
-<li><a class="reference internal" href="#eager-initialization">Eager initialization</a></li>
-<li><a class="reference internal" href="#lazy-initialization">Lazy initialization</a><ul>
-<li><a class="reference internal" href="#double-checked-locking">Double checked locking</a></li>
-<li><a class="reference internal" href="#concise">Concise</a></li>
-<li><a class="reference internal" href="#enum">Enum</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#references">References</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
