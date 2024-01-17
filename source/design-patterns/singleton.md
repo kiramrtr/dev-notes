@@ -17,8 +17,9 @@ class Resource {
 }
 ```
 
-- {octicon}`check-circle` Thread-safe.
-- {octicon}`circle-slash` Instance is created even if it's never used.
+{octicon}`check-circle` Thread-safe.
+
+{octicon}`circle-slash` Instance is created even if it's never used.
 
 ## Lazy initialization
 
