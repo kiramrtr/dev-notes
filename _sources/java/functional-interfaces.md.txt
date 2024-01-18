@@ -27,6 +27,8 @@ Functional interfaces can provide a target type in multiple contexts
 
 ## Lambda Expression
 
+Lambdas provide a clear and concise way to represent one method interface using an expression. They are used primarily to define inline implementation of a _Functional Interface_.
+
 ### Closure
 
 A lambda expression can capture variables from the context where it is defined and user the variable within the body. This technique is known as closure and can be used only if a captured variable is `final` or **effectively final**, i.e., _a variable or parameter whose value is never changed after it is initialized and if a reference is not changed it is effectively final even if the object reference is changed_.

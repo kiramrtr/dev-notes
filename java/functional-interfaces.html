@@ -252,6 +252,7 @@
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Java</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Java</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="core-java.html">Core Java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="collections.html">Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collections.html#map">Map</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Functional Interfaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html">Streams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="optional.html">Optional</a></li>
@@ -347,6 +348,7 @@
 </section>
 <section id="lambda-expression">
 <h2>Lambda Expression<a class="headerlink" href="#lambda-expression" title="Link to this heading">#</a></h2>
+<p>Lambdas provide a clear and concise way to represent one method interface using an expression. They are used primarily to define inline implementation of a <em>Functional Interface</em>.</p>
 <section id="closure">
 <h3>Closure<a class="headerlink" href="#closure" title="Link to this heading">#</a></h3>
 <p>A lambda expression can capture variables from the context where it is defined and user the variable within the body. This technique is known as closure and can be used only if a captured variable is <code class="docutils literal notranslate"><span class="pre">final</span></code> or <strong>effectively final</strong>, i.e., <em>a variable or parameter whose value is never changed after it is initialized and if a reference is not changed it is effectively final even if the object reference is changed</em>.</p>

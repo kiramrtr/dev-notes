@@ -1,5 +1,7 @@
 # Streams
 
+Stream API simplifies the process of manupulating collection of objects. It supports operations like `map`, `filter`, `limit`, `reduce`, `find`, `match` and `sort` in a declarative way.
+
 ## Collectors
 
 Collectors in Java are a part of the `java.util.stream` package and are typically used with streams to perform various operations such as grouping, summarizing, and partitioning data.
