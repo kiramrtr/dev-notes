@@ -124,15 +124,15 @@
 :::{table}
 :class: grind-75
 
-|   # | Problem                                                                       | Difficulty            | Time    | Topic         |
-| --: | :---------------------------------------------------------------------------- | --------------------- | ------- | :------------ |
-|  1. | [Longest Palindromic Substring](leetcode/00005_longest_palindromic_substring) | {bdg-warning}`Medium` | 25 mins | String        |
-|  2. | Word Ladder                                                                   | {bdg-danger}`Hard`    | 45 mins | Graph         |
-|  3. | Basic Calculator                                                              | {bdg-danger}`Hard`    | 40 mins | Stack         |
-|  4. | Maximum Profit in Job Scheduling                                              | {bdg-danger}`Hard`    | 45 mins | Binary Search |
-|  5. | Merge k Sorted Lists                                                          | {bdg-danger}`Hard`    | 30 mins | Heap          |
-|  6. | Largest Rectangle in Histogram                                                | {bdg-danger}`Hard`    | 35 mins | Stack         |
-|  7. | Maximum Depth of Binary Tree                                                  | {bdg-success}`Easy`   | 15 mins | Binary Tree   |
+|   # | Problem                                                                         | Difficulty            | Time    | Topic         |
+| --: | :------------------------------------------------------------------------------ | --------------------- | ------- | :------------ |
+|  1. | [Longest Palindromic Substring](leetcode/00005_longest_palindromic_substring)   | {bdg-warning}`Medium` | 25 mins | String        |
+|  2. | Word Ladder                                                                     | {bdg-danger}`Hard`    | 45 mins | Graph         |
+|  3. | Basic Calculator                                                                | {bdg-danger}`Hard`    | 40 mins | Stack         |
+|  4. | Maximum Profit in Job Scheduling                                                | {bdg-danger}`Hard`    | 45 mins | Binary Search |
+|  5. | Merge k Sorted Lists                                                            | {bdg-danger}`Hard`    | 30 mins | Heap          |
+|  6. | [Largest Rectangle in Histogram](leetcode/00084_largest_rectangle_in_histogram) | {bdg-danger}`Hard`    | 35 mins | Stack         |
+|  7. | Maximum Depth of Binary Tree                                                    | {bdg-success}`Easy`   | 15 mins | Binary Tree   |
 
 :::
 
