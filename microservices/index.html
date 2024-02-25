@@ -253,6 +253,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../java/index.html">Java</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Java</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../java/core-java.html">Core Java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../java/collections.html">Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../java/collections.html#stack">Stack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../java/collections.html#map">Map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../java/functional-interfaces.html">Functional Interfaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../java/streams.html">Streams</a></li>
@@ -317,7 +318,10 @@
 <h1>Microservices<a class="headerlink" href="#microservices" title="Link to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="patterns.html">Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patterns.html">Patterns</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="patterns.html#service-mesh">Service Mesh</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="transactions.html">Transactions</a></li>
 </ul>
 </div>
@@ -337,12 +341,38 @@
 <li><p>Increased complexity</p></li>
 </ul>
 </section>
+<section id="challenges">
+<h2>Challenges<a class="headerlink" href="#challenges" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Service discovery</p></li>
+<li><p>Load balancing</p></li>
+<li><p>Fault tolerance</p></li>
+<li><p>Distributed tracing</p></li>
+<li><p>Telemetrics</p></li>
+<li><p>Security (mTLS, policies, patching)</p></li>
+<li><p>Granularity</p></li>
+<li><p>Bounded contexts</p></li>
+<li><p>Data modelling</p></li>
+<li><p>Independently releasable</p></li>
+<li><p>Service contracts</p></li>
+<li><p>Smart services, dumb-pipes</p></li>
+</ul>
+</section>
+<section id="service-mesh">
+<h2>Service Mesh<a class="headerlink" href="#service-mesh" title="Link to this heading">#</a></h2>
+</section>
 <section id="pillars-of-observability">
 <h2>3 pillars of observability<a class="headerlink" href="#pillars-of-observability" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Distributed Tracing</p></li>
 <li><p>Metrics</p></li>
 <li><p>Logging</p></li>
+</ul>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>https://www.youtube.com/watch?v=QiXK0B9FhO0</p></li>
 </ul>
 </section>
 </section>
@@ -405,7 +435,10 @@
 <li><a class="reference internal" href="#">Microservices</a><ul>
 <li><a class="reference internal" href="#advantages">Advantages</a></li>
 <li><a class="reference internal" href="#disadvantages">Disadvantages</a></li>
+<li><a class="reference internal" href="#challenges">Challenges</a></li>
+<li><a class="reference internal" href="#service-mesh">Service Mesh</a></li>
 <li><a class="reference internal" href="#pillars-of-observability">3 pillars of observability</a></li>
+<li><a class="reference internal" href="#references">References</a></li>
 </ul>
 </li>
 </ul>

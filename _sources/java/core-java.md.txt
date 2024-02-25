@@ -207,3 +207,6 @@ An object is considered _immutable_ if its state cannot change after it is const
    - b. Avoid sharing or storing external mutable object references. Instead, use copies of these objects for internal storage and method returns
 
 > https://docs.oracle.com/javase/tutorial/essential/concurrency/imstrat.html
+
+## String
+
