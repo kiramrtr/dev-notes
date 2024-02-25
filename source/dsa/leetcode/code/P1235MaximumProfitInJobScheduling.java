@@ -69,6 +69,10 @@ public class P1235MaximumProfitInJobScheduling {
       int startTime,
       int upperBound
     ) {
+        int left = 0, right = upperBound;
+        while (left < right) {
+            
+        }
       for (int i = upperBound; i >= 0; --i) {
         if (startTime >= jobs[i].endTime) {
           return i;
