@@ -44,3 +44,29 @@ public class Solution {
 ```
 
 ## Approach 2: Using prefix sum in HashMap
+
+```{code-block} java
+:linenos:
+:emphasize-lines: 1
+
+public class Solution {
+
+  public int maxSubArrayLen(int[] nums, int k) {
+    Map<Integer, Integer> map = new HashMap<>();
+    map.put(0, -1);
+
+    int prefixSum = 0;
+    int maxLen = 0;
+
+    for (int i = 0; i < nums.length; ++i) {
+      prefixSum += nums[i];
+      if (map.containsKey(prefixSum - k)) {
+        maxLen = Math.max(maxLen, i - map.get(prefixSum - k));
+      }
+      map.putIfAbsent(prefixSum, i);
+    }
+
+    return maxLen;
+  }
+}
+```

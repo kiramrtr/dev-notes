@@ -295,7 +295,7 @@ Use cases:
 :language: java
 :linenos:
 :lines: 6-
-:emphasize-lines:
+:emphasize-lines: 1
 
 ```
 

@@ -67,9 +67,9 @@
 
 - Knowledge of Executor Framework
 - Deadlock
-- Fork & Join 
+- Fork & Join
 - Synchronization
-- Latch and barrier 
+- Latch and barrier
 - ReentrantLock, Threadlocal, volatile keyword, thread pool in Java 4, immutability in multithreading.
 
 **Java Memory Management:**
@@ -107,7 +107,3 @@
 **Log Monitoring Tools:**
 
 - Familiarity with tools like ELK Stack, Greylog, Splunk, AppDynamics, Grafana, Sumo Logic, etc.
-
----
-
-This text covers a wide range of technical topics, primarily focused on cloud computing, DevOps, Java programming, and associated technologies and methodologies.

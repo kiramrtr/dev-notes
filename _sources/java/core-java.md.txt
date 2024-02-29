@@ -1,5 +1,16 @@
 # Core Java
 
+## Nested Classes
+
+A _nested class_ is a class that is defined within another class.
+
+1. _Inner class_: A non-static type defined at the member level of a class.
+2. _Static nested class_: A `static` type defined at the member level of a class.
+3. _Local class_: A class defines within a method body.
+4. _Anonymous class_: A local class without a name.
+
+- Interfaces and enums can be declared as both inner classes and `static` nested classes, but not as local or anonymous classes.
+
 ## Fail-fast and Fail-safe (weakly consistent) Iterators
 
 **Fail-fast:** Fail-fast iterator throws `ConcurrentModificationException` when any change has taken place to the collection.

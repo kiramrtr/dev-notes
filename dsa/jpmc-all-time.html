@@ -1,0 +1,670 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="LeetCode" href="leetcode.html" /><link rel="prev" title="Grind 75" href="grind75.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>JP Morgan (All time) - Kira&#39;s dev notes</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/katex-math.css?v=91adb8b6" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=c4588d08" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Kira's dev notes</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">Kira's dev notes</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../agile.html">Agile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">Database</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../design-patterns/index.html">Design Patterns</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Design Patterns</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design-patterns/builder.html">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design-patterns/decorator.html">Decorator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design-patterns/factory-method.html">Factory Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design-patterns/singleton.html">Singleton</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dev-tools/index.html">Dev Tools</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Dev Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dev-tools/curl.html">cURL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-tools/git.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-tools/keys-and-certificates.html">Keys and Certificates</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../devops/index.html">DevOps</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of DevOps</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../devops/jenkins.html">Jenkins</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../docker/index.html">Docker</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Docker</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Data Structures &amp; Algorithms</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Data Structures &amp; Algorithms</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="algorithmic-techniques.html">Algorithmic Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bit-manipulation.html">Bit Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grind75.html">Grind 75</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">JP Morgan (All time)</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="leetcode.html">LeetCode</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of LeetCode</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00001_two_sum.html">1. Two Sum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00003_longest_substring_without_repeating_characters.html">3. Longest Substring Without Repeating Characters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00005_longest_palindromic_substring.html">5. Longest Palindromic Substring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00008_string_to_integer_atoi.html">8. String to Integer (atoi)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00011_container_with_most_water.html">11. Container With Most Water</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00015_3_sum.html">15. 3Sum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00017_letter_combinations_of_a_phone_number.html">17. Letter Combinations of a Phone Number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00020_valid_parentheses.html">20. Valid Parentheses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00021_merge_two_sorted_lists.html">21. Merge Two Sorted Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00033_search_in_rotated_sorted_array.html">33. Search in Rotated Sorted Array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00042_trapping_rain_water.html">42. Trapping Rain Water</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00046_permutations.html">46. Permutations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00053_maximum_subarray.html">53. Maximum Subarray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00056_merge_intervals.html">56. Merge Intervals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00057_insert_interval.html">57. Insert Interval</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00062_unique_paths.html">62. Unique Paths</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00070_climbing_stairs.html">70. Climbing Stairs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00075_sort_colors.html">75. Sort Colors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00078_subsets.html">78. Subsets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00084_largest_rectangle_in_histogram.html">84. Largest Rectangle in Histogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00098_validate_binary_search_tree.html">98. Validate Binary Search Tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00102_binary_tree_level_order_traversal.html">102. Binary Tree Level Order Traversal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00104_maximum_depth_of_binary_tree.html">104. Maximum Depth of Binary Tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00110_balanced_binary_tree.html">110. Balanced Binary Tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00121_best_time_to_buy_and_sell_stock.html">121. Best Time to Buy and Sell Stock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00125_valid_palindrome.html">125. Valid Palindrome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00133_clone_graph.html">133. Clone Graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00141_linked_list_cycle.html">141. Linked List Cycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00150_evaluate_reverse_polish_notation.html">150. Evaluate Reverse Polish Notation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00155_min_stack.html">155. Min Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00169_majority_element.html">169. Majority Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00189_rotate_array.html">189. Rotate Array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00200_number_of_islands.html">200. Number of Islands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00206_reverse_linked_list.html">206. Reverse Linked List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00207_course_schedule.html">207. Course Schedule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00208_implement_trie_prefix_tree.html">208. Implement Trie (Prefix Tree)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00217_contains_duplicate.html">217. Contains Duplicate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00226_invert_binary_tree.html">226. Invert Binary Tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00232_implement_queue_using_stacks.html">232. Implement Queue using Stacks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00235_lowest_common_ancestor_of_a_binary_search_tree.html">235. Lowest Common Ancestor of a Binary Search Tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00236_lowest_common_ancestor_of_a_binary_tree.html">236. Lowest Common Ancestor of a Binary Tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00238_product_of_array_except_self.html">238. Product of Array Except Self</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00242_valid_anagram.html">242. Valid Anagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00278_first_bad_version.html">278. First Bad Version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00295_find_median_from_data_stream.html">295. Find Median from Data Stream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00322_coin_change.html">322. Coin Change</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00325_maximum_size_subarray_sum_equals_k.html">325. Maximum Size Subarray Sum Equals k</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00383_ransom_note.html">383. Ransom Note</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00409_longest_palindrome.html">409. Longest Palindrome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00542_01_matrix.html">542. 01 Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00543_diameter_of_binary_tree.html">543. Diameter of Binary Tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00560_subarray_sum_equals_k.html">560. Subarray Sum Equals K</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00704_binary_search.html">704. Binary Search</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00733_flood_fill.html">733. Flood Fill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00876_middle_of_the_linked_list.html">876. Middle of the Linked List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00973_k_closest_points_to_origin.html">973. K Closest Points to Origin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/00994_rotting_oranges.html">994. Rotting Oranges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="leetcode/02716_minimize_string_length.html">2716. Minimize String Length</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../java/index.html">Java</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Java</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../java/core-java.html">Core Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../java/collections.html">Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../java/collections.html#stack">Stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../java/collections.html#map">Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../java/functional-interfaces.html">Functional Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../java/streams.html">Streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../java/optional.html">Optional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../java/concurrency.html">Concurrency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../java/jvm.html">JVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../java/testing.html">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../js/index.html">JavaScript Ecosystem</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of JavaScript Ecosystem</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../js/javascript.html">JavaScript</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../kafka.html">Kafka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/index.html">Kubernetes</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../microservices/index.html">Microservices</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Microservices</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../microservices/patterns.html">Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../microservices/transactions.html">Transactions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../redis.html">Redis</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../spring/index.html">Spring</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Spring</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../spring/jpa.html">JPA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spring/spring-security.html">Spring Security</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section class="tex2jax_ignore mathjax_ignore" id="jp-morgan-all-time">
+<h1>JP Morgan (All time)<a class="headerlink" href="#jp-morgan-all-time" title="Link to this heading">#</a></h1>
+<section id="happy-number">
+<h2><a class="reference external" href="https://leetcode.com/problems/happy-number">202. Happy Number</a><a class="headerlink" href="#happy-number" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Easy</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isHappy</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">slow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">squaredSum</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<span class="linenos"> 5</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">fast</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">squaredSum</span><span class="p">(</span><span class="n">squaredSum</span><span class="p">(</span><span class="n">n</span><span class="p">));</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">slow</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">fast</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 8</span><span class="w">      </span><span class="n">slow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">squaredSum</span><span class="p">(</span><span class="n">slow</span><span class="p">);</span>
+<span class="linenos"> 9</span><span class="w">      </span><span class="n">fast</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">squaredSum</span><span class="p">(</span><span class="n">squaredSum</span><span class="p">(</span><span class="n">fast</span><span class="p">));</span>
+<span class="linenos">10</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">slow</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="linenos">13</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">squaredSum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">16</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">17</span><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">18</span><span class="w">      </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="linenos">19</span><span class="w">      </span><span class="n">n</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="linenos">20</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">21</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span>
+<span class="linenos">22</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">23</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="valid-parentheses">
+<h2><a class="reference external" href="https://leetcode.com/problems/valid-parentheses">20. Valid Parentheses</a><a class="headerlink" href="#valid-parentheses" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Easy</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isValid</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="n">Deque</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayDeque</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">toCharArray</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 7</span><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;(&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 8</span><span class="w">        </span><span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="sc">&#39;)&#39;</span><span class="p">);</span>
+<span class="linenos"> 9</span><span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;{&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">10</span><span class="w">        </span><span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="sc">&#39;}&#39;</span><span class="p">);</span>
+<span class="linenos">11</span><span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;[&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">12</span><span class="w">        </span><span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="sc">&#39;]&#39;</span><span class="p">);</span>
+<span class="linenos">13</span><span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">14</span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="linenos">15</span><span class="w">      </span><span class="p">}</span>
+<span class="linenos">16</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">stack</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">();</span>
+<span class="linenos">19</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">20</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="coin-change">
+<h2><a class="reference external" href="https://leetcode.com/problems/coin-change">322. Coin Change</a><a class="headerlink" href="#coin-change" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">Medium</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">coinChange</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">coins</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="c1">// dp[i] := the minimum number of coins to make up i</span>
+<span class="linenos"> 5</span><span class="w">    </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">dp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="n">amount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="n">Arrays</span><span class="p">.</span><span class="na">fill</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">dp</span><span class="p">.</span><span class="na">length</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">coin</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">coins</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 9</span><span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">coin</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">amount</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">10</span><span class="w">        </span><span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">coin</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="linenos">11</span><span class="w">      </span><span class="p">}</span>
+<span class="linenos">12</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">dp</span><span class="o">[</span><span class="n">amount</span><span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">dp</span><span class="o">[</span><span class="n">amount</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos">15</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">16</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="best-time-to-buy-and-sell-stock">
+<h2><a class="reference external" href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock">121. Best Time to Buy and Sell Stock</a><a class="headerlink" href="#best-time-to-buy-and-sell-stock" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Easy</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
+</pre></div>
+</div>
+</section>
+<section id="break-a-palindrome">
+<h2><a class="reference external" href="https://leetcode.com/problems/break-a-palindrome">1328. Break a Palindrome</a><a class="headerlink" href="#break-a-palindrome" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">Medium</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
+</pre></div>
+</div>
+</section>
+<section id="next-permutation">
+<h2><a class="reference external" href="https://leetcode.com/problems/next-permutation">31. Next Permutation</a><a class="headerlink" href="#next-permutation" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">Medium</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
+</pre></div>
+</div>
+</section>
+<section id="integer-to-english-words">
+<h2><a class="reference external" href="https://leetcode.com/problems/integer-to-english-words">273. Integer to English Words</a><a class="headerlink" href="#integer-to-english-words" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">Hard</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
+</pre></div>
+</div>
+</section>
+<section id="palindrome-number">
+<h2><a class="reference external" href="https://leetcode.com/problems/palindrome-number">9. Palindrome Number</a><a class="headerlink" href="#palindrome-number" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Easy</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
+</pre></div>
+</div>
+</section>
+<section id="two-sum">
+<h2><a class="reference external" href="https://leetcode.com/problems/two-sum">1. Two Sum</a><a class="headerlink" href="#two-sum" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Easy</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
+</pre></div>
+</div>
+</section>
+<section id="reverse-integer">
+<h2><a class="reference external" href="https://leetcode.com/problems/reverse-integer">7. Reverse Integer</a><a class="headerlink" href="#reverse-integer" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Easy</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
+</pre></div>
+</div>
+</section>
+<section id="letter-combinations-of-a-phone-number">
+<h2><a class="reference external" href="https://leetcode.com/problems/letter-combinations-of-a-phone-number">17. Letter Combinations of a Phone Number</a><a class="headerlink" href="#letter-combinations-of-a-phone-number" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">Medium</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
+</pre></div>
+</div>
+</section>
+<section id="number-of-islands">
+<h2><a class="reference external" href="https://leetcode.com/problems/number-of-islands">200. Number of Islands</a><a class="headerlink" href="#number-of-islands" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">Medium</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
+</pre></div>
+</div>
+</section>
+<section id="maximum-subarray">
+<h2><a class="reference external" href="https://leetcode.com/problems/maximum-subarray">53. Maximum Subarray</a><a class="headerlink" href="#maximum-subarray" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Easy</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
+</pre></div>
+</div>
+</section>
+<section id="longest-palindromic-substring">
+<h2><a class="reference external" href="https://leetcode.com/problems/longest-palindromic-substring">5. Longest Palindromic Substring</a><a class="headerlink" href="#longest-palindromic-substring" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">Medium</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
+</pre></div>
+</div>
+</section>
+<section id="median-of-two-sorted-arrays">
+<h2><a class="reference external" href="https://leetcode.com/problems/median-of-two-sorted-arrays">4. Median of Two Sorted Arrays</a><a class="headerlink" href="#median-of-two-sorted-arrays" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">Hard</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
+</pre></div>
+</div>
+</section>
+<section id="search-in-rotated-sorted-array">
+<h2><a class="reference external" href="https://leetcode.com/problems/search-in-rotated-sorted-array">33. Search in Rotated Sorted Array</a><a class="headerlink" href="#search-in-rotated-sorted-array" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">Medium</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
+</pre></div>
+</div>
+</section>
+<section id="lru-cache">
+<h2><a class="reference external" href="https://leetcode.com/problems/lru-cache">146. LRU Cache</a><a class="headerlink" href="#lru-cache" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">Medium</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
+</pre></div>
+</div>
+</section>
+<section id="intersection-of-two-arrays">
+<h2><a class="reference external" href="https://leetcode.com/problems/intersection-of-two-arrays">349. Intersection of Two Arrays</a><a class="headerlink" href="#intersection-of-two-arrays" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Easy</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
+</pre></div>
+</div>
+</section>
+<section id="word-search">
+<h2><a class="reference external" href="https://leetcode.com/problems/word-search">79. Word Search</a><a class="headerlink" href="#word-search" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">Medium</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
+</pre></div>
+</div>
+</section>
+<section id="kth-largest-element-in-an-array">
+<h2><a class="reference external" href="https://leetcode.com/problems/kth-largest-element-in-an-array">215. Kth Largest Element in an Array</a><a class="headerlink" href="#kth-largest-element-in-an-array" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">Medium</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
+</pre></div>
+</div>
+</section>
+<section id="combination-sum">
+<h2><a class="reference external" href="https://leetcode.com/problems/combination-sum">39. Combination Sum</a><a class="headerlink" href="#combination-sum" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">Medium</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
+</pre></div>
+</div>
+</section>
+<section id="first-unique-character-in-a-string">
+<h2><a class="reference external" href="https://leetcode.com/problems/first-unique-character-in-a-string">387. First Unique Character in a String</a><a class="headerlink" href="#first-unique-character-in-a-string" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Easy</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
+</pre></div>
+</div>
+</section>
+<section id="minimum-swaps-to-make-strings-equal">
+<h2><a class="reference external" href="https://leetcode.com/problems/minimum-swaps-to-make-strings-equal">1247. Minimum Swaps to Make Strings Equal</a><a class="headerlink" href="#minimum-swaps-to-make-strings-equal" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">Medium</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
+</pre></div>
+</div>
+</section>
+<section id="remove-colored-pieces-if-both-neighbors-are-the-same-color">
+<h2><a class="reference external" href="https://leetcode.com/problems/remove-colored-pieces-if-both-neighbors-are-the-same-color">2038. Remove Colored Pieces if Both Neighbors are the Same Color</a><a class="headerlink" href="#remove-colored-pieces-if-both-neighbors-are-the-same-color" title="Link to this heading">#</a></h2>
+<p><span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">Medium</span></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">winnerOfGame</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">colors</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">aTripletsCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos"> 5</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">bTripletsCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">colors</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 8</span><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span>
+<span class="linenos"> 9</span><span class="w">        </span><span class="n">colors</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">colors</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="linenos">10</span><span class="w">        </span><span class="n">colors</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">colors</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">11</span><span class="w">      </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">12</span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">colors</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">13</span><span class="w">          </span><span class="n">aTripletsCount</span><span class="o">++</span><span class="p">;</span>
+<span class="linenos">14</span><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">15</span><span class="w">          </span><span class="n">bTripletsCount</span><span class="o">++</span><span class="p">;</span>
+<span class="linenos">16</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos">17</span><span class="w">      </span><span class="p">}</span>
+<span class="linenos">18</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">aTripletsCount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">bTripletsCount</span><span class="p">;</span>
+<span class="linenos">21</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">22</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="leetcode.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">LeetCode</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="grind75.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Grind 75</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022-2024, Kiran Marturu
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">JP Morgan (All time)</a><ul>
+<li><a class="reference internal" href="#happy-number">202. Happy Number</a></li>
+<li><a class="reference internal" href="#valid-parentheses">20. Valid Parentheses</a></li>
+<li><a class="reference internal" href="#coin-change">322. Coin Change</a></li>
+<li><a class="reference internal" href="#best-time-to-buy-and-sell-stock">121. Best Time to Buy and Sell Stock</a></li>
+<li><a class="reference internal" href="#break-a-palindrome">1328. Break a Palindrome</a></li>
+<li><a class="reference internal" href="#next-permutation">31. Next Permutation</a></li>
+<li><a class="reference internal" href="#integer-to-english-words">273. Integer to English Words</a></li>
+<li><a class="reference internal" href="#palindrome-number">9. Palindrome Number</a></li>
+<li><a class="reference internal" href="#two-sum">1. Two Sum</a></li>
+<li><a class="reference internal" href="#reverse-integer">7. Reverse Integer</a></li>
+<li><a class="reference internal" href="#letter-combinations-of-a-phone-number">17. Letter Combinations of a Phone Number</a></li>
+<li><a class="reference internal" href="#number-of-islands">200. Number of Islands</a></li>
+<li><a class="reference internal" href="#maximum-subarray">53. Maximum Subarray</a></li>
+<li><a class="reference internal" href="#longest-palindromic-substring">5. Longest Palindromic Substring</a></li>
+<li><a class="reference internal" href="#median-of-two-sorted-arrays">4. Median of Two Sorted Arrays</a></li>
+<li><a class="reference internal" href="#search-in-rotated-sorted-array">33. Search in Rotated Sorted Array</a></li>
+<li><a class="reference internal" href="#lru-cache">146. LRU Cache</a></li>
+<li><a class="reference internal" href="#intersection-of-two-arrays">349. Intersection of Two Arrays</a></li>
+<li><a class="reference internal" href="#word-search">79. Word Search</a></li>
+<li><a class="reference internal" href="#kth-largest-element-in-an-array">215. Kth Largest Element in an Array</a></li>
+<li><a class="reference internal" href="#combination-sum">39. Combination Sum</a></li>
+<li><a class="reference internal" href="#first-unique-character-in-a-string">387. First Unique Character in a String</a></li>
+<li><a class="reference internal" href="#minimum-swaps-to-make-strings-equal">1247. Minimum Swaps to Make Strings Equal</a></li>
+<li><a class="reference internal" href="#remove-colored-pieces-if-both-neighbors-are-the-same-color">2038. Remove Colored Pieces if Both Neighbors are the Same Color</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/tabs.js?v=3ee01567"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/katex.min.js?v=48ec3933"></script>
+    <script src="../_static/auto-render.min.js?v=8b9f325c"></script>
+    <script src="../_static/katex_autorenderer.js?v=bebc588a"></script>
+    </body>
+</html>

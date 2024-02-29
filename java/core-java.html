@@ -186,6 +186,8 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dsa/index.html">Data Structures &amp; Algorithms</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Data Structures &amp; Algorithms</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dsa/algorithmic-techniques.html">Algorithmic Techniques</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dsa/bit-manipulation.html">Bit Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dsa/grind75.html">Grind 75</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dsa/jpmc-all-time.html">JP Morgan (All time)</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../dsa/leetcode.html">LeetCode</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of LeetCode</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../dsa/leetcode/00001_two_sum.html">1. Two Sum</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dsa/leetcode/00003_longest_substring_without_repeating_characters.html">3. Longest Substring Without Repeating Characters</a></li>
@@ -247,7 +249,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../dsa/leetcode/02716_minimize_string_length.html">2716. Minimize String Length</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../dsa/grind75.html">Grind 75</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Java</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Java</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
@@ -316,6 +317,19 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="core-java">
 <h1>Core Java<a class="headerlink" href="#core-java" title="Link to this heading">#</a></h1>
+<section id="nested-classes">
+<h2>Nested Classes<a class="headerlink" href="#nested-classes" title="Link to this heading">#</a></h2>
+<p>A <em>nested class</em> is a class that is defined within another class.</p>
+<ol class="arabic simple">
+<li><p><em>Inner class</em>: A non-static type defined at the member level of a class.</p></li>
+<li><p><em>Static nested class</em>: A <code class="docutils literal notranslate"><span class="pre">static</span></code> type defined at the member level of a class.</p></li>
+<li><p><em>Local class</em>: A class defines within a method body.</p></li>
+<li><p><em>Anonymous class</em>: A local class without a name.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Interfaces and enums can be declared as both inner classes and <code class="docutils literal notranslate"><span class="pre">static</span></code> nested classes, but not as local or anonymous classes.</p></li>
+</ul>
+</section>
 <section id="fail-fast-and-fail-safe-weakly-consistent-iterators">
 <h2>Fail-fast and Fail-safe (weakly consistent) Iterators<a class="headerlink" href="#fail-fast-and-fail-safe-weakly-consistent-iterators" title="Link to this heading">#</a></h2>
 <p><strong>Fail-fast:</strong> Fail-fast iterator throws <code class="docutils literal notranslate"><span class="pre">ConcurrentModificationException</span></code> when any change has taken place to the collection.</p>
@@ -585,6 +599,7 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Core Java</a><ul>
+<li><a class="reference internal" href="#nested-classes">Nested Classes</a></li>
 <li><a class="reference internal" href="#fail-fast-and-fail-safe-weakly-consistent-iterators">Fail-fast and Fail-safe (weakly consistent) Iterators</a></li>
 <li><a class="reference internal" href="#generics">Generics</a><ul>
 <li><a class="reference internal" href="#type-erasure">Type Erasure</a></li>
