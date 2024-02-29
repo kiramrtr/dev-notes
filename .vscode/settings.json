@@ -2,7 +2,9 @@
   "cSpell.words": [
     "creational",
     "instanceof",
+    "leetcode",
     "linenos",
     "println"
-  ]
+  ],
+  "java.project.sourcePaths": ["source"]
 }

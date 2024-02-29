@@ -19,7 +19,8 @@
         "esbenp.prettier-vscode",
         "mwpb.java-prettier-formatter",
         "wmaurer.change-case",
-        "vscjava.vscode-java-pack"
+        "vscjava.vscode-java-pack",
+        "tomoki1207.pdf"
       ]
     }
   }
